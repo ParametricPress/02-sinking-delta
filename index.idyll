@@ -49,6 +49,26 @@ River deltas are among the most fertile and biodiverse areas on the planet. Wher
 Deltas have always been hubs of human development. Ancient civilizations flourished in the Nile and the Ganges deltas, and today, half a billion people call them home - even though they cover only 1 % of the earth's land surface. With rich crops and abundant fish, deltas are crucial to food security and economic development.
 
 Deltas are also extremely vulnerable.
+
+[data name:"annualPrecip" source:"annual-precipitation.csv" /]
+[Table data:annualPrecip /]
+[IdyllVegaLite data:annualPrecip spec:`{
+  mark: "bar",
+  encoding: {
+    x: {
+      field: "time",
+      type: "temporal",
+      axis: {title: "Year", format:"%Y"}
+    },
+    y: {
+      field: "value",
+      type: "quantitative",
+      axis: {title: "Precipitation [mm]"},
+      //scale: { domain: [575, 582] }
+    }
+  }
+}` /]
+
 [/Step]
 
 
