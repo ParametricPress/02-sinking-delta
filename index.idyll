@@ -3,7 +3,7 @@
   shareImageWidth:"880"
   shareImageHeight:"440" /]
 
-[var name:"parametricSlug" value:"tk-article-slug" /]
+[var name:"parametricSlug" value:"sinking-delta" /]
 
 [Nav fullWidth:true /]
 
@@ -13,6 +13,7 @@
   date:"May 15, 2020"
   dek:"TK TK A punchy description of why we should read your article."
   fullWidth:true
+  headerImage:"static/images/62.jpg"
   authors:`[{
     name: "",
     role: "",
@@ -85,6 +86,13 @@ That is exactly what is happening in the delta of the Mekong. The delta of South
 But what exactly causes this double threat? And what can be done about it?
 
 The answers to these questions are as complex as the environmental and political problems casting their shadows over the region. At their core - climate change.
+
+
+
+[Aside]
+  [Recirc slug:parametricSlug /]
+[/Aside]
+
 // [/Step]
 
 // [/Scroller]
@@ -248,7 +256,6 @@ Satellite data from ESA’s Sentinel mission shows the flooded areas of July and
       In Southeast Asia, 2015/16 saw a drought similarly severe as that of 2019. This period also saw the strongest-ever El Niño, also referred to as a Super El Niño event.
 
       The effects of anthropogenic climate change on the Mekong basin are undeniable. But humans also have more direct impacts on the delta, which further aggravate floods droughts.
-
       // [/Step]
 
 
