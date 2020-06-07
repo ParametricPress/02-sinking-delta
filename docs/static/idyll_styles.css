@@ -1584,6 +1584,22 @@ a {
   background: none;
 }
 
+.parametric-header-image img,
+.parametric-header-image video {
+  width: 400px;
+  z-index: 3;
+  position: relative;
+  top: -70px;
+  left: -120px;
+  background: none;
+}
+.parametric-header-image img,
+.parametric-header-image video {
+  left: 0;
+  width: 520px;
+}
+
+
 .hed-rotate {
   z-index: 10;
   pointer-events: none;
@@ -1934,6 +1950,33 @@ h1.hed-rotate {
 .ReactTable .-pagination button {
   margin: 0;
 }
+
+body {
+  font-size: 24px;
+  color: #222222;
+  font-family: 'Graphik Web';
+  line-height: 36px;
+}
+
+p {
+  font-weight: 400;
+}
+
+.parametric-header-image img,
+.parametric-header-image video {
+  width: 400px;
+  z-index: 3;
+  position: relative;
+  top: -70px;
+  left: -120px;
+  background: none;
+}
+.parametric-header-image img,
+.parametric-header-image video {
+  left: 0;
+  width: 520px;
+}
+
 
 @media all and (max-width: 1000px) {
   .idyll-root {
