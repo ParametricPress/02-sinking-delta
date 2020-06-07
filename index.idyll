@@ -23,11 +23,60 @@
   source:`"https://github.com/ParametricPress/02-" + parametricSlug `
 /]
 
+// [Scroller currentStep:scrollerIndex]
+// [Graphic]
+//  [div fullWidth:true style:`{
+//    width: '100vw',
+//    height: '100vh',
+//    // position: 'fixed',
+//    transition: 'opacity 1s',
+//    display: 'flex',
+//    flexDirection: 'row',
+//    alignItems:' center'
+//    // opacity: stepperState === 'hero' ? 1 : 0,
+//    // background: 'url(static/images/background-1.jpg) no-repeat center center fixed',
+//  }` ]
+//    [img style:`{width: "100vw", height:'auto', maxHeight: 'none'}` src:"static/images/background-1.jpg" /]
+
+//        [/div]
+//      [/Graphic]
+
+
+//   [Step]
+
 River deltas are among the most fertile and biodiverse areas on the planet. Where a large river transitions into the sea, and a dendritic web of watercourses stretches over floodplains, both animal and plant life thrive.
 
 Deltas have always been hubs of human development. Ancient civilizations flourished in the Nile and the Ganges deltas, and today, half a billion people call them home - even though they cover only 1 % of the earth's land surface. With rich crops and abundant fish, deltas are crucial to food security and economic development.
 
 Deltas are also extremely vulnerable.
+
+[data name:"annualPrecip" source:"annual-precipitation.csv" /]
+[Table data:annualPrecip /]
+
+
+[ParametricGraphic hed:"Annual Precipitation" subhed:"More context, why do we care?" source:"Source of the data"]
+  [IdyllVegaLite data:annualPrecip spec:`{
+    mark: "bar",
+    encoding: {
+      x: {
+        field: "year",
+        type: "temporal",
+        axis: {title: "Year", format:"%Y"}
+      },
+      y: {
+        field: "precipitation mm",
+        type: "quantitative",
+        axis: {title: "Precipitation [mm]"},
+        //scale: { domain: [575, 582] }
+      }
+    }
+  }` /]
+[/ParametricGraphic]
+
+// [/Step]
+
+
+// [Step]
 
 This is because they are located at the intersection of terrestrial and aquatic ecosystems. Their entire existence depends on a delicate balance of factors: temperature, freshwater and saltwater, precipitation and river flow. It is a balance only too easily disturbed.
 
@@ -36,8 +85,9 @@ That is exactly what is happening in the delta of the Mekong. The delta of South
 But what exactly causes this double threat? And what can be done about it?
 
 The answers to these questions are as complex as the environmental and political problems casting their shadows over the region. At their core - climate change.
+// [/Step]
 
-##Living with the River
+// [/Scroller]
 
 // [Scroller currentStep:scrollerIndex]
 //   [Graphic style:`{padding: 50}`]
@@ -47,7 +97,28 @@ The answers to these questions are as complex as the environmental and political
 //       [Chart type:`"line"` data:`scrollerChartData.slice(0, scrollerIndex + 2)` /]
 //   [/Graphic]
 
+
+// [Scroller currentStep:scrollerIndex]
+// [Graphic]
+//  [div fullWidth:true style:`{
+//    width: '100vw',
+//    height: '100vh',
+//    // position: 'fixed',
+//    transition: 'opacity 1s',
+//    display: 'flex',
+//    flexDirection: 'row',
+//    alignItems:' center'
+//    // opacity: stepperState === 'hero' ? 1 : 0,
+//    // background: 'url(static/images/background-1.jpg) no-repeat center center fixed',
+//  }` ]
+   [img style:`{width: "100vw", height:'auto', maxHeight: 'none'}` src:"static/images/background-2.jpg" /]
+
+    //    [/div]
+    //  [/Graphic]
+
 //   [Step]
+
+##Living with the River
 
   Springing from the vast Tibetan plateau at the foot of the Himalayas, the Mekong River winds its way over 2,700 miles through China, Myanmar, Laos, Thailand, Cambodia and Vietnam.
 
@@ -98,15 +169,32 @@ The answers to these questions are as complex as the environmental and political
 
 //       [Chart type:`"line"` data:`scrollerChartData.slice(0, scrollerIndex + 2)` /]
 //   [/Graphic]
+//  [Scroller currentStep:scrollerIndex]
+// [Graphic]
+//  [div fullWidth:true style:`{
+//    width: '100vw',
+//    height: '100vh',
+//    // position: 'fixed',
+//    transition: 'opacity 1s',
+//    display: 'flex',
+//    flexDirection: 'row',
+//    alignItems:' center'
+//    // opacity: stepperState === 'hero' ? 1 : 0,
+//    // background: 'url(static/images/background-1.jpg) no-repeat center center fixed',
+//  }` ]
+//    [img style:`{width: "100vw", height:'auto', maxHeight: 'none'}` src:"static/images/background-3.jpg" /]
 
-    // [Step]
+//        [/div]
+//      [/Graphic]
+
+//     // [Step]
 
 
-      At the beginning of August 2019, the delta was still dry.
+// ##Droughts, Dams, and the Distribution of Rain
 
-      Endless water surfaces should be stretching into the horizon. Instead, the bare earth of the floodplains was cracked with heat.
-
-      Satellite data from ESA’s Sentinel mission shows the flooded areas of July and August 2019 in stark contrast to those of previous years. On XXXX 2018, XXXX square miles of the delta were inundated. On the same day a year later, it was only XXXX square miles . In tandem, the water levels of the Mekong stayed low well into August.
+At the beginning of August 2019, the delta was still dry.
+Endless water surfaces should be stretching into the horizon. Instead, the bare earth of the floodplains was cracked with heat.
+Satellite data from ESA’s Sentinel mission shows the flooded areas of July and August 2019 in stark contrast to those of previous years. On XXXX 2018, XXXX square miles of the delta were inundated. On the same day a year later, it was only XXXX square miles . In tandem, the water levels of the Mekong stayed low well into August.
 
    // insert the satellite extents
 
@@ -196,8 +284,30 @@ The answers to these questions are as complex as the environmental and political
 
 //       [Chart type:`"line"` data:`scrollerChartData.slice(0, scrollerIndex + 2)` /]
 //   [/Graphic]
+// [/Step]
+//       [/Scroller]
+
+//   [Scroller currentStep:scrollerIndex]
+// [Graphic]
+//  [div fullWidth:true style:`{
+//    width: '100vw',
+//    height: '100vh',
+//    // position: 'fixed',
+//    transition: 'opacity 1s',
+//    display: 'flex',
+//    flexDirection: 'row',
+//    alignItems:' center'
+//    // opacity: stepperState === 'hero' ? 1 : 0,
+//    // background: 'url(static/images/background-1.jpg) no-repeat center center fixed',
+//  }` ]
+   [img style:`{width: "100vw", height:'auto', maxHeight: 'none'}` src:"static/images/background-4.jpg" /]
+
+    //    [/div]
+    //  [/Graphic]
 
 //     [Step]
+
+##Rising Seas and Sinking Lands
 
          While the floodplains of the delta are left parched by late, short floods, there is more trouble on the horizon: The delta as a whole is sinking, with the sea encroaching inland. For this phenomenon, too, there is a complex web of reasons.
 
@@ -271,8 +381,30 @@ The answers to these questions are as complex as the environmental and political
 
 //       [Chart type:`"line"` data:`scrollerChartData.slice(0, scrollerIndex + 2)` /]
 //   [/Graphic]
+//          [/Step]
+// [/Scroller]
 
-//     [Step]
+//   [Scroller currentStep:scrollerIndex]
+// [Graphic]
+//  [div fullWidth:true style:`{
+//    width: '100vw',
+//    height: '100vh',
+//    // position: 'fixed',
+//    transition: 'opacity 1s',
+//    display: 'flex',
+//    flexDirection: 'row',
+//    alignItems:' center'
+//    // opacity: stepperState === 'hero' ? 1 : 0,
+//    // background: 'url(static/images/background-1.jpg) no-repeat center center fixed',
+//  }` ]
+//    [img style:`{width: "100vw", height:'auto', maxHeight: 'none'}` src:"static/images/background-7.jpg" /]
+
+//        [/div]
+//      [/Graphic]
+
+// //     [Step]
+
+// ##What Will the Future Hold?
 
             The degrees to which the present crisis in the Mekong delta will morph into a future catastrophe is not yet certain. Many of the projections on which future scenarios are based are still wide open to human influence, on a local, regional, and global level.
 

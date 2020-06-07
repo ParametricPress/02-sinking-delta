@@ -10,18 +10,20 @@
     "css": "styles.css",
     "authorView": false,
     "template": "_index.html",
+    "compileLibs": true,
     "layout": "./node_modules/parametric-styles/issue-02-layout.css",
-    "theme": "./issue-02-theme.css",
+    "theme": "./node_modules/parametric-styles/issue-02-theme.css",
     "components": [
-      "./node_modules/parametric-components/dist/cjs/issue-02",
-      "./components"
+      "./components",
+      "./node_modules/parametric-components/dist/cjs/issue-02"
     ]
   },
   "dependencies": {
     "d3": "^5.15.0",
     "idyll": "^4.0.7",
     "idyll-d3-component": "^2.0.0",
-    "parametric-components": "^2.1.2",
-    "parametric-styles": "^2.1.1"
+    "idyll-vega-lite": "^2.0.3",
+    "parametric-components": "^2.1.3",
+    "parametric-styles": "^2.1.2"
   }
 }
