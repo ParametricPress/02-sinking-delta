@@ -23,7 +23,7 @@
     "idyll": "^4.0.7",
     "idyll-d3-component": "^2.0.0",
     "idyll-vega-lite": "^2.0.3",
-    "parametric-components": "^2.1.4",
-    "parametric-styles": "^2.1.3"
+    "parametric-components": "^2.1.5",
+    "parametric-styles": "^2.1.4"
   }
 }
