@@ -262,6 +262,121 @@ Video works, but it's too small.
 //   [/div]
 // [/Conditional]
 
+//
+## Dam chart
+
+// * Show me my data:
+[data name:"dams" source:"dams.json" /]
+// [Table data:`dams.slice(0, 2).concat([{i: "...", year: "...", capacity: "...", cumulative_capacity: "..."}, dams[dams.length - 1]])` /]
+
+* Dam Count and Capacity (layered)
+[IdyllVegaLite data:dams spec:`{
+  encoding: {
+    x: {
+      field: "year",
+      type: "temporal",
+      axis: {
+        title: "Year",
+        labelAngle: -45,
+        tickCount: {interval: "year", step: 10}
+      }
+    }
+  },
+  layer: [
+    { /* layer 1 - cumulative dam capacity */
+      mark: {
+        type: "area",
+        tooltip: true,
+        color: "black"
+      },
+      encoding: {
+        y: {
+          field: "cumulative_capacity",
+          type: "quantitative",
+          axis: {title: "Capacity [million m³]", orient: "left"},
+          scale: {domain: [0, 90000] }
+        }
+      } /* end encoding */
+    }, /* end layer 1 */
+    { /* layer 2 - cumulative dam count */
+      mark: {
+        type: "point",
+        tooltip: true,
+        color: "blue"
+      },
+      encoding: {
+        y: {
+          aggregate: "max",
+          field: "i",
+          type: "quantitative",
+          axis: {
+            title: "Number of dams",
+            orient: "right"
+            },
+          scale: {domain: [0, 180] }
+        }
+      } /* end encoding */
+    } /* end layer 2 - cumulative dam count */
+  ], /* end layer composer */
+  resolve: {scale: {"y": "independent"}}
+}` /]
+
+// * Dam count (cumulative)
+// [IdyllVegaLite data:dams spec:`{
+//   mark: {
+//     type: "point",
+//     tooltip: true,
+//     color: "blue"
+//   },
+//   encoding: {
+//     x: {
+//       field: "year",
+//       type: "temporal",
+//       axis: {
+//         title: "Year",
+//         labelAngle: -45,
+//         tickCount: {interval: "year", step: 10}
+//       }
+//     },
+//     y: {
+//       aggregate: "max",
+//       field: "i",
+//       type: "quantitative",
+//       axis: {title: "Number of dams"},
+//       scale: {domain: [0, 180] }
+//     }
+//   } /* end encoding */
+// }` /]
+
+// * Dam count (simple)
+// [IdyllVegaLite data:dams spec:`{
+//   mark: {
+//     type: "point",
+//     tooltip: true,
+//     color: "blue"
+//   },
+//   encoding: {
+//     x: {
+//       field: "year",
+//       type: "temporal",
+//       axis: {
+//         title: "Year",
+//         labelAngle: -45,
+//         tickCount: {interval: "year", step: 10}
+//       }
+//     },
+//     y: {
+//       aggregate: "count",
+//       field: "year",
+//       type: "quantitative",
+//       axis: {title: "Number of dams"},
+//       scale: {domain: [0, 20] }
+//     }
+//   } /* end encoding */
+// }` /]
+
+
+
 ## END DEV SECTION
 
 //   [Step]
