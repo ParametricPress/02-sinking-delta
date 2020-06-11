@@ -221,6 +221,47 @@ versus [Display value:`rolling_mean_date_b` format:".1f"/]% of delta flooded on 
 // #### Table: Just the data
 // [Table data:`inex.slice(0, 2).concat([{date: "...", flooded: "...", rolling_mean: "..."}, inex[inex.length - 1]])` /]
 
+### Video
+Video works, but it's too small.
+[var name:"playVideo" value:false /]
+[var name:"playAudio" value:true /]
+[var name:"videoReady" value:false /]
+[var name:"isLoaded" value:false /]
+[var name:"started" value:false /]
+[var name:"hideVideo" value:false /]
+[var name:"isMobile" value:false /]
+
+[Graphic]
+  [div fullWidth:true style:`{
+    width: '100vw',
+    height: '100vh',
+    // position: 'fixed',
+    transition: 'opacity 1s',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems:' center',
+    opacity: hideVideo ? 0 : 1,
+    // background: 'url(static/images/hero.jpg) no-repeat center center fixed',
+  }` ]
+
+    // [Youtube play:`videoStep >= 1 && mapStep < 2` id:"k81wTUT7x4Y" /]
+    [Conditional if:isMobile null:true]
+      [img style:`{width: "100vw", height:'auto', maxHeight: 'none'}` src:"static/images/record.png" /]
+    [/Conditional]
+    [Conditional if:`!isMobile `]
+      [Youtube onReady:`videoReady = true ` play:started audio:playAudio id:"k81wTUT7x4Y" /]
+    [/Conditional]
+  [/div]
+[/Graphic]
+
+// [Conditional if:`videoReady && !isMobile `]
+//   [div style:`{textAlign: 'center'}`]
+//     [Conditional if:`!started ` ]
+//       [Button className:"start" onClick:`started = true; setTimeout(() => { showScroll = true; }, 4500); /*setTimeout(() => { hideVideo = true}, 25000); */ `]Click to start[/Button]
+//     [/Conditional]
+//   [/div]
+// [/Conditional]
+
 ## END DEV SECTION
 
 //   [Step]
