@@ -439,8 +439,9 @@ Y-axis: 0 [Range min:0 max:1200 step:10 value:aP_yStart /] 1200
 [/Inset]
 You can move the range slider to change the starting value of the *y-axis*, currently set to [dynamic min:0 max:1200 step:10 value:aP_yStart /].
 
-* El Nino'd IdyllVegaLite chart. Data source: https://ggweather.com/enso/oni.htm
-
+### El Nino'd IdyllVegaLite chart. Data source: https://ggweather.com/enso/oni.htm
+Something's off here: the slider drops the bars through the x-axis. Probably has to do with the color hack I used here.
+Should use a layered chart instead.
 [var name:"aP_enso_yStart" value:0 /]
 [IdyllVegaLite data:aPrecip spec:`{
   mark: {
@@ -469,6 +470,12 @@ You can move the range slider to change the starting value of the *y-axis*, curr
 [Inset]
 Y-axis: 0 [Range min:0 max:1200 step:10 value:aP_enso_yStart /] 1200
 [/Inset]
+
+### Juxtapose Graphic
+Size is too small, despite container.
+[ParametricGraphic fullWidth:true hed:"Compare Inundation Extents" subhed:"More context, why do we care?" source:"Source of the data"]
+  [iframe frameborder:"0" class:"juxtapose" width:"100%" height:"360" src:"https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=7e4b9a76-6ce0-11ea-b9b8-0edaf8f81e27"][/iframe]
+[/ParametricGraphic]
 
 ## END DEV SECTION
 
