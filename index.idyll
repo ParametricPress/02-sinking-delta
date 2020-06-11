@@ -41,7 +41,187 @@
 
 //        [/div]
 //      [/Graphic]
+## DEV SECTION
 
+### Inundation chart
+#### Data import
+[data name:"inex" source:"inundation_extents_rd_rolling.csv" /] // not a JS object, but an Array of them
+
+// #### Data Table
+// [Table data:`inex.slice(0, 2).concat([{date: "...", rolling_mean: "..."}, inex[inex.length - 1]])` /]
+
+#### Time Series Chart: Select dates w slider
+
+[derived name:"row_count" value: `inex.length - 1` /]
+[derived name:"date_first" value:`inex[0].date` /]
+[derived name:"date_last" value:`inex[row_count].date` /]
+
+// Row count: [Display value:`row_count` format:".0f" /]
+//
+// First date: [Display value:`date_first` /]
+//
+// Last date: [Display value:`date_last` /]
+
+[var name:"date_a_index" value:0 /]
+[var name:"date_b_index" value:1 /]
+
+[Inset]
+  [Display value:`date_first` /] [Range min:0 max:row_count step:1 value:date_a_index /] [Display value:`date_last` /]
+[/Inset]
+[Inset]
+  [Display value:`date_first` /] [Range min:0 max:row_count step:1 value:date_b_index /] [Display value:`date_last` /]
+[/Inset]
+
+// Index Date A: [dynamic value:`date_a_index` format:".0f"/]
+
+// Index Date B: [dynamic value:`date_b_index` format:".0f"/]
+
+[derived name:"date_a" value:`inex[date_a_index].date` /]
+[derived name:"date_b" value:`inex[date_b_index].date` /]
+
+// Date A: [Display value:`date_a` /]
+
+// Date B: [Display value:`date_b` /]
+
+[derived name:"rolling_mean_date_a" value:`inex[date_a_index].rolling_mean` /]
+[derived name:"rolling_mean_date_b" value:`inex[date_b_index].rolling_mean` /]
+
+% of delta flooded on [Display value:`date_a` /]: [Display value:`rolling_mean_date_a` format:".1f"/]
+versus [Display value:`rolling_mean_date_b` format:".1f"/]% of delta flooded on  on [Display value:`date_b` /]
+
+// [derived name:"inEx_Date1" value:`inex[inex.findIndex(obj => obj.date==date_first)].rolling_mean` /]
+// [derived name:"inEx_Date2" value:`inex[inex.findIndex(obj => obj.date==date_last)].rolling_mean` /]
+// Rolling mean on day 1: [Display value:`inEx_Date1` /]
+
+
+
+[IdyllVegaLite data:inex spec:`{
+  layer: [
+    { // time series layer
+      mark: {
+        type: "area",
+        line: {color: "darkgreen"},
+        //tooltip: true,
+        color: {
+          x1: 1,
+          y1: 1,
+          x2: 1,
+          y2: 0.5,
+          gradient: "linear",
+          stops: [
+            {
+              offset: 0,
+              color: "white"
+            },
+            {
+              offset: 1,
+              color: "darkgreen"
+            }
+          ]
+        }
+      },
+      encoding: {
+        x: {
+          field: "date",
+          type: "temporal",
+          axis: {
+            title: "Date",
+            labelAngle: -45,
+            tickCount: {interval: "year"}
+          }
+        },
+        y: {
+          field: "rolling_mean",
+          type: "quantitative",
+          axis: {title: "Delta flooded [%]"},
+          scale: {domain: [0, 55] }
+        }
+      } // end encoding
+    }, // end time series layer
+    { // highlight layer
+      data: {values: [
+        {"date": date_a, "rolling_mean": rolling_mean_date_a},
+        {"date": date_b, "rolling_mean": rolling_mean_date_b}
+        ]},
+      mark: {
+        type: "point",
+        filled: true,
+        color: "black",
+        tooltip: true
+        },
+      encoding: {
+        x: {
+          field: "date",
+          //timeUnit: "year",
+          type: "temporal"
+        },
+        y: {
+          field: "rolling_mean",
+          type: "quantitative"
+        }
+      } // end encoding
+    } // end highlight layer
+  ] // end layer composer
+}` /] // end IdyllVegaLite
+
+// #### Time Series Chart: Rolling Mean
+//
+// [IdyllVegaLite data:inex spec:`{
+//   mark: {
+//     type: "area",
+//     tooltip: true,
+//     color: "black"
+//   },
+//   encoding: {
+//     x: {
+//       field: "date",
+//       // timeUnit: "quarter",
+//       type: "temporal",
+//       axis: {
+//         title: "Year",
+//         labelAngle: -45,
+//         tickCount: {interval: "year"}
+//       }
+//     },
+//     y: {
+//       field: "rolling_mean",
+//       type: "quantitative",
+//       axis: {title: "Delta flooded [%]"},
+//       scale: {domain: [0, 55] }
+//     }
+//   } /* end encoding */
+// }` /]
+//
+// #### Time Series Chart: Raw Date Values
+// [IdyllVegaLite data:inex spec:`{
+//   mark: {
+//     type: "area",
+//     tooltip: true,
+//     color: "black"
+//   },
+//   encoding: {
+//     x: {
+//       field: "date",
+//       type: "temporal",
+//       axis: {
+//         title: "Year",
+//         labelAngle: -45,
+//         tickCount: {interval: "year"}
+//       }
+//     },
+//     y: {
+//       field: "flooded",
+//       type: "quantitative",
+//       axis: {title: "Delta flooded [%]"},
+//       scale: {domain: [0, 55] }
+//     }
+//   } /* end encoding */
+// }` /]
+//
+// #### Table: Just the data
+// [Table data:`inex.slice(0, 2).concat([{date: "...", flooded: "...", rolling_mean: "..."}, inex[inex.length - 1]])` /]
+
+## END DEV SECTION
 
 //   [Step]
 
