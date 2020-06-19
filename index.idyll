@@ -24,6 +24,15 @@
   source:`"https://github.com/ParametricPress/02-" + parametricSlug `
 /]
 
+// Set-up for video, later
+[var name:"playVideo" value:false /]
+[var name:"playAudio" value:true /]
+[var name:"videoReady" value:false /]
+[var name:"isLoaded" value:false /]
+[var name:"started" value:false /]
+[var name:"hideVideo" value:false /]
+[var name:"isMobile" value:false /]
+
 // [Scroller currentStep:scrollerIndex]
 // [Graphic]
 //  [div fullWidth:true style:`{
@@ -38,19 +47,8 @@
 //    // background: 'url(static/images/background-1.jpg) no-repeat center center fixed',
 //  }` ]
 //    [img style:`{width: "100vw", height:'auto', maxHeight: 'none'}` src:"static/images/background-1.jpg" /]
-
 //        [/div]
 //      [/Graphic]
-
-
-// Set-up for video, later
-[var name:"playVideo" value:false /]
-[var name:"playAudio" value:true /]
-[var name:"videoReady" value:false /]
-[var name:"isLoaded" value:false /]
-[var name:"started" value:false /]
-[var name:"hideVideo" value:false /]
-[var name:"isMobile" value:false /]
 
 // BEGIN BODY TEXT
 
@@ -116,9 +114,9 @@ The answers to these questions are as complex as the environmental and political
 
 ##Living with the River
 
-  Springing from the vast Tibetan plateau at the foot of the Himalayas, the Mekong River winds its way over 2,700 miles through China, Myanmar, Laos, Thailand, Cambodia and Vietnam.
+Springing from the vast Tibetan plateau at the foot of the Himalayas, the Mekong River winds its way over 2,700 miles through China, Myanmar, Laos, Thailand, Cambodia and Vietnam.
 
-  At Cambodia's capital Phnom Penh, the river splits into branches to fan out into the fertile delta plain defining the landscapes of southern Cambodia and Vietnam.
+At Cambodia's capital Phnom Penh, the river splits into branches to fan out into the fertile delta plain defining the landscapes of southern Cambodia and Vietnam.
 
   // insert overview figure
 
@@ -136,12 +134,15 @@ The answers to these questions are as complex as the environmental and political
   During the wet season, the delta is replenished. Fish populations explode. Water infiltrates the soil, dusty from months of little to no precipitation, and is stored in canals and lowland areas. The sediments left behind at the end of the wet season are full of nutrients. In the rich, muddy earth that emerges from the receding floods, farmers plant rice and vegetables, marking the beginning of the new agricultural year.
 
 
-  // Insert juxtapose image slider: https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=7e4b9a76-6ce0-11ea-b9b8-0edaf8f81e27
-  [ParametricGraphic fullWidth:true hed:"Compare Inundation Extents" subhed:"More context, why do we care?" source:"Source of the data"]
-    [iframe frameborder:"0" class:"juxtapose" width:"100%" height:"360" src:"https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=7e4b9a76-6ce0-11ea-b9b8-0edaf8f81e27"][/iframe]
-  [/ParametricGraphic]
-  // [/Step]
+  // Insert juxtapose image slider from  https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=7e4b9a76-6ce0-11ea-b9b8-0edaf8f81e27
+[ParametricGraphic fullWidth:true hed:"Compare Inundation Extents" subhed:"More context, why do we care?" source:"Source of the data"]
+// Fits better without the ParametricGraphic (and setting fullWidth:true on the iframe), but doesn't integrate as well.
+    [iframe frameborder:"0" class:"juxtapose" width:"1380px" height:"820px" src:"https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=7e4b9a76-6ce0-11ea-b9b8-0edaf8f81e27"][/iframe]
+    // original params: width - 1366px, height - 796px , which resulted in scroll bars
+    // a simple solution would be to just make the original images smaller and create a new juxtapose on knightlab.
+[/ParametricGraphic]
 
+  // [/Step]
 
   // [Step]
 
@@ -192,11 +193,14 @@ The answers to these questions are as complex as the environmental and political
 
 At the beginning of August 2019, the delta was still dry.
 Endless water surfaces should be stretching into the horizon. Instead, the bare earth of the floodplains was cracked with heat.
-Satellite data from ESA’s Sentinel mission shows the flooded areas of July and August 2019 in stark contrast to those of previous years. On XXXX 2018, XXXX square miles of the delta were inundated. On the same day a year later, it was only XXXX square miles . In tandem, the water levels of the Mekong stayed low well into August.
+Satellite data from ESA’s Sentinel mission shows the flooded areas of July and August 2019 in stark contrast to those of previous years. On XXXX 2018, XXXX square miles of the delta were inundated. On the same day a year later, it was only XXXX square miles. In tandem, the water levels of the Mekong stayed low well into August.
 
    // insert the satellite extents
+
    // CHART: Inundation extents
-   // Fetch data:
+   // Fetch data: Inundation extents, in % of delta area,
+   // as rolling mean to eliminate potentially spurious data
+   // spikes, and rounded.
       [data name:"inex" source:"inundation_extents_rd_rolling.csv" /] // not a JS object, but an Array of them
 
    // Define variables needed for chart
@@ -228,6 +232,7 @@ Satellite data from ESA’s Sentinel mission shows the flooded areas of July and
       On [Display value:`date_a` /],  [Display value:`rolling_mean_date_a` format:".1f"/]% of the delta were flooded, while [Display value:`rolling_mean_date_b` format:".1f"/]% were flooded on [Display value:`date_b` /].
 
    // Actual chart
+   [ParametricGraphic fullWidth:true hed:"Compare Inundation Extents" subhed:"More context, why do we care?" source:"Source of the data"]
       [IdyllVegaLite data:inex spec:`{
         layer: [
           { // time series layer
@@ -296,6 +301,8 @@ Satellite data from ESA’s Sentinel mission shows the flooded areas of July and
           } // end highlight layer
         ] // end layer composer
       }` /] // end IdyllVegaLite
+    [/ParametricGraphic]
+
 
 
 
@@ -332,8 +339,12 @@ Satellite data from ESA’s Sentinel mission shows the flooded areas of July and
      // Fetch data:
      [data name:"aPrecip" source:"annual-precipitation-chirps-and-ENSO.json" /]
 
+     // Define starting value for beginning Y-axis.
      [var name:"aP_yStart" value:0 /]
-     [IdyllVegaLite data:aPrecip spec:`{
+
+     // Actual chart
+     [ParametricGraphic fullWidth:true hed:"Annual Precipitation" subhed:"More context, why do we care?" source:"Source of the data"]
+        [IdyllVegaLite data:aPrecip spec:`{
        mark: "bar",
        encoding: {
          x: {
@@ -354,46 +365,47 @@ Satellite data from ESA’s Sentinel mission shows the flooded areas of July and
            color: "black"
          }
        }
-     }` /]
+        }` /]
+        [Inset] // Y-Axis slider for annual precipitation charts
+        Y-axis: 0 [Range min:0 max:1200 step:10 value:aP_yStart /] 1200
+        [/Inset]
+        You can move the range slider to change the starting value of the *y-axis*, currently set to [dynamic min:0 max:1200 step:10 value:aP_yStart /].
+     [/ParametricGraphic]
 
-     // * Y-Axis slider for annual precipitation charts
-
-     [Inset]
-     Y-axis: 0 [Range min:0 max:1200 step:10 value:aP_yStart /] 1200
-     [/Inset]
-     You can move the range slider to change the starting value of the *y-axis*, currently set to [dynamic min:0 max:1200 step:10 value:aP_yStart /].
-
-     ### El Nino'd IdyllVegaLite chart. Data source: https://ggweather.com/enso/oni.htm
+     El Nino'd IdyllVegaLite chart. //Data source: https://ggweather.com/enso/oni.htm
      Something's off here: the slider drops the bars through the x-axis. Probably has to do with the color hack I used here.
      Should use a layered chart instead.
      [var name:"aP_enso_yStart" value:0 /]
-     [IdyllVegaLite data:aPrecip spec:`{
-       mark: {
-         type: "bar",
-         tooltip: true
-       },
-       encoding: {
-         x: {
-           field: "year",
-           type: "ordinal",
-           axis: {title: "Year"}
+
+     [ParametricGraphic fullWidth:true hed:"Title of Graphic" subhed:"More context, why do we care?" source:"Source of the data"]
+       [IdyllVegaLite data:aPrecip spec:`{
+         mark: {
+           type: "bar",
+           tooltip: true
          },
-         y: {
-           field: "precipitation",
-           type: "quantitative",
-           axis: {title: "Precipitation [mm]"},
-           scale: {domain: [aP_enso_yStart, 2000] }
-         },
-         color: {
-           field: "color",
-           type: "nominal",
-           scale: null
+         encoding: {
+           x: {
+             field: "year",
+             type: "ordinal",
+             axis: {title: "Year"}
+           },
+           y: {
+             field: "precipitation",
+             type: "quantitative",
+             axis: {title: "Precipitation [mm]"},
+             scale: {domain: [aP_enso_yStart, 2000] }
+           },
+           color: {
+             field: "color",
+             type: "nominal",
+             scale: null
+           }
          }
-       }
-     }` /]
-     [Inset]
-     Y-axis: 0 [Range min:0 max:1200 step:10 value:aP_enso_yStart /] 1200
-     [/Inset]
+       }` /]
+       [Inset]
+       Y-axis: 0 [Range min:0 max:1200 step:10 value:aP_enso_yStart /] 1200
+       [/Inset]
+     [/ParametricGraphic]
 
      // Add video comparison of rainfall over the Mekong Basin (annotate grey area to say something along the lines of ‘all rain that falls here eventually flows into the Mekong)
      // VIDEO
@@ -415,7 +427,7 @@ Satellite data from ESA’s Sentinel mission shows the flooded areas of July and
            [img style:`{width: "100vw", height:'auto', maxHeight: 'none'}` src:"static/images/record.png" /]
          [/Conditional]
          [Conditional if:`!isMobile`]
-           [Youtube onReady:`videoReady = true ` play:started audio:playAudio id:"k81wTUT7x4Y" /]
+           [Youtube onReady:`videoReady = true` play:started audio:playAudio id:"k81wTUT7x4Y" /]
          [/Conditional]
        [/div]
      [/Graphic]
@@ -459,6 +471,7 @@ Satellite data from ESA’s Sentinel mission shows the flooded areas of July and
       [data name:"dams" source:"dams.json" /]
 
       // Actual chart:
+      [ParametricGraphic hed:"Title of Graphic" subhed:"More context, why do we care?" source:"Source of the data"]
       [IdyllVegaLite data:dams spec:`{
         encoding: {
           x: {
@@ -509,6 +522,7 @@ Satellite data from ESA’s Sentinel mission shows the flooded areas of July and
         ], /* end layer composer */
         resolve: {scale: {"y": "independent"}}
       }` /]
+      [/ParametricGraphic]
 
       2019 also saw the opening of Xayaburi in Laos, the first of eleven dams built directly on the Mekong mainstream. Its construction originally began in 2012 but was fraught with complaints from environmentalists and citizens' groups. Many local residents believe that the drought suffered in downstream countries was a direct consequence of the newly opened dam. Even though a panel of experts invited to observe the dam's functioning by its operator concluded in February 2020 that it was not a drought contributing factor, a Thai activist initiative submitted evidence to the contrary the very same week.
 
