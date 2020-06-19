@@ -41,188 +41,9 @@
 
 //        [/div]
 //      [/Graphic]
-## DEV SECTION
-
-### Inundation chart
-#### Data import
-[data name:"inex" source:"inundation_extents_rd_rolling.csv" /] // not a JS object, but an Array of them
-
-// #### Data Table
-// [Table data:`inex.slice(0, 2).concat([{date: "...", rolling_mean: "..."}, inex[inex.length - 1]])` /]
-
-#### Time Series Chart: Select dates w slider
-
-[derived name:"row_count" value: `inex.length - 1` /]
-[derived name:"date_first" value:`inex[0].date` /]
-[derived name:"date_last" value:`inex[row_count].date` /]
-
-// Row count: [Display value:`row_count` format:".0f" /]
-//
-// First date: [Display value:`date_first` /]
-//
-// Last date: [Display value:`date_last` /]
-
-[var name:"date_a_index" value:0 /]
-[var name:"date_b_index" value:1 /]
-
-[Inset]
-  [Display value:`date_first` /] [Range min:0 max:row_count step:1 value:date_a_index /] [Display value:`date_last` /]
-[/Inset]
-[Inset]
-  [Display value:`date_first` /] [Range min:0 max:row_count step:1 value:date_b_index /] [Display value:`date_last` /]
-[/Inset]
-
-// Index Date A: [dynamic value:`date_a_index` format:".0f"/]
-
-// Index Date B: [dynamic value:`date_b_index` format:".0f"/]
-
-[derived name:"date_a" value:`inex[date_a_index].date` /]
-[derived name:"date_b" value:`inex[date_b_index].date` /]
-
-// Date A: [Display value:`date_a` /]
-
-// Date B: [Display value:`date_b` /]
-
-[derived name:"rolling_mean_date_a" value:`inex[date_a_index].rolling_mean` /]
-[derived name:"rolling_mean_date_b" value:`inex[date_b_index].rolling_mean` /]
-
-% of delta flooded on [Display value:`date_a` /]: [Display value:`rolling_mean_date_a` format:".1f"/]
-versus [Display value:`rolling_mean_date_b` format:".1f"/]% of delta flooded on  on [Display value:`date_b` /]
-
-// [derived name:"inEx_Date1" value:`inex[inex.findIndex(obj => obj.date==date_first)].rolling_mean` /]
-// [derived name:"inEx_Date2" value:`inex[inex.findIndex(obj => obj.date==date_last)].rolling_mean` /]
-// Rolling mean on day 1: [Display value:`inEx_Date1` /]
 
 
-
-[IdyllVegaLite data:inex spec:`{
-  layer: [
-    { // time series layer
-      mark: {
-        type: "area",
-        line: {color: "darkgreen"},
-        //tooltip: true,
-        color: {
-          x1: 1,
-          y1: 1,
-          x2: 1,
-          y2: 0.5,
-          gradient: "linear",
-          stops: [
-            {
-              offset: 0,
-              color: "white"
-            },
-            {
-              offset: 1,
-              color: "darkgreen"
-            }
-          ]
-        }
-      },
-      encoding: {
-        x: {
-          field: "date",
-          type: "temporal",
-          axis: {
-            title: "Date",
-            labelAngle: -45,
-            tickCount: {interval: "year"}
-          }
-        },
-        y: {
-          field: "rolling_mean",
-          type: "quantitative",
-          axis: {title: "Delta flooded [%]"},
-          scale: {domain: [0, 55] }
-        }
-      } // end encoding
-    }, // end time series layer
-    { // highlight layer
-      data: {values: [
-        {"date": date_a, "rolling_mean": rolling_mean_date_a},
-        {"date": date_b, "rolling_mean": rolling_mean_date_b}
-        ]},
-      mark: {
-        type: "point",
-        filled: true,
-        color: "black",
-        tooltip: true
-        },
-      encoding: {
-        x: {
-          field: "date",
-          //timeUnit: "year",
-          type: "temporal"
-        },
-        y: {
-          field: "rolling_mean",
-          type: "quantitative"
-        }
-      } // end encoding
-    } // end highlight layer
-  ] // end layer composer
-}` /] // end IdyllVegaLite
-
-// #### Time Series Chart: Rolling Mean
-//
-// [IdyllVegaLite data:inex spec:`{
-//   mark: {
-//     type: "area",
-//     tooltip: true,
-//     color: "black"
-//   },
-//   encoding: {
-//     x: {
-//       field: "date",
-//       // timeUnit: "quarter",
-//       type: "temporal",
-//       axis: {
-//         title: "Year",
-//         labelAngle: -45,
-//         tickCount: {interval: "year"}
-//       }
-//     },
-//     y: {
-//       field: "rolling_mean",
-//       type: "quantitative",
-//       axis: {title: "Delta flooded [%]"},
-//       scale: {domain: [0, 55] }
-//     }
-//   } /* end encoding */
-// }` /]
-//
-// #### Time Series Chart: Raw Date Values
-// [IdyllVegaLite data:inex spec:`{
-//   mark: {
-//     type: "area",
-//     tooltip: true,
-//     color: "black"
-//   },
-//   encoding: {
-//     x: {
-//       field: "date",
-//       type: "temporal",
-//       axis: {
-//         title: "Year",
-//         labelAngle: -45,
-//         tickCount: {interval: "year"}
-//       }
-//     },
-//     y: {
-//       field: "flooded",
-//       type: "quantitative",
-//       axis: {title: "Delta flooded [%]"},
-//       scale: {domain: [0, 55] }
-//     }
-//   } /* end encoding */
-// }` /]
-//
-// #### Table: Just the data
-// [Table data:`inex.slice(0, 2).concat([{date: "...", flooded: "...", rolling_mean: "..."}, inex[inex.length - 1]])` /]
-
-### Video
-Video works, but it's too small.
+// Set-up for video, later
 [var name:"playVideo" value:false /]
 [var name:"playAudio" value:true /]
 [var name:"videoReady" value:false /]
@@ -231,253 +52,7 @@ Video works, but it's too small.
 [var name:"hideVideo" value:false /]
 [var name:"isMobile" value:false /]
 
-[Graphic]
-  [div fullWidth:true style:`{
-    width: '100vw',
-    height: '100vh',
-    // position: 'fixed',
-    transition: 'opacity 1s',
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems:' center',
-    opacity: hideVideo ? 0 : 1,
-    // background: 'url(static/images/hero.jpg) no-repeat center center fixed',
-  }` ]
-
-    // [Youtube play:`videoStep >= 1 && mapStep < 2` id:"k81wTUT7x4Y" /]
-    [Conditional if:isMobile null:true]
-      [img style:`{width: "100vw", height:'auto', maxHeight: 'none'}` src:"static/images/record.png" /]
-    [/Conditional]
-    [Conditional if:`!isMobile `]
-      [Youtube onReady:`videoReady = true ` play:started audio:playAudio id:"k81wTUT7x4Y" /]
-    [/Conditional]
-  [/div]
-[/Graphic]
-
-// [Conditional if:`videoReady && !isMobile `]
-//   [div style:`{textAlign: 'center'}`]
-//     [Conditional if:`!started ` ]
-//       [Button className:"start" onClick:`started = true; setTimeout(() => { showScroll = true; }, 4500); /*setTimeout(() => { hideVideo = true}, 25000); */ `]Click to start[/Button]
-//     [/Conditional]
-//   [/div]
-// [/Conditional]
-
-//
-### Dam chart
-
-// * Show me my data:
-[data name:"dams" source:"dams.json" /]
-// [Table data:`dams.slice(0, 2).concat([{i: "...", year: "...", capacity: "...", cumulative_capacity: "..."}, dams[dams.length - 1]])` /]
-
-* Dam Count and Capacity (layered)
-[IdyllVegaLite data:dams spec:`{
-  encoding: {
-    x: {
-      field: "year",
-      type: "temporal",
-      axis: {
-        title: "Year",
-        labelAngle: -45,
-        tickCount: {interval: "year", step: 10}
-      }
-    }
-  },
-  layer: [
-    { /* layer 1 - cumulative dam capacity */
-      mark: {
-        type: "area",
-        tooltip: true,
-        color: "black"
-      },
-      encoding: {
-        y: {
-          field: "cumulative_capacity",
-          type: "quantitative",
-          axis: {title: "Capacity [million m³]", orient: "left"},
-          scale: {domain: [0, 90000] }
-        }
-      } /* end encoding */
-    }, /* end layer 1 */
-    { /* layer 2 - cumulative dam count */
-      mark: {
-        type: "point",
-        tooltip: true,
-        color: "blue"
-      },
-      encoding: {
-        y: {
-          aggregate: "max",
-          field: "i",
-          type: "quantitative",
-          axis: {
-            title: "Number of dams",
-            orient: "right"
-            },
-          scale: {domain: [0, 180] }
-        }
-      } /* end encoding */
-    } /* end layer 2 - cumulative dam count */
-  ], /* end layer composer */
-  resolve: {scale: {"y": "independent"}}
-}` /]
-
-// * Dam count (cumulative)
-// [IdyllVegaLite data:dams spec:`{
-//   mark: {
-//     type: "point",
-//     tooltip: true,
-//     color: "blue"
-//   },
-//   encoding: {
-//     x: {
-//       field: "year",
-//       type: "temporal",
-//       axis: {
-//         title: "Year",
-//         labelAngle: -45,
-//         tickCount: {interval: "year", step: 10}
-//       }
-//     },
-//     y: {
-//       aggregate: "max",
-//       field: "i",
-//       type: "quantitative",
-//       axis: {title: "Number of dams"},
-//       scale: {domain: [0, 180] }
-//     }
-//   } /* end encoding */
-// }` /]
-
-// * Dam count (simple)
-// [IdyllVegaLite data:dams spec:`{
-//   mark: {
-//     type: "point",
-//     tooltip: true,
-//     color: "blue"
-//   },
-//   encoding: {
-//     x: {
-//       field: "year",
-//       type: "temporal",
-//       axis: {
-//         title: "Year",
-//         labelAngle: -45,
-//         tickCount: {interval: "year", step: 10}
-//       }
-//     },
-//     y: {
-//       aggregate: "count",
-//       field: "year",
-//       type: "quantitative",
-//       axis: {title: "Number of dams"},
-//       scale: {domain: [0, 20] }
-//     }
-//   } /* end encoding */
-// }` /]
-
-// * Capacity
-// [IdyllVegaLite data:dams spec:`{
-//   mark: {
-//     type: "area",
-//     tooltip: true,
-//     color: "black"
-//   },
-//   encoding: {
-//     x: {
-//       field: "year",
-//       type: "temporal",
-//       axis: {
-//         title: "Year",
-//         labelAngle: -45,
-//         tickCount: {interval: "year", step: 10}
-//       }
-//     },
-//     y: {
-//       field: "cumulative_capacity",
-//       type: "quantitative",
-//       axis: {title: "Storage capacity [million m³]"},
-//       scale: {domain: [0, 90000] }
-//     }
-//   } /* end encoding */
-// }` /]
-
-### Precipitation Chart
-
-// * Show me my data:
-[data name:"aPrecip" source:"annual-precipitation-chirps-and-ENSO.json" /]
-// [Table data:`aPrecip.slice(0, 5).concat([{year: "...", precipitation: "...", enso: "..."}, aPrecip[aPrecip.length - 1]])` /]
-
-#### Simple IdyllVegaLite chart
-[var name:"aP_yStart" value:0 /]
-[IdyllVegaLite data:aPrecip spec:`{
-  mark: "bar",
-  encoding: {
-    x: {
-      field: "year",
-      type: "ordinal",
-      axis: {title: "Year"},
-    },
-    y: {
-      field: "precipitation",
-      type: "quantitative",
-      axis: {title: "Precipitation [mm]"},
-      scale: {domain: [aP_yStart, 2000] }
-    }
-  },
-  config: {
-    mark: {
-      tooltip: true,
-      color: "black"
-    }
-  }
-}` /]
-
-// * Y-Axis slider for annual precipitation charts
-
-[Inset]
-Y-axis: 0 [Range min:0 max:1200 step:10 value:aP_yStart /] 1200
-[/Inset]
-You can move the range slider to change the starting value of the *y-axis*, currently set to [dynamic min:0 max:1200 step:10 value:aP_yStart /].
-
-### El Nino'd IdyllVegaLite chart. Data source: https://ggweather.com/enso/oni.htm
-Something's off here: the slider drops the bars through the x-axis. Probably has to do with the color hack I used here.
-Should use a layered chart instead.
-[var name:"aP_enso_yStart" value:0 /]
-[IdyllVegaLite data:aPrecip spec:`{
-  mark: {
-    type: "bar",
-    tooltip: true
-  },
-  encoding: {
-    x: {
-      field: "year",
-      type: "ordinal",
-      axis: {title: "Year"}
-    },
-    y: {
-      field: "precipitation",
-      type: "quantitative",
-      axis: {title: "Precipitation [mm]"},
-      scale: {domain: [aP_enso_yStart, 2000] }
-    },
-    color: {
-      field: "color",
-      type: "nominal",
-      scale: null
-    }
-  }
-}` /]
-[Inset]
-Y-axis: 0 [Range min:0 max:1200 step:10 value:aP_enso_yStart /] 1200
-[/Inset]
-
-### Juxtapose Graphic
-Size is too small, despite container.
-[ParametricGraphic fullWidth:true hed:"Compare Inundation Extents" subhed:"More context, why do we care?" source:"Source of the data"]
-  [iframe frameborder:"0" class:"juxtapose" width:"100%" height:"360" src:"https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=7e4b9a76-6ce0-11ea-b9b8-0edaf8f81e27"][/iframe]
-[/ParametricGraphic]
-
-## END DEV SECTION
+// BEGIN BODY TEXT
 
 //   [Step]
 
@@ -486,29 +61,6 @@ River deltas are among the most fertile and biodiverse areas on the planet. Wher
 Deltas have always been hubs of human development. Ancient civilizations flourished in the Nile and the Ganges deltas, and today, half a billion people call them home - even though they cover only 1 % of the earth's land surface. With rich crops and abundant fish, deltas are crucial to food security and economic development.
 
 Deltas are also extremely vulnerable.
-
-[data name:"annualPrecip" source:"annual-precipitation.csv" /]
-[Table data:annualPrecip /]
-
-
-[ParametricGraphic hed:"Annual Precipitation" subhed:"More context, why do we care?" source:"Source of the data"]
-  [IdyllVegaLite data:annualPrecip spec:`{
-    mark: "bar",
-    encoding: {
-      x: {
-        field: "year",
-        type: "temporal",
-        axis: {title: "Year", format:"%Y"}
-      },
-      y: {
-        field: "precipitation mm",
-        type: "quantitative",
-        axis: {title: "Precipitation [mm]"},
-        //scale: { domain: [575, 582] }
-      }
-    }
-  }` /]
-[/ParametricGraphic]
 
 // [/Step]
 
@@ -585,7 +137,9 @@ The answers to these questions are as complex as the environmental and political
 
 
   // Insert juxtapose image slider: https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=7e4b9a76-6ce0-11ea-b9b8-0edaf8f81e27
-
+  [ParametricGraphic fullWidth:true hed:"Compare Inundation Extents" subhed:"More context, why do we care?" source:"Source of the data"]
+    [iframe frameborder:"0" class:"juxtapose" width:"100%" height:"360" src:"https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=7e4b9a76-6ce0-11ea-b9b8-0edaf8f81e27"][/iframe]
+  [/ParametricGraphic]
   // [/Step]
 
 
@@ -641,6 +195,109 @@ Endless water surfaces should be stretching into the horizon. Instead, the bare 
 Satellite data from ESA’s Sentinel mission shows the flooded areas of July and August 2019 in stark contrast to those of previous years. On XXXX 2018, XXXX square miles of the delta were inundated. On the same day a year later, it was only XXXX square miles . In tandem, the water levels of the Mekong stayed low well into August.
 
    // insert the satellite extents
+   // CHART: Inundation extents
+   // Fetch data:
+      [data name:"inex" source:"inundation_extents_rd_rolling.csv" /] // not a JS object, but an Array of them
+
+   // Define variables needed for chart
+      [derived name:"row_count" value: `inex.length - 1` /]
+      [derived name:"date_first" value:`inex[0].date` /]
+      [derived name:"date_last" value:`inex[row_count].date` /]
+
+   // Start position indices
+      [var name:"date_a_index" value:0 /]
+      [var name:"date_b_index" value:1 /]
+
+   // Start position dates
+      [derived name:"date_a" value:`inex[date_a_index].date` /]
+      [derived name:"date_b" value:`inex[date_b_index].date` /]
+
+   // Start position data
+      [derived name:"rolling_mean_date_a" value:`inex[date_a_index].rolling_mean` /]
+      [derived name:"rolling_mean_date_b" value:`inex[date_b_index].rolling_mean` /]
+
+   // Sliders
+      [Inset]
+        [Display value:`date_first` /] [Range min:0 max:row_count step:1 value:date_a_index /] [Display value:`date_last` /]
+      [/Inset]
+      [Inset]
+        [Display value:`date_first` /] [Range min:0 max:row_count step:1 value:date_b_index /] [Display value:`date_last` /]
+      [/Inset]
+
+   // Text display
+      On [Display value:`date_a` /],  [Display value:`rolling_mean_date_a` format:".1f"/]% of the delta were flooded, while [Display value:`rolling_mean_date_b` format:".1f"/]% were flooded on [Display value:`date_b` /].
+
+   // Actual chart
+      [IdyllVegaLite data:inex spec:`{
+        layer: [
+          { // time series layer
+            mark: {
+              type: "area",
+              line: {color: "darkgreen"},
+              //tooltip: true,
+              color: {
+                x1: 1,
+                y1: 1,
+                x2: 1,
+                y2: 0.5,
+                gradient: "linear",
+                stops: [
+                  {
+                    offset: 0,
+                    color: "white"
+                  },
+                  {
+                    offset: 1,
+                    color: "darkgreen"
+                  }
+                ]
+              }
+            },
+            encoding: {
+              x: {
+                field: "date",
+                type: "temporal",
+                axis: {
+                  title: "Date",
+                  labelAngle: -45,
+                  tickCount: {interval: "year"}
+                }
+              },
+              y: {
+                field: "rolling_mean",
+                type: "quantitative",
+                axis: {title: "Delta flooded [%]"},
+                scale: {domain: [0, 55] }
+              }
+            } // end encoding
+          }, // end time series layer
+          { // highlight layer
+            data: {values: [
+              {"date": date_a, "rolling_mean": rolling_mean_date_a},
+              {"date": date_b, "rolling_mean": rolling_mean_date_b}
+              ]},
+            mark: {
+              type: "point",
+              filled: true,
+              color: "black",
+              tooltip: true
+              },
+            encoding: {
+              x: {
+                field: "date",
+                //timeUnit: "year",
+                type: "temporal"
+              },
+              y: {
+                field: "rolling_mean",
+                type: "quantitative"
+              }
+            } // end encoding
+          } // end highlight layer
+        ] // end layer composer
+      }` /] // end IdyllVegaLite
+
+
 
   //  [/Step]
 
@@ -671,9 +328,107 @@ Satellite data from ESA’s Sentinel mission shows the flooded areas of July and
       Satellite rain measurements over the Mekong basin show that macro-scale precipitation distribution in 2019 differed significantly from previous years. The torrential Monsoon rains in the catchment area of the Mekong, which generally set in towards the end of May, were sparse in the spring and early summer of 2019. On XXXX 2018, a cumulative XXXX of rain had fallen over the basin area that year - but only XXXX on the same date in 2019.
 
      ///Add slider graph of cumulative rainfall, and illustration of rainfall in comparison of years Data extracted from CHIRPS precipitation satellite measurements through Google Earth Engine
+     // CHART: Annual precipitation
+     // Fetch data:
+     [data name:"aPrecip" source:"annual-precipitation-chirps-and-ENSO.json" /]
+
+     [var name:"aP_yStart" value:0 /]
+     [IdyllVegaLite data:aPrecip spec:`{
+       mark: "bar",
+       encoding: {
+         x: {
+           field: "year",
+           type: "ordinal",
+           axis: {title: "Year"},
+         },
+         y: {
+           field: "precipitation",
+           type: "quantitative",
+           axis: {title: "Precipitation [mm]"},
+           scale: {domain: [aP_yStart, 2000] }
+         }
+       },
+       config: {
+         mark: {
+           tooltip: true,
+           color: "black"
+         }
+       }
+     }` /]
+
+     // * Y-Axis slider for annual precipitation charts
+
+     [Inset]
+     Y-axis: 0 [Range min:0 max:1200 step:10 value:aP_yStart /] 1200
+     [/Inset]
+     You can move the range slider to change the starting value of the *y-axis*, currently set to [dynamic min:0 max:1200 step:10 value:aP_yStart /].
+
+     ### El Nino'd IdyllVegaLite chart. Data source: https://ggweather.com/enso/oni.htm
+     Something's off here: the slider drops the bars through the x-axis. Probably has to do with the color hack I used here.
+     Should use a layered chart instead.
+     [var name:"aP_enso_yStart" value:0 /]
+     [IdyllVegaLite data:aPrecip spec:`{
+       mark: {
+         type: "bar",
+         tooltip: true
+       },
+       encoding: {
+         x: {
+           field: "year",
+           type: "ordinal",
+           axis: {title: "Year"}
+         },
+         y: {
+           field: "precipitation",
+           type: "quantitative",
+           axis: {title: "Precipitation [mm]"},
+           scale: {domain: [aP_enso_yStart, 2000] }
+         },
+         color: {
+           field: "color",
+           type: "nominal",
+           scale: null
+         }
+       }
+     }` /]
+     [Inset]
+     Y-axis: 0 [Range min:0 max:1200 step:10 value:aP_enso_yStart /] 1200
+     [/Inset]
 
      // Add video comparison of rainfall over the Mekong Basin (annotate grey area to say something along the lines of ‘all rain that falls here eventually flows into the Mekong)
+     // VIDEO
+     [Graphic]
+       [div fullWidth:true style:`{
+         width: '100vw',
+         height: '100vh',
+         // position: 'fixed',
+         transition: 'opacity 1s',
+         display: 'flex',
+         flexDirection: 'row',
+         alignItems:' center',
+         opacity: hideVideo ? 0 : 1,
+         // background: 'url(static/images/hero.jpg) no-repeat center center fixed',
+       }` ]
 
+         // [Youtube play:`videoStep >= 1 && mapStep < 2` id:"k81wTUT7x4Y" /]
+         [Conditional if:isMobile null:true]
+           [img style:`{width: "100vw", height:'auto', maxHeight: 'none'}` src:"static/images/record.png" /]
+         [/Conditional]
+         [Conditional if:`!isMobile`]
+           [Youtube onReady:`videoReady = true ` play:started audio:playAudio id:"k81wTUT7x4Y" /]
+         [/Conditional]
+       [/div]
+     [/Graphic]
+
+     // [Conditional if:`videoReady && !isMobile `]
+     //   [div style:`{textAlign: 'center'}`]
+     //     [Conditional if:`!started ` ]
+     //       [Button className:"start" onClick:`started = true; setTimeout(() => { showScroll = true; }, 4500); /*setTimeout(() => { hideVideo = true}, 25000); */ `]Click to start[/Button]
+     //     [/Conditional]
+     //   [/div]
+     // [/Conditional]
+
+     //
      //Data: CHIRPS precipitation visualisation 3x3 km, Google Earth Engine
 
     //  [/Step]
@@ -699,7 +454,61 @@ Satellite data from ESA’s Sentinel mission shows the flooded areas of July and
 
       First and foremost, hydropower projects have been increasingly damming up the Mekong and its tributaries. The first dams were built in the 1960s, and for decades both the number of dams and the amount of river water they hold back remained limited. But in the early 2000, both the number of dams and their capacity skyrocketed. In 2005, there were 16 dams on the Mekong and its tributaries. Now, there are nearly 100.  Another 30 are currently under construction. Overall, these hydropower stations have the potential to generate 13 000 MW of electricity - more than enough to power the whole of New York City. According to a 2018 study, the percentage of river water stored for hydropower will rise tenfold from 2% in 2008 to almost 20% in 2025.
 
-      // add hydropower dam figure
+      // CHART: Dams and Capacity
+      // Fetch data:
+      [data name:"dams" source:"dams.json" /]
+
+      // Actual chart:
+      [IdyllVegaLite data:dams spec:`{
+        encoding: {
+          x: {
+            field: "year",
+            type: "temporal",
+            axis: {
+              title: "Year",
+              labelAngle: -45,
+              tickCount: {interval: "year", step: 10}
+            }
+          }
+        },
+        layer: [
+          { /* layer 1 - cumulative dam capacity */
+            mark: {
+              type: "area",
+              tooltip: true,
+              color: "black"
+            },
+            encoding: {
+              y: {
+                field: "cumulative_capacity",
+                type: "quantitative",
+                axis: {title: "Capacity [million m³]", orient: "left"},
+                scale: {domain: [0, 90000] }
+              }
+            } /* end encoding */
+          }, /* end layer 1 */
+          { /* layer 2 - cumulative dam count */
+            mark: {
+              type: "point",
+              tooltip: true,
+              color: "blue"
+            },
+            encoding: {
+              y: {
+                aggregate: "max",
+                field: "i",
+                type: "quantitative",
+                axis: {
+                  title: "Number of dams",
+                  orient: "right"
+                  },
+                scale: {domain: [0, 180] }
+              }
+            } /* end encoding */
+          } /* end layer 2 - cumulative dam count */
+        ], /* end layer composer */
+        resolve: {scale: {"y": "independent"}}
+      }` /]
 
       2019 also saw the opening of Xayaburi in Laos, the first of eleven dams built directly on the Mekong mainstream. Its construction originally began in 2012 but was fraught with complaints from environmentalists and citizens' groups. Many local residents believe that the drought suffered in downstream countries was a direct consequence of the newly opened dam. Even though a panel of experts invited to observe the dam's functioning by its operator concluded in February 2020 that it was not a drought contributing factor, a Thai activist initiative submitted evidence to the contrary the very same week.
 
