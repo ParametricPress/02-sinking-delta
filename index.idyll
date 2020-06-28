@@ -62,6 +62,10 @@ River deltas are among the most fertile and biodiverse areas on the planet. Wher
 
 Deltas have always been hubs of human development. Ancient civilizations flourished in the Nile and the Ganges deltas, and today, half a billion people call them home - even though they cover only 1 % of the earth's land surface. With rich crops and abundant fish, deltas are crucial to food security and economic development.
 
+[/Step]
+
+[Step]
+
 Deltas are also extremely vulnerable.
 
 [/Step]
@@ -84,6 +88,8 @@ The answers to these questions are as complex as the environmental and political
 
 [/Scroller]
 // END Intro
+
+
 
 // BEGIN Living with the River
 [Scroller currentStep:scrollerIndex]
@@ -138,7 +144,7 @@ Today, the hydrological balance in the delta is shifting.
 
 [/Step]
 
-[/Scroller]  
+[/Scroller]
 
 // Insert juxtapose image slider from  https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=7e4b9a76-6ce0-11ea-b9b8-0edaf8f81e27
 [ParametricGraphic fullWidth:true hed:"Compare Inundation Extents" subhed:"More context, why do we care?" source:"Source of the data"]
@@ -206,19 +212,9 @@ Satellite data from ESA’s Sentinel mission shows the flooded areas of July and
       [derived name:"rolling_mean_date_a" value:`inex[date_a_index].rolling_mean` /]
       [derived name:"rolling_mean_date_b" value:`inex[date_b_index].rolling_mean` /]
 
-   // Sliders
-      [Inset]
-        [Display value:`date_first` /] [Range min:0 max:row_count step:1 value:date_a_index /] [Display value:`date_last` /]
-      [/Inset]
-      [Inset]
-        [Display value:`date_first` /] [Range min:0 max:row_count step:1 value:date_b_index /] [Display value:`date_last` /]
-      [/Inset]
-
-   // Text display
-      On [Display value:`date_a` /],  [Display value:`rolling_mean_date_a` format:".1f"/]% of the delta were flooded, while [Display value:`rolling_mean_date_b` format:".1f"/]% were flooded on [Display value:`date_b` /].
-
-   // Actual chart
+   // Graphic Wrapper: With chart and slide controls
    [ParametricGraphic fullWidth:true hed:"Compare Inundation Extents" subhed:"More context, why do we care?" source:"Source of the data"]
+      // Actual Chart
       [IdyllVegaLite data:inex spec:`{
         layer: [
           { // time series layer
@@ -287,11 +283,38 @@ Satellite data from ESA’s Sentinel mission shows the flooded areas of July and
           } // end highlight layer
         ] // end layer composer
       }` /] // end IdyllVegaLite
+
+      // Sliders
+      [Inset]
+        [Display value:`date_first` /] [Range min:0 max:row_count step:1 value:date_a_index /] [Display value:`date_last` /]
+      [/Inset]
+      [Inset]
+        [Display value:`date_first` /] [Range min:0 max:row_count step:1 value:date_b_index /] [Display value:`date_last` /]
+      [/Inset]
+
+      // Text display
+      On [Display value:`date_a` /],  [Display value:`rolling_mean_date_a` format:".1f"/]% of the delta were flooded, while [Display value:`rolling_mean_date_b` format:".1f"/]% were flooded on [Display value:`date_b` /].
+
     [/ParametricGraphic]
 
-  //  [/Step]
+    [Scroller currentStep:scrollerIndex]
+    [Graphic]
+     [div fullWidth:true style:`{
+       width: '100vw',
+       height: '100vh',
+       // position: 'fixed',
+       transition: 'opacity 1s',
+       display: 'flex',
+       flexDirection: 'row',
+       alignItems:' center'
+       // opacity: stepperState === 'hero' ? 1 : 0,
+       // background: 'url(static/images/background-1.jpg) no-repeat center center fixed',
+     }` ]
+       [img style:`{width: "100vw", height:'auto', maxHeight: 'none'}` src:"static/images/86_fhd.jpg" /]
+     [/div]
+    [/Graphic]
 
-  //  [Step]
+    [Step]
 
       Officially, the arrival of the 2019 flood was two weeks late. During this time, the Mekong water levels dropped to their lowest in 100 years.
 
@@ -303,10 +326,9 @@ Satellite data from ESA’s Sentinel mission shows the flooded areas of July and
 
       How could this all happen?
 
-      // [/Step]
+      [/Step]
 
-
-      // [Step]
+      [Step]
 
       The chain of causality is a long one, reaching from a dam cascade being built upstream, to land-use changes in the Mekong basin. Climate change casts an additional shadow on every link in the chain.
 
@@ -315,6 +337,8 @@ Satellite data from ESA’s Sentinel mission shows the flooded areas of July and
       Temperature increase is not the only contributor to the droughts that have struck the region in recent years.
 
       Satellite rain measurements over the Mekong basin show that macro-scale precipitation distribution in 2019 differed significantly from previous years. The torrential Monsoon rains in the catchment area of the Mekong, which generally set in towards the end of May, were sparse in the spring and early summer of 2019. On XXXX 2018, a cumulative XXXX of rain had fallen over the basin area that year - but only XXXX on the same date in 2019.
+
+
 
      ///Add slider graph of cumulative rainfall, and illustration of rainfall in comparison of years Data extracted from CHIRPS precipitation satellite measurements through Google Earth Engine
      // CHART: Annual precipitation
@@ -325,7 +349,7 @@ Satellite data from ESA’s Sentinel mission shows the flooded areas of July and
      [var name:"aP_yStart" value:0 /]
 
      // Actual chart
-     [ParametricGraphic fullWidth:true hed:"Annual Precipitation" subhed:"More context, why do we care?" source:"Source of the data"]
+     [ParametricGraphic hed:"Annual Precipitation" subhed:"More context, why do we care?" source:"Source of the data"]
         [IdyllVegaLite data:aPrecip spec:`{
        mark: "bar",
        encoding: {
@@ -353,6 +377,10 @@ Satellite data from ESA’s Sentinel mission shows the flooded areas of July and
         [/Inset]
         You can move the range slider to change the starting value of the *y-axis*, currently set to [dynamic min:0 max:1200 step:10 value:aP_yStart /].
      [/ParametricGraphic]
+
+     [/Step]
+
+     [Step]
 
      El Nino'd IdyllVegaLite chart. //Data source: https://ggweather.com/enso/oni.htm
      Something's off here: the slider drops the bars through the x-axis. Probably has to do with the color hack I used here.
@@ -388,6 +416,10 @@ Satellite data from ESA’s Sentinel mission shows the flooded areas of July and
        Y-axis: 0 [Range min:0 max:1200 step:10 value:aP_enso_yStart /] 1200
        [/Inset]
      [/ParametricGraphic]
+
+     [/Step]
+
+     [Step]
 
      // Add video comparison of rainfall over the Mekong Basin (annotate grey area to say something along the lines of ‘all rain that falls here eventually flows into the Mekong)
      // VIDEO
@@ -425,10 +457,9 @@ Satellite data from ESA’s Sentinel mission shows the flooded areas of July and
      //
      //Data: CHIRPS precipitation visualisation 3x3 km, Google Earth Engine
 
-    //  [/Step]
+     [/Step]
 
-
-    //  [Step]
+     [Step]
 
       Meteorological experts trace the immediate cause for this back to the El Niño Southern Oscillation (ENSO). Approximately occurring every four years, El Niño is a global weather event with impacts on local weather. It is caused by a change in temperature distributions in the Pacific Ocean. Oceanic and atmospheric conditions interact to invert the usual east-west direction of ocean surface winds. Now blowing from west to east, they drive warm equatorial waters towards the eastern Pacific. This, in turn, has impacts on weather patterns such as the Monsoon rains over Southeast Asia.
 
@@ -441,10 +472,10 @@ Satellite data from ESA’s Sentinel mission shows the flooded areas of July and
       In Southeast Asia, 2015/16 saw a drought similarly severe as that of 2019. This period also saw the strongest-ever El Niño, also referred to as a Super El Niño event.
 
       The effects of anthropogenic climate change on the Mekong basin are undeniable. But humans also have more direct impacts on the delta, which further aggravate floods droughts.
-      // [/Step]
 
+      [/Step]
 
-      // [Step]
+      [Step]
 
       First and foremost, hydropower projects have been increasingly damming up the Mekong and its tributaries. The first dams were built in the 1960s, and for decades both the number of dams and the amount of river water they hold back remained limited. But in the early 2000, both the number of dams and their capacity skyrocketed. In 2005, there were 16 dams on the Mekong and its tributaries. Now, there are nearly 100.  Another 30 are currently under construction.
 
@@ -456,9 +487,9 @@ Satellite data from ESA’s Sentinel mission shows the flooded areas of July and
 
       The Mekong River Commission, an intergovernmental body charged with the management of the Mekong, attempts to mediate water use conflicts. But it still appears that dam operators optimize their water usage for power generation, with little regard for downstream effects.
 
-//[/Step]
+      [/Step]
 
-// [Step]
+      [Step]
 
       The predominance of hydropower projects is also a result of Chinese influence over Southeast Asia. Chinese companies and government initiatives invest heavily in infrastructure projects in countries like Laos and Cambodia. Local politicians welcome funding with open arms - seeing it as a safeguard for their citizens' prosperity, and their own re-election.
 
@@ -470,8 +501,10 @@ Satellite data from ESA’s Sentinel mission shows the flooded areas of July and
 
       The droughts that have haunted the Mekong delta ever more frequently in recent decades can be traced back to all these developments - rising temperatures, changing land management, the construction of hydropower dams, and the El Niño events aggravated by climate change on a global scale.
 
-      // [/Step]
-      // [/Scroller]
+      [/Step]
+
+      [Step]
+
       // CHART: Dams and Capacity
       // Fetch data:
       [data name:"dams" source:"dams.json" /]
@@ -529,20 +562,14 @@ Satellite data from ESA’s Sentinel mission shows the flooded areas of July and
         resolve: {scale: {"y": "independent"}}
       }` /]
       [/ParametricGraphic]
+      [/Step]
 
-##Rising Seas and Sinking Lands
+//END Dams, Droughts and the Distribution of Rain
+[/Scroller]
+
+//BEGIN Rising Seas and Sinking Lands
 
 // [Scroller currentStep:scrollerIndex]
-//   [Graphic style:`{padding: 50}`]
-//   [image name:'myData' source:'background-1.jpg' /]
-//   [image data:myData /]
-
-//       [Chart type:`"line"` data:`scrollerChartData.slice(0, scrollerIndex + 2)` /]
-//   [/Graphic]
-// [/Step]
-//       [/Scroller]
-
-//   [Scroller currentStep:scrollerIndex]
 // [Graphic]
 //  [div fullWidth:true style:`{
 //    width: '100vw',
@@ -555,12 +582,9 @@ Satellite data from ESA’s Sentinel mission shows the flooded areas of July and
 //    // opacity: stepperState === 'hero' ? 1 : 0,
 //    // background: 'url(static/images/background-1.jpg) no-repeat center center fixed',
 //  }` ]
-   [img style:`{width: "100vw", height:'auto', maxHeight: 'none'}` src:"static/images/background-4.jpg" /]
-
-    //    [/div]
-    //  [/Graphic]
-
-//     [Step]
+//    [img style:`{width: "100vw", height:'auto', maxHeight: 'none'}` src:"static/images/86_fhd.jpg" /]
+//  [/div]
+// [/Graphic]
 
 ##Rising Seas and Sinking Lands
 
