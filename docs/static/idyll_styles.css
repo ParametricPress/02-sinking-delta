@@ -1952,8 +1952,8 @@ h1.hed-rotate {
 
 @font-face {
   font-family: 'Editorial New';
-  src: url('/static/fonts/EditorialNew-Regular.woff2') format('woff2'),
-       url('/static/fonts/EditorialNew-Regular.woff') format('woff');
+  src: url('./static/fonts/EditorialNew-Regular.woff2') format('woff2'),
+       url('./static/fonts/EditorialNew-Regular.woff') format('woff');
   font-weight:  400;
   font-style:   normal;
   font-stretch: normal;
@@ -1961,8 +1961,8 @@ h1.hed-rotate {
 
 @font-face {
   font-family: 'Tiempos Text';
-  src: url('/static/fonts/tiempos-text-web-regular.woff2') format('woff2'),
-       url('/static/fonts/tiempos-text-web-regular.woff') format('woff');
+  src: url('./static/fonts/tiempos-text-web-regular.woff2') format('woff2'),
+       url('./static/fonts/tiempos-text-web-regular.woff') format('woff');
   font-weight:  400;
   font-style:   normal;
   font-stretch: normal;
@@ -1971,8 +1971,8 @@ h1.hed-rotate {
 
 @font-face {
   font-family: 'Tiempos Text';
-  src: url('/static/fonts/tiempos-text-web-regular-italic.woff2') format('woff2'),
-       url('/static/fonts/tiempos-text-web-regular-italic.woff') format('woff');
+  src: url('./static/fonts/tiempos-text-web-regular-italic.woff2') format('woff2'),
+       url('./static/fonts/tiempos-text-web-regular-italic.woff') format('woff');
   font-weight:  400;
   font-style:   italic;
   font-stretch: normal;
@@ -1980,8 +1980,8 @@ h1.hed-rotate {
 
 @font-face {
   font-family: 'Tiempos Text';
-  src: url('/static/fonts/tiempos-text-web-bold.woff2') format('woff2'),
-       url('/static/fonts/tiempos-text-web-bold.woff') format('woff');
+  src: url('./static/fonts/tiempos-text-web-bold.woff2') format('woff2'),
+       url('./static/fonts/tiempos-text-web-bold.woff') format('woff');
   font-weight:  700;
   font-style:   normal;
   font-stretch: normal;
@@ -1990,8 +1990,8 @@ h1.hed-rotate {
 
 @font-face {
   font-family: 'Tiempos Text';
-  src: url('/static/fonts/tiempos-text-web-bold-italic.woff2') format('woff2'),
-       url('/static/fonts/tiempos-text-web-bold-italic.woff') format('woff');
+  src: url('./static/fonts/tiempos-text-web-bold-italic.woff2') format('woff2'),
+       url('./static/fonts/tiempos-text-web-bold-italic.woff') format('woff');
   font-weight:  700;
   font-style:   italic;
   font-stretch: normal;
@@ -2019,6 +2019,7 @@ p {
   margin: 0;
   width: auto;
   max-width: none;
+  border-top: none;
 }
 .parametric-header-text .parametric-long-title {
   font-size: 120px;
@@ -2126,9 +2127,13 @@ h2 {
 
 /* SCROLLER */
 
+.idyll-scroll {
+  margin-bottom: 25vh;
+}
+
+
 .idyll-scroll-text .idyll-step {
   padding: 1.5em 2em;
-  background: ;
 }
 .idyll-step h2 {
   margin: 0;
