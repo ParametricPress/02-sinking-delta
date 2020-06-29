@@ -405,9 +405,54 @@ The delay in itself was already a major problem for the many farmers of wet seas
 
     Temperature increase is not the only contributor to the droughts that have struck the region in recent years.
 
-    Satellite rain measurements over the Mekong basin show that macro-scale precipitation distribution in 2019 differed significantly from previous years. The torrential Monsoon rains in the catchment area of the Mekong, which generally set in towards the end of May, were sparse in the spring and early summer of 2019. On XXXX 2018, a cumulative XXXX of rain had fallen over the basin area that year - but only XXXX on the same date in 2019.
 
-    Meteorological experts trace the immediate cause for this back to the El Niño Southern Oscillation (ENSO). Approximately occurring every four years, El Niño is a global weather event with impacts on local weather. It is caused by a change in temperature distributions in the Pacific Ocean. Oceanic and atmospheric conditions interact to invert the usual east-west direction of ocean surface winds. Now blowing from west to east, they drive warm equatorial waters towards the eastern Pacific. This, in turn, has impacts on weather patterns such as the Monsoon rains over Southeast Asia.
+
+
+  [Scroller]
+     // Add video comparison of rainfall over the Mekong Basin (annotate grey area to say something along the lines of ‘all rain that falls here eventually flows into the Mekong)
+     // VIDEO
+     [Graphic]
+       [div fullWidth:true style:`{
+         width: '100vw',
+         height: '100vh',
+         // position: 'fixed',
+         transition: 'opacity 1s',
+         display: 'flex',
+         flexDirection: 'row',
+         alignItems:' center',
+         opacity: hideVideo ? 0 : 1,
+         // background: 'url(static/images/hero.jpg) no-repeat center center fixed',
+       }` ]
+        [video style:`{width: "100vw", height:'auto', maxHeight: 'none'}` src:"static/videos/precipitation-4.mp4" /]
+
+       [/div]
+     [/Graphic]
+
+     // [Conditional if:`videoReady && !isMobile `]
+     //   [div style:`{textAlign: 'center'}`]
+     //     [Conditional if:`!started ` ]
+     //       [Button className:"start" onClick:`started = true; setTimeout(() => { showScroll = true; }, 4500); /*setTimeout(() => { hideVideo = true}, 25000); */ `]Click to start[/Button]
+     //     [/Conditional]
+     //   [/div]
+     // [/Conditional]
+
+     //
+     //Data: CHIRPS precipitation visualisation 3x3 km, Google Earth Engine
+
+
+     [Step]
+         Satellite rain measurements over the Mekong basin show that macro-scale precipitation distribution in 2019 differed significantly from previous years.
+
+         The torrential Monsoon rains in the catchment area of the Mekong, which generally set in towards the end of May, were sparse in the spring and early summer of 2019. On XXXX 2018, a cumulative XXXX of rain had fallen over the basin area that year - but only XXXX on the same date in 2019.
+      [/Step]
+
+
+//END Dams, Droughts and the Distribution of Rain
+[/Scroller]
+
+      Meteorological experts trace the immediate cause for this back to the El Niño Southern Oscillation (ENSO). Approximately occurring every four years, El Niño is a global weather event with impacts on local weather. It is caused by a change in temperature distributions in the Pacific Ocean. Oceanic and atmospheric conditions interact to invert the usual east-west direction of ocean surface winds. Now blowing from west to east, they drive warm equatorial waters towards the eastern Pacific. This, in turn, has impacts on weather patterns such as the Monsoon rains over Southeast Asia.
+
+
 
 
      ///Add slider graph of cumulative rainfall, and illustration of rainfall in comparison of years Data extracted from CHIRPS precipitation satellite measurements through Google Earth Engine
@@ -493,88 +538,37 @@ The delay in itself was already a major problem for the many farmers of wet seas
 
     El Niño is a periodic natural phenomenon, which has been continuously observed over the past 120 years. But here, climate change enters the equation for the second time.
 
-    Scientists warn that global warming could exacerbate El Niño to make the events positively devastating. A recent study published in Nature Geoscience assessed the last 400 years of El Niño by researching coral reef growth. Its results show that in recent decades, the events have grown both more frequent and far more severe. A major cause of this trend?
 
-
-
-
-  [Scroller]
-     // Add video comparison of rainfall over the Mekong Basin (annotate grey area to say something along the lines of ‘all rain that falls here eventually flows into the Mekong)
-     // VIDEO
-     [Graphic]
-       [div fullWidth:true style:`{
-         width: '100vw',
-         height: '100vh',
-         // position: 'fixed',
-         transition: 'opacity 1s',
-         display: 'flex',
-         flexDirection: 'row',
-         alignItems:' center',
-         opacity: hideVideo ? 0 : 1,
-         // background: 'url(static/images/hero.jpg) no-repeat center center fixed',
-       }` ]
-
-         // [Youtube play:`videoStep >= 1 && mapStep < 2` id:"k81wTUT7x4Y" /]
-         [Conditional if:isMobile]
-           [img style:`{width: "100vw", height:'auto', maxHeight: 'none'}` src:"static/images/record.png" /]
-         [/Conditional]
-         [Conditional if:`!isMobile`]
-           [Youtube onReady:`videoReady = true` play:started audio:playAudio id:"k81wTUT7x4Y" /]
-         [/Conditional]
-       [/div]
-     [/Graphic]
-
-     // [Conditional if:`videoReady && !isMobile `]
-     //   [div style:`{textAlign: 'center'}`]
-     //     [Conditional if:`!started ` ]
-     //       [Button className:"start" onClick:`started = true; setTimeout(() => { showScroll = true; }, 4500); /*setTimeout(() => { hideVideo = true}, 25000); */ `]Click to start[/Button]
-     //     [/Conditional]
-     //   [/div]
-     // [/Conditional]
-
-     //
-     //Data: CHIRPS precipitation visualisation 3x3 km, Google Earth Engine
-
-
-     [Step]
+        Scientists warn that global warming could exacerbate El Niño to make the events positively devastating. A recent study published in Nature Geoscience assessed the last 400 years of El Niño by researching coral reef growth. Its results show that in recent decades, the events have grown both more frequent and far more severe. A major cause of this trend?
 
        In Southeast Asia, 2015/16 saw a drought similarly severe as that of 2019. This period also saw the strongest-ever El Niño, also referred to as a Super El Niño event.
 
-      The effects of anthropogenic climate change on the Mekong basin are undeniable. But humans also have more direct impacts on the delta, which further aggravate floods droughts.
+        The effects of anthropogenic climate change on the Mekong basin are undeniable. But humans also have more direct impacts on the delta, which further aggravate floods droughts.
+
+//BEGIN Rising Seas and Sinking Lands
+
+// [Scroller currentStep:scrollerIndex]
+// [Graphic]
+//  [div fullWidth:true style:`{
+//    width: '100vw',
+//    height: '100vh',
+//    // position: 'fixed',
+//    transition: 'opacity 1s',
+//    display: 'flex',
+//    flexDirection: 'row',
+//    alignItems:' center'
+//    // opacity: stepperState === 'hero' ? 1 : 0,
+//    // background: 'url(static/images/background-1.jpg) no-repeat center center fixed',
+//  }` ]
+//    [img style:`{width: "100vw", height:'auto', maxHeight: 'none'}` src:"static/images/86_fhd.jpg" /]
+//  [/div]
+// [/Graphic]
 
 
-      First and foremost, hydropower projects have been increasingly damming up the Mekong and its tributaries. The first dams were built in the 1960s, and for decades both the number of dams and the amount of river water they hold back remained limited. But in the early 2000, both the number of dams and their capacity skyrocketed. In 2005, there were 16 dams on the Mekong and its tributaries. Now, there are nearly 100.  Another 30 are currently under construction.
 
-      Overall, these hydropower stations have the potential to generate 13 000 MW of electricity - more than enough to power the whole of New York City. According to a 2018 study, the percentage of river water stored for hydropower will rise tenfold from 2% in 2008 to almost 20% in 2025.
-
-      [/Step]
-
-      [Step]
+// [/Step]
 
 
-      2019 also saw the opening of Xayaburi in Laos, the first of eleven dams built directly on the Mekong mainstream. Its construction originally began in 2012 but was fraught with complaints from environmentalists and citizens' groups.
-
-      Many local residents believe that the drought suffered in downstream countries was a direct consequence of the newly opened dam. Even though a panel of experts invited to observe the dam's functioning by its operator concluded in February 2020 that it was not a drought contributing factor, a Thai activist initiative submitted evidence to the contrary the very same week.
-
-      The Mekong River Commission, an intergovernmental body charged with the management of the Mekong, attempts to mediate water use conflicts. But it still appears that dam operators optimize their water usage for power generation, with little regard for downstream effects.
-
-      [/Step]
-
-      [Step]
-
-      The predominance of hydropower projects is also a result of Chinese influence over Southeast Asia. Chinese companies and government initiatives invest heavily in infrastructure projects in countries like Laos and Cambodia. Local politicians welcome funding with open arms - seeing it as a safeguard for their citizens' prosperity, and their own re-election.
-
-      Land-use changes further exacerbate the adverse effects of climate change in Southeast Asia.
-
-      In recent years, natural vegetation has been removed from vast swaths of land, and agriculture has been intensified. The spread of urban centers like Phnom Penh and Ho Chi Minh City has swallowed up huge tracts of land. Cumulatively, the modified land surface contributes to hydrological imbalances. Temperatures increase due to the sunlight absorbed by urban areas and open fields rather than reflected by natural vegetation.
-
-      Evapotranspiration increases and ever-larger quantities of water are needed for irrigation.
-
-      The droughts that have haunted the Mekong delta ever more frequently in recent decades can be traced back to all these developments - rising temperatures, changing land management, the construction of hydropower dams, and the El Niño events aggravated by climate change on a global scale.
-
-      [/Step]
-
-      [Step]
 
       // CHART: Dams and Capacity
       // Fetch data:
@@ -633,41 +627,43 @@ The delay in itself was already a major problem for the many farmers of wet seas
         resolve: {scale: {"y": "independent"}}
       }` /]
       [/ParametricGraphic]
-      [/Step]
 
-//END Dams, Droughts and the Distribution of Rain
-[/Scroller]
+      First and foremost, hydropower projects have been increasingly damming up the Mekong and its tributaries. The first dams were built in the 1960s, and for decades both the number of dams and the amount of river water they hold back remained limited. But in the early 2000, both the number of dams and their capacity skyrocketed. In 2005, there were 16 dams on the Mekong and its tributaries. Now, there are nearly 100.  Another 30 are currently under construction.
 
-//BEGIN Rising Seas and Sinking Lands
-
-// [Scroller currentStep:scrollerIndex]
-// [Graphic]
-//  [div fullWidth:true style:`{
-//    width: '100vw',
-//    height: '100vh',
-//    // position: 'fixed',
-//    transition: 'opacity 1s',
-//    display: 'flex',
-//    flexDirection: 'row',
-//    alignItems:' center'
-//    // opacity: stepperState === 'hero' ? 1 : 0,
-//    // background: 'url(static/images/background-1.jpg) no-repeat center center fixed',
-//  }` ]
-//    [img style:`{width: "100vw", height:'auto', maxHeight: 'none'}` src:"static/images/86_fhd.jpg" /]
-//  [/div]
-// [/Graphic]
+      Overall, these hydropower stations have the potential to generate 13 000 MW of electricity - more than enough to power the whole of New York City. According to a 2018 study, the percentage of river water stored for hydropower will rise tenfold from 2% in 2008 to almost 20% in 2025.
 
 
+      2019 also saw the opening of Xayaburi in Laos, the first of eleven dams built directly on the Mekong mainstream. Its construction originally began in 2012 but was fraught with complaints from environmentalists and citizens' groups.
 
-// [/Step]
+      Many local residents believe that the drought suffered in downstream countries was a direct consequence of the newly opened dam. Even though a panel of experts invited to observe the dam's functioning by its operator concluded in February 2020 that it was not a drought contributing factor, a Thai activist initiative submitted evidence to the contrary the very same week.
+
+      The Mekong River Commission, an intergovernmental body charged with the management of the Mekong, attempts to mediate water use conflicts. But it still appears that dam operators optimize their water usage for power generation, with little regard for downstream effects.
+
+  [Recirc slug:parametricSlug /]
+
+  [MattNote]Will update the style of this thing so it isn't so visually loud[/MattNote]
+
+      The predominance of hydropower projects is also a result of Chinese influence over Southeast Asia. Chinese companies and government initiatives invest heavily in infrastructure projects in countries like Laos and Cambodia. Local politicians welcome funding with open arms - seeing it as a safeguard for their citizens' prosperity, and their own re-election.
+
+      Land-use changes further exacerbate the adverse effects of climate change in Southeast Asia.
+
+      In recent years, natural vegetation has been removed from vast swaths of land, and agriculture has been intensified. The spread of urban centers like Phnom Penh and Ho Chi Minh City has swallowed up huge tracts of land. Cumulatively, the modified land surface contributes to hydrological imbalances. Temperatures increase due to the sunlight absorbed by urban areas and open fields rather than reflected by natural vegetation.
+
+      Evapotranspiration increases and ever-larger quantities of water are needed for irrigation.
+
+      The droughts that have haunted the Mekong delta ever more frequently in recent decades can be traced back to all these developments - rising temperatures, changing land management, the construction of hydropower dams, and the El Niño events aggravated by climate change on a global scale.
+
 
 ##Rising Seas and Sinking Lands
 
          While the floodplains of the delta are left parched by late, short floods, there is more trouble on the horizon: The delta as a whole is sinking, with the sea encroaching inland. For this phenomenon, too, there is a complex web of reasons.
 
+[video fullWidth:true style:`{width: "100vw", height:'auto', maxHeight: 'none', margin: '2em auto 3em auto'}` src:"static/videos/49.m4v" /]
+
          Sea levels worldwide are rising due to different direct causes. Higher temperatures are melting glaciers worldwide, including the vast ice sheets of Antarctica and Greenland. In August 2019, images of meltwater torrents in Greenland went around the globe, with scientists calculating that ice was being lost at a record-breaking rate of 12.5 billion tons a single day. On February 7, 2020, temperatures of 18.3 °C were measured in Antarctica - the highest values ever recorded.
 
          Another factor contributing to sea-level rise recently highlighted is the thermal expansion of ocean water. The higher the water temperature, the larger the volume that water molecules take up. Currently, the warming of ocean water mostly affects the upper water layers. Data from the US National Oceanic and Atmospheric Administration (NOAA) shows that over the past 100 years, average surface temperatures of oceans around the world have risen by 0.13 °C per decade. And the future is looking grim. Studies modelling scenarios of ocean warming, published in reports by the Intergovernmental Panel on Climate Change (IPCC), show that ocean temperatures could increase by another 1 – 4 °C by 2100.
+
 
          How high precisely the sea levels are going to rise as a result of these developments is not yet clear. So far, measurements based on satellite data and gauges from across the world, indicate that the average sea level has increased by 7 - 8 inches since 1900. The scale of future increases depends, ultimately, on the success of measures taken to combat global warming. Currently, scientists are expecting global sea levels to rise by up to 8 feet by 2100.
 
@@ -675,8 +671,11 @@ The delay in itself was already a major problem for the many farmers of wet seas
 
          This spells doom for coastal populations around the world, but especially for deltas, where the average elevation of the land is only a few feet above sea level. Here, small increases can reach far inland.
 
+    [img fullWidth:true style:`{maxWidth: 960, height:'auto', maxHeight: 'none', margin: '1em auto'}` src:"static/images/62_fhd.jpg" /]
+
          The situation in the Mekong delta is particularly dire.
         //  [/Step]
+
 
 
         //  [Step]
@@ -689,7 +688,6 @@ The delay in itself was already a major problem for the many farmers of wet seas
         //  [/Step]
 
 
-  [Recirc slug:parametricSlug /]
 
         //  [Step]
 
@@ -698,6 +696,7 @@ The delay in itself was already a major problem for the many farmers of wet seas
          In the Mekong delta, some land subsidence is natural, caused by tectonics and the settling of sediments deposited by the river since the last Ice Age. The majority, however, can be traced back to human actions. The expanding urban infrastructure is heavy, putting pressure on the delta and accelerating compaction. At the same time, the groundwater bodies in the Vietnamese Mekong delta are among the most exploited in the world.
 
          After Vietnam's transition to a market economy in 1986, economic growth increased the need for water. Groundwater is used for domestic, agricultural and industrial purposes. The effects are already being felt throughout the delta. In 2017, a study using a 3D hydro-geological model found that over the past 25 years, the land has sunk by an average of 7 inches. Currently, around 660 million gallons of groundwater are being extracted from the Vietnamese Mekong delta every single day.
+
 
          Subsidence due to groundwater extraction is extremely dangerous in that it continues beyond the end of the practice. A 2020 study found that even when ceasing all groundwater as quickly as possible, and implementing mitigation measures, the land would lose at least another 6 inches of elevation until 2100.
 
@@ -717,7 +716,6 @@ The delay in itself was already a major problem for the many farmers of wet seas
 
         //  [Step]
 
-    [img fullWidth:true style:`{maxWidth: 960, height:'auto', maxHeight: 'none', margin: '1em auto'}` src:"static/images/62_fhd.jpg" /]
 
 
          The effects are already being felt: Storm floods are sweeping across the delta ever more frequently, and much farther inland than before. The coastline, renowned for its beauty and a popular tourist destination, is slowly eroding away. Salty seawater encroaches into the river system, tilting the balance in ecosystems, and threatening agriculture and freshwater fisheries.
