@@ -5,6 +5,8 @@
 
 [var name:"parametricSlug" value:"sinking-delta" /]
 
+[data name:"vlConfig" source:"vega-lite-config.json" /]
+
 
   // headerVideo:"static/videos/49.m4v"
 [Header
@@ -93,14 +95,34 @@ But what exactly causes this double threat? And what can be done about it?
 The answers to these questions are as complex as the environmental and political problems casting their shadows over the region. At their core - climate change.
 
 
+
+##Living with the River
+
+Springing from the vast Tibetan plateau at the foot of the Himalayas, the Mekong River winds its way over 2,700 miles through China, Myanmar, Laos, Thailand, Cambodia and Vietnam.
+
+
 // [/Scroller]
 // END Intro
 
 
+// [img fullWidth:true style:`{maxWidth: 960, margin: '1em auto', height:'auto', maxHeight: 'none'}` src:"static/images/35_lq.jpg" /]
+
+// At Cambodia's capital Phnom Penh, the river splits into branches to fan out into the fertile delta plain defining the landscapes of southern Cambodia and Vietnam.
+
+// In its wetland habitats, biodiversity flourishes - and agriculture. Over eighteen million people live in the delta, but it supplies over 200 million with rice, fruit, vegetables and fish throughout Cambodia and Vietnam. Agricultural products from the area also bolster international exports for both countries.
+
+
+// [img fullWidth:true style:`{maxWidth: '100vw', height:'auto', margin: '1em auto', maxHeight: 'none'}` src:"static/images/67_lq.jpg" /]
+
+
+
+
+[var name:"firstScrollerIndex" value:0 /]
+[derived name:"firstScrollerIndexBG" value:`({ 0: '35_lq.jpg', 1: '67_lq.jpg' })[firstScrollerIndex]` /]
 
 // BEGIN Living with the River
-[Scroller currentStep:scrollerIndex]
-[Graphic]
+[Scroller currentStep:firstScrollerIndex]
+[Graphic fullWidth:true]
  [div fullWidth:true style:`{
    width: '100vw',
    height: '100vh',
@@ -108,11 +130,14 @@ The answers to these questions are as complex as the environmental and political
    transition: 'opacity 1s',
    display: 'flex',
    flexDirection: 'row',
-   alignItems:' center'
+   alignItems:' center',
+   backgroundSize: 'cover',
    // opacity: stepperState === 'hero' ? 1 : 0,
-   // background: 'url(static/images/background-1.jpg) no-repeat center center fixed',
+  //  background: "url(static/images/" + firstScrollerIndexBG + ")",
+  //  backgroundRepeat: 'no-repeat',
+  //  backgroundSize: 'cover'
  }` ]
-   [img style:`{width: "100vw", height:'auto', maxHeight: 'none'}` src:"static/images/20_fhd.jpg" /]
+   [img style:`{width: "100vw", height:'auto', maxHeight: 'none'}` src:"static/images/35_lq.jpg" /]
   //  [img style:`{width: "100vw", height:'auto', maxHeight: 'none'}` src:"static/images/17_fhd.jpg" /]
 
  [/div]
@@ -120,38 +145,30 @@ The answers to these questions are as complex as the environmental and political
 
 [Step]
 
-##Living with the River
-
-Springing from the vast Tibetan plateau at the foot of the Himalayas, the Mekong River winds its way over 2,700 miles through China, Myanmar, Laos, Thailand, Cambodia and Vietnam.
-
 At Cambodia's capital Phnom Penh, the river splits into branches to fan out into the fertile delta plain defining the landscapes of southern Cambodia and Vietnam.
 
+
   // insert overview figure
+
+[/Step]
+
+[Step]
+
+  In its wetland habitats, biodiversity flourishes - and agriculture. Over eighteen million people live in the delta, but it supplies over 200 million with rice, fruit, vegetables and fish throughout Cambodia and Vietnam. Agricultural products from the area also bolster international exports for both countries.
 
 [/Step]
 
 [/Scroller]
 
 
-// [Step]
-
-In its wetland habitats, biodiversity flourishes - and agriculture. Over eighteen million people live in the delta, but it supplies over 200 million with rice, fruit, vegetables and fish throughout Cambodia and Vietnam. Agricultural products from the area also bolster international exports for both countries.
-
-
 The abundant fertility of the Mekong delta is based on the annual Monsoon cycle. Fed by torrential rains, the Mekong begins to swell in June, overbrimming its banks and inundating the surrounding floodplains. The land remains underwater for several months, until the flood begins to recede in October to November.
 
-Far from being a disaster, these inundations are welcomed by the local population.
-
-
-
-// [/Step]
-// [/Scroller]
 
 // Insert juxtapose image slider from  https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=7e4b9a76-6ce0-11ea-b9b8-0edaf8f81e27
-[ParametricGraphic fullWidth:true hed:"Compare Inundation Extents" subhed:"More context, why do we care?" source:"Source of the data"]
+[ParametricGraphic fullWidth:true style:`{maxWidth: 960, margin: '1em auto'}` hed:"Compare Inundation Extents" subhed:"More context, why do we care?" source:"Source of the data"]
 
   // Fits better without the ParametricGraphic (and setting fullWidth:true on the iframe instead), but doesn't integrate as well.
-  [iframe fullWidth:true frameborder:"0" class:"juxtapose" style:`{width: 'calc(100% + 50px)', height: '60vh', margin: '1em -25px', overflowY: 'hidden'}` src:"https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=7e4b9a76-6ce0-11ea-b9b8-0edaf8f81e27"][/iframe]
+  [iframe frameborder:"0" class:"juxtapose" style:`{width: 'calc(100% + 50px)', height: '60vh', margin: '1em -25px', overflowY: 'hidden'}` src:"https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=7e4b9a76-6ce0-11ea-b9b8-0edaf8f81e27"][/iframe]
   // original params: width - 1366px, height - 796px , which resulted in scroll bars
   // a simple solution would be to just make the original images smaller and create a new juxtapose on knightlab.
 
@@ -161,8 +178,18 @@ Far from being a disaster, these inundations are welcomed by the local populatio
 
 [/ParametricGraphic]
 
-// END Living with the River
-During the wet season, the delta is replenished. Fish populations explode. Water infiltrates the soil, dusty from months of little to no precipitation, and is stored in canals and lowland areas. The sediments left behind at the end of the wet season are full of nutrients. In the rich, muddy earth that emerges from the receding floods, farmers plant rice and vegetables, marking the beginning of the new agricultural year.
+Far from being a disaster, these inundations are welcomed by the local population.
+
+During the wet season, the delta is replenished. Fish populations explode. Water infiltrates the soil, dusty from months of little to no precipitation, and is stored in canals and lowland areas.
+
+The sediments left behind at the end of the wet season are full of nutrients. In the rich, muddy earth that emerges from the receding floods, farmers plant rice and vegetables, marking the beginning of the new agricultural year.
+
+
+
+[img fullWidth:true style:`{maxWidth: '100vw', height:'auto', margin: '1em auto', maxHeight: 'none'}` src:"static/images/67_lq.jpg" /]
+
+// [/Step]
+// [/Scroller]
 
 
 This cycle is so deeply ingrained in the consciousness and identity of the people that it forms the basis of some of the region's most important cultural traditions. In Cambodia, the Water Festival (Bon Om Touk) is celebrated in November. It marks the beginning of the flood recession with fireworks, boat races and nautical parades.
@@ -173,19 +200,24 @@ These traditions reach back to the Khmer empire of the 9th-15th century. They il
 Today, the hydrological balance in the delta is shifting.
 
 
+// END Living with the River
+
 ##Droughts, Dams, and the Distribution of Rain
+
+Officially, the arrival of the 2019 flood was two weeks late. During this time, the Mekong water levels dropped to their lowest in 100 years.Endless water surfaces should have been stretching into the horizon. Instead, the bare earth of the floodplains was cracked with heat.
 
 At the beginning of August 2019, the delta was still dry.
 
-Endless water surfaces should have been stretching into the horizon. Instead, the bare earth of the floodplains was cracked with heat.
 
-[img fullWidth:true style:`{width: "67vw", height:'auto', maxHeight: 'none', margin: '1em auto'}` src:"static/images/88_fhd.jpg" /]
-
+[img fullWidth:true style:`{maxWidth: 960, height:'auto', maxHeight: 'none', margin: '1em auto'}` src:"static/images/88_fhd.jpg" /]
 
 Satellite data from ESA’s Sentinel mission shows the flooded areas of July and August 2019 in stark contrast to those of previous years. On XXXX 2018, XXXX square miles of the delta were inundated. On the same day a year later, it was only XXXX square miles. In tandem, the water levels of the Mekong stayed low well into August.
 
+The delay in itself was already a major problem for the many farmers of wet season rice, a crop which depends on the inundations starting at the right time. What’s worse, the flood began to drain away at roughly the usual time, spelling disaster on a larger scale. As the flood curves of the Mekong water levels show, the 2019 flood pulse was only about half as long as in past years.
 
-// // BEGIN Droughts, Dams, and the Distribution of Rain
+
+
+// // // BEGIN Droughts, Dams, and the Distribution of Rain
 // [Scroller currentStep:scrollerIndex]
 // [Graphic]
 //  [div fullWidth:true style:`{
@@ -243,14 +275,15 @@ Satellite data from ESA’s Sentinel mission shows the flooded areas of July and
       [derived name:"rolling_mean_date_b" value:`inex[date_b_index].rolling_mean` /]
 
    // Graphic Wrapper: With chart and slide controls
-   [ParametricGraphic fullWidth:true hed:"Compare Inundation Extents" subhed:"More context, why do we care?" source:"Source of the data"]
+   [ParametricGraphic fullWidth:true  style:`{maxWidth: 960, margin: '1em auto'}` hed:"Compare Inundation Extents" subhed:"More context, why do we care?" source:"Source of the data"]
       // Actual Chart
-      [IdyllVegaLite data:inex spec:`{
+      [IdyllVegaLite data:inex width:"container" height:"200" spec:`{
+        config: vlConfig,
         layer: [
           { // time series layer
             mark: {
               type: "area",
-              line: {color: "darkgreen"},
+              line: {color: "#000000"},
               //tooltip: true,
               color: {
                 x1: 1,
@@ -261,11 +294,11 @@ Satellite data from ESA’s Sentinel mission shows the flooded areas of July and
                 stops: [
                   {
                     offset: 0,
-                    color: "white"
+                    color: "#000000"
                   },
                   {
                     offset: 1,
-                    color: "darkgreen"
+                    color: "#000000"
                   }
                 ]
               }
@@ -284,7 +317,7 @@ Satellite data from ESA’s Sentinel mission shows the flooded areas of July and
                 field: "rolling_mean",
                 type: "quantitative",
                 axis: {title: "Delta flooded [%]"},
-                scale: {domain: [0, 55] }
+                scale: {domain: [15, 55] }
               }
             } // end encoding
           }, // end time series layer
@@ -315,17 +348,26 @@ Satellite data from ESA’s Sentinel mission shows the flooded areas of July and
       }` /] // end IdyllVegaLite
 
       // Sliders
-      [Inset]
-        [Display value:`date_first` /] [Range min:0 max:row_count step:1 value:date_a_index /] [Display value:`date_last` /]
-      [/Inset]
-      [Inset]
-        [Display value:`date_first` /] [Range min:0 max:row_count step:1 value:date_b_index /] [Display value:`date_last` /]
-      [/Inset]
+      [div style:`{display: 'flex', flexDirection: 'row'}`]
+        [div]
+          [Display value:`date_first ` /] [Range min:0 max:row_count step:1 value:date_a_index /] [Display value:`date_last ` /]
+        [/div]
+        [div]
+          [Display value:`date_first ` /] [Range min:0 max:row_count step:1 value:date_b_index /] [Display value:`date_last ` /]
+        [/div]
+      [/div]
 
       // Text display
-      On [Display value:`date_a` /],  [Display value:`rolling_mean_date_a` format:".1f"/]% of the delta were flooded, while [Display value:`rolling_mean_date_b` format:".1f"/]% were flooded on [Display value:`date_b` /].
+      On [Display value:`date_a` /], [Display value:`rolling_mean_date_a` format:".1f"/]% of the delta were flooded, while [Display value:`rolling_mean_date_b` format:".1f"/]% were flooded on [Display value:`date_b` /].
 
     [/ParametricGraphic]
+
+
+
+      The combined effects of the late arrival and short duration of last year's flood now reverberate through the landscape in a cascade of negative impacts.
+
+      While farmers did mostly succeed in growing crops directly after the flood, many of them now face worries about the rest of the agricultural year.
+
 
     [Scroller currentStep:scrollerIndex]
     [Graphic]
@@ -345,21 +387,10 @@ Satellite data from ESA’s Sentinel mission shows the flooded areas of July and
     [/Graphic]
 
     [Step]
+      The flood was too short to infiltrate deeply into the soil, leaving it thirsty for irrigation.
 
-      Officially, the arrival of the 2019 flood was two weeks late. During this time, the Mekong water levels dropped to their lowest in 100 years.
-
-      The delay in itself was already a major problem for the many farmers of wet season rice, a crop which depends on the inundations starting at the right time. What’s worse, the flood began to drain away at roughly the usual time, spelling disaster on a larger scale. As the flood curves of the Mekong water levels show, the 2019 flood pulse was only about half as long as in past years.
-
+      In addition to the drought, pests usually decimated by the flood are now threatening crops. Rats in particular survived in far higher numbers than usual, and are now attacking vegetable and rice crops.
     [/Step]
-
-    [Step]
-
-      The combined effects of the late arrival and short duration of last year's flood now reverberate through the landscape in a cascade of negative impacts.
-
-      While farmers did mostly succeed in growing crops directly after the flood, many of them now face worries about the rest of the agricultural year. The flood was too short to infiltrate deeply into the soil, leaving it thirsty for irrigation. In addition to the drought, pests usually decimated by the flood are now threatening crops. Rats in particular survived in far higher numbers than usual, and are now attacking vegetable and rice crops.
-
-
-      [/Step]
 
     [Step]
       How could this all happen?
@@ -370,12 +401,13 @@ Satellite data from ESA’s Sentinel mission shows the flooded areas of July and
 
     The chain of causality is a long one, reaching from a dam cascade being built upstream, to land-use changes in the Mekong basin. Climate change casts an additional shadow on every link in the chain.
 
-    To begin with, average temperatures in Southeast Asia have risen continuously over the last few decades, in line with global warming. In Viet Nam, the annual average temperature rise has been 0.1 °C per decade since 1900, ramping up to 0.14 °C per decade towards the end of the century. Summer temperature increases are even higher, with average monthly temperatures climbing by 0.1–0.3 °C per decade.
+    To begin with, average temperatures in Southeast Asia have risen continuously over the last few decades, in line with global warming. In Vietnam, the annual average temperature rise has been 0.1 °C per decade since 1900, ramping up to 0.14 °C per decade towards the end of the century. Summer temperature increases are even higher, with average monthly temperatures climbing by 0.1–0.3 °C per decade.
 
     Temperature increase is not the only contributor to the droughts that have struck the region in recent years.
 
     Satellite rain measurements over the Mekong basin show that macro-scale precipitation distribution in 2019 differed significantly from previous years. The torrential Monsoon rains in the catchment area of the Mekong, which generally set in towards the end of May, were sparse in the spring and early summer of 2019. On XXXX 2018, a cumulative XXXX of rain had fallen over the basin area that year - but only XXXX on the same date in 2019.
 
+    Meteorological experts trace the immediate cause for this back to the El Niño Southern Oscillation (ENSO). Approximately occurring every four years, El Niño is a global weather event with impacts on local weather. It is caused by a change in temperature distributions in the Pacific Ocean. Oceanic and atmospheric conditions interact to invert the usual east-west direction of ocean surface winds. Now blowing from west to east, they drive warm equatorial waters towards the eastern Pacific. This, in turn, has impacts on weather patterns such as the Monsoon rains over Southeast Asia.
 
 
      ///Add slider graph of cumulative rainfall, and illustration of rainfall in comparison of years Data extracted from CHIRPS precipitation satellite measurements through Google Earth Engine
@@ -387,47 +419,49 @@ Satellite data from ESA’s Sentinel mission shows the flooded areas of July and
      [var name:"aP_yStart" value:0 /]
 
      // Actual chart
-     [ParametricGraphic hed:"Annual Precipitation" subhed:"More context, why do we care?" source:"Source of the data"]
-        [IdyllVegaLite data:aPrecip spec:`{
-       mark: "bar",
-       encoding: {
-         x: {
-           field: "year",
-           type: "ordinal",
-           axis: {title: "Year"},
-         },
-         y: {
-           field: "precipitation",
-           type: "quantitative",
-           axis: {title: "Precipitation [mm]"},
-           scale: {domain: [aP_yStart, 2000] }
-         }
-       },
-       config: {
-         mark: {
-           tooltip: true,
-           color: "black"
-         }
-       }
-        }` /]
-        [Inset] // Y-Axis slider for annual precipitation charts
-        Y-axis: 0 [Range min:0 max:1200 step:10 value:aP_yStart /] 1200
-        [/Inset]
-        You can move the range slider to change the starting value of the *y-axis*, currently set to [dynamic min:0 max:1200 step:10 value:aP_yStart /].
-     [/ParametricGraphic]
+    //  [ParametricGraphic hed:"Annual Precipitation" subhed:"More context, why do we care?" source:"Source of the data"]
+    //     [IdyllVegaLite width:"container" height:"300" data:aPrecip spec:`{
+    //    mark: "bar",
+    //    encoding: {
+    //      x: {
+    //        field: "year",
+    //        type: "ordinal",
+    //        axis: {title: "Year"},
+    //      },
+    //      y: {
+    //        field: "precipitation",
+    //        type: "quantitative",
+    //        axis: {title: "Precipitation [mm]"},
+    //        scale: {domain: [aP_yStart, 2000] }
+    //      }
+    //    },
+    //    config: {
+    //      mark: {
+    //        tooltip: true,
+    //        color: "black"
+    //      }
+    //    }
+    //     }` /]
+    //     [Inset] // Y-Axis slider for annual precipitation charts
+    //     Y-axis: 0 [Range min:0 max:1200 step:10 value:aP_yStart /] 1200
+    //     [/Inset]
+    //     You can move the range slider to change the starting value of the *y-axis*, currently set to [dynamic min:0 max:1200 step:10 value:aP_yStart /].
+    //  [/ParametricGraphic]
 
-    [br/]
+    // [br/]
 
-     El Nino'd IdyllVegaLite chart. //Data source: https://ggweather.com/enso/oni.htm
-     Something's off here: the slider drops the bars through the x-axis. Probably has to do with the color hack I used here.
-     Should use a layered chart instead.
+    //  El Nino'd IdyllVegaLite chart. //Data source: https://ggweather.com/enso/oni.htm
+    //  Something's off here: the slider drops the bars through the x-axis. Probably has to do with the color hack I used here.
+    //  Should use a layered chart instead.
 
-     [br/]
+    //  [br/]
 
      [var name:"aP_enso_yStart" value:0 /]
 
-     [ParametricGraphic fullWidth:true hed:"Title of Graphic" subhed:"More context, why do we care?" source:"Source of the data"]
-       [IdyllVegaLite data:aPrecip spec:`{
+
+     [ParametricGraphic  style:`{maxWidth: 720, margin: '1em auto'}` fullWidth:true hed:"Title of Graphic" subhed:"More context, why do we care?" source:"Source of the data"]
+       [IdyllVegaLite data:aPrecip width:"container" height:"300" spec:`{
+         config: vlConfig,
          mark: {
            type: "bar",
            tooltip: true
@@ -446,8 +480,7 @@ Satellite data from ESA’s Sentinel mission shows the flooded areas of July and
            },
            color: {
              field: "color",
-             type: "nominal",
-             scale: null
+             scale: {domain: ["black", "yellow"], range: ["#222222", '#ccc'] }
            }
          }
        }` /]
@@ -455,6 +488,14 @@ Satellite data from ESA’s Sentinel mission shows the flooded areas of July and
        Y-axis: 0 [Range min:0 max:1200 step:10 value:aP_enso_yStart /] 1200
        [/Inset]
      [/ParametricGraphic]
+
+
+
+    El Niño is a periodic natural phenomenon, which has been continuously observed over the past 120 years. But here, climate change enters the equation for the second time.
+
+    Scientists warn that global warming could exacerbate El Niño to make the events positively devastating. A recent study published in Nature Geoscience assessed the last 400 years of El Niño by researching coral reef growth. Its results show that in recent decades, the events have grown both more frequent and far more severe. A major cause of this trend?
+
+
 
 
   [Scroller]
@@ -497,25 +538,19 @@ Satellite data from ESA’s Sentinel mission shows the flooded areas of July and
 
      [Step]
 
-      Meteorological experts trace the immediate cause for this back to the El Niño Southern Oscillation (ENSO). Approximately occurring every four years, El Niño is a global weather event with impacts on local weather. It is caused by a change in temperature distributions in the Pacific Ocean. Oceanic and atmospheric conditions interact to invert the usual east-west direction of ocean surface winds. Now blowing from west to east, they drive warm equatorial waters towards the eastern Pacific. This, in turn, has impacts on weather patterns such as the Monsoon rains over Southeast Asia.
-
-      El Niño is a periodic natural phenomenon, which has been continuously observed over the past 120 years. But here, climate change enters the equation for the second time.
-
-      Scientists warn that global warming could exacerbate El Niño to make the events positively devastating. A recent study published in Nature Geoscience assessed the last 400 years of El Niño by researching coral reef growth. Its results show that in recent decades, the events have grown both more frequent and far more severe. A major cause of this trend?
-
-      Climate change.
-
-      In Southeast Asia, 2015/16 saw a drought similarly severe as that of 2019. This period also saw the strongest-ever El Niño, also referred to as a Super El Niño event.
+       In Southeast Asia, 2015/16 saw a drought similarly severe as that of 2019. This period also saw the strongest-ever El Niño, also referred to as a Super El Niño event.
 
       The effects of anthropogenic climate change on the Mekong basin are undeniable. But humans also have more direct impacts on the delta, which further aggravate floods droughts.
+
+
+      First and foremost, hydropower projects have been increasingly damming up the Mekong and its tributaries. The first dams were built in the 1960s, and for decades both the number of dams and the amount of river water they hold back remained limited. But in the early 2000, both the number of dams and their capacity skyrocketed. In 2005, there were 16 dams on the Mekong and its tributaries. Now, there are nearly 100.  Another 30 are currently under construction.
+
+      Overall, these hydropower stations have the potential to generate 13 000 MW of electricity - more than enough to power the whole of New York City. According to a 2018 study, the percentage of river water stored for hydropower will rise tenfold from 2% in 2008 to almost 20% in 2025.
 
       [/Step]
 
       [Step]
 
-      First and foremost, hydropower projects have been increasingly damming up the Mekong and its tributaries. The first dams were built in the 1960s, and for decades both the number of dams and the amount of river water they hold back remained limited. But in the early 2000, both the number of dams and their capacity skyrocketed. In 2005, there were 16 dams on the Mekong and its tributaries. Now, there are nearly 100.  Another 30 are currently under construction.
-
-      Overall, these hydropower stations have the potential to generate 13 000 MW of electricity - more than enough to power the whole of New York City. According to a 2018 study, the percentage of river water stored for hydropower will rise tenfold from 2% in 2008 to almost 20% in 2025.
 
       2019 also saw the opening of Xayaburi in Laos, the first of eleven dams built directly on the Mekong mainstream. Its construction originally began in 2012 but was fraught with complaints from environmentalists and citizens' groups.
 

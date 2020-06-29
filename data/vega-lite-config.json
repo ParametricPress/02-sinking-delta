@@ -1,0 +1,8 @@
+{
+  "background": "none",
+  "border": "none",
+  "text": {
+    "color": "#ADADAD"
+  },
+  "axis": {"grid": false}
+}
