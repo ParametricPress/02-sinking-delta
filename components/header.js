@@ -21,11 +21,8 @@ class Header extends React.PureComponent {
                     <div className="parametric-long-title" >
                       {formatTitle(this.props.longTitle)}
                     </div>
-                    <div style={{fontSize: 16, fontWeight: 'bold', marginTop: 0, marginBottom: '2em'}}>
-                      {props.date}
-                    </div>
                   </div>
-                  <div style={{display: 'flex', flexDirection: 'row', color: '#000000', fontSize: 12, fontWeight: 500}}>
+                  <div className="byline-container" style={{display: 'flex', flexDirection: 'row', color: '#000000', fontSize: 12, fontWeight: 500}}>
                     <div>
                       <div style={{fontWeight: 'bold'}}>
                         Created by
@@ -40,7 +37,7 @@ class Header extends React.PureComponent {
                     </div>
                     <div style={{marginLeft: '4em'}}>
                       <div style={{fontWeight: 'bold'}}>
-                        Metadata
+                        {props.date}
                       </div>
                       <div>
                         <a href={this.props.source}>Source Code</a><br/>
