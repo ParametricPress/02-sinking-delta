@@ -1,11 +1,10 @@
-[meta title:"TK Article Title" description:"TK Article Description"
+[meta title:"Drought of the Sinking Delta" description:"TK Article Description"
   shareImageUrl:"https://parametric.press/issue-02/tk-article-slug/static/images/share.png"
   shareImageWidth:"880"
   shareImageHeight:"440" /]
 
 [var name:"parametricSlug" value:"sinking-delta" /]
 
-[Nav fullWidth:true /]
 
 [Header
   title:`["Drought of the", "Sinking Delta"]`
@@ -13,9 +12,9 @@
   date:"May 15, 2020"
   dek:"TK TK A punchy description of why we should read your article."
   fullWidth:true
-  headerVideo:"static/videos/49.m4v"
+  headerImage:"static/images/20_fhd.jpg"
   authors:`[{
-    name: "",
+    name: "Christina Orieschnig",
     role: "",
     url: ""
   }]`
@@ -23,6 +22,8 @@
   archive:`'https://parametric-press-archives.s3.amazonaws.com/issue-02/' + parametricSlug + '.warc.gz'`
   source:`"https://github.com/ParametricPress/02-" + parametricSlug `
 /]
+
+[Nav fullWidth:true /]
 
 // Set-up for video, later
 [var name:"playVideo" value:false /]
@@ -39,38 +40,38 @@
 // BEGIN Body text
 
 // BEGIN Intro
-[Scroller currentStep:scrollerIndex]
-[Graphic]
- [div fullWidth:true style:`{
-   width: '100vw',
-   height: '100vh',
-   // position: 'fixed',
-   transition: 'opacity 1s',
-   display: 'flex',
-   flexDirection: 'row',
-   alignItems:' center'
-   // opacity: stepperState === 'hero' ? 1 : 0,
-   // background: 'url(static/images/background-1.jpg) no-repeat center center fixed',
- }`]
-   [img style:`{width: "100vw", height:'auto', maxHeight: 'none'}` src:"static/images/20_fhd.jpg" /]
- [/div]
-[/Graphic]
+// [Scroller currentStep:scrollerIndex]
+// [Graphic]
+//  [div fullWidth:true style:`{
+//    width: '100vw',
+//    height: '100vh',
+//    // position: 'fixed',
+//    transition: 'opacity 1s',
+//    display: 'flex',
+//    flexDirection: 'row',
+//    alignItems:' center'
+//    // opacity: stepperState === 'hero' ? 1 : 0,
+//    // background: 'url(static/images/background-1.jpg) no-repeat center center fixed',
+//  }`]
+//    [img style:`{width: "100vw", height:'auto', maxHeight: 'none'}` src:"static/images/20_fhd.jpg" /]
+//  [/div]
+// [/Graphic]
 
-[Step]
+// [Step]
 
 River deltas are among the most fertile and biodiverse areas on the planet. Where a large river transitions into the sea, and a dendritic web of watercourses stretches over floodplains, both animal and plant life thrive.
 
 Deltas have always been hubs of human development. Ancient civilizations flourished in the Nile and the Ganges deltas, and today, half a billion people call them home - even though they cover only 1 % of the earth's land surface. With rich crops and abundant fish, deltas are crucial to food security and economic development.
 
-[/Step]
+// [/Step]
 
-[Step]
+// [Step]
 
 Deltas are also extremely vulnerable.
 
-[/Step]
+// [/Step]
 
-[Step]
+// [Step]
 
 This is because they are located at the intersection of terrestrial and aquatic ecosystems. Their entire existence depends on a delicate balance of factors: temperature, freshwater and saltwater, precipitation and river flow. It is a balance only too easily disturbed.
 
@@ -80,13 +81,8 @@ But what exactly causes this double threat? And what can be done about it?
 
 The answers to these questions are as complex as the environmental and political problems casting their shadows over the region. At their core - climate change.
 
-[Aside]
-  [Recirc slug:parametricSlug /]
-[/Aside]
 
-[/Step]
-
-[/Scroller]
+// [/Scroller]
 // END Intro
 
 
@@ -419,8 +415,8 @@ Satellite data from ESA’s Sentinel mission shows the flooded areas of July and
 
      [/Step]
 
-     [Step]
-
+  [/Scroller]
+  [Scroller]
      // Add video comparison of rainfall over the Mekong Basin (annotate grey area to say something along the lines of ‘all rain that falls here eventually flows into the Mekong)
      // VIDEO
      [Graphic]
@@ -437,7 +433,7 @@ Satellite data from ESA’s Sentinel mission shows the flooded areas of July and
        }` ]
 
          // [Youtube play:`videoStep >= 1 && mapStep < 2` id:"k81wTUT7x4Y" /]
-         [Conditional if:isMobile null:true]
+         [Conditional if:isMobile]
            [img style:`{width: "100vw", height:'auto', maxHeight: 'none'}` src:"static/images/record.png" /]
          [/Conditional]
          [Conditional if:`!isMobile`]
@@ -457,7 +453,6 @@ Satellite data from ESA’s Sentinel mission shows the flooded areas of July and
      //
      //Data: CHIRPS precipitation visualisation 3x3 km, Google Earth Engine
 
-     [/Step]
 
      [Step]
 
@@ -585,6 +580,12 @@ Satellite data from ESA’s Sentinel mission shows the flooded areas of July and
 //    [img style:`{width: "100vw", height:'auto', maxHeight: 'none'}` src:"static/images/86_fhd.jpg" /]
 //  [/div]
 // [/Graphic]
+
+
+
+  [Recirc slug:parametricSlug /]
+
+// [/Step]
 
 ##Rising Seas and Sinking Lands
 
