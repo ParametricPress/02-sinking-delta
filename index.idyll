@@ -6,6 +6,7 @@
 [var name:"parametricSlug" value:"sinking-delta" /]
 
 
+  // headerVideo:"static/videos/49.m4v"
 [Header
   title:`["Drought of the", "Sinking Delta"]`
   longTitle:`["Drought of the Sinking Delta"]`
@@ -111,7 +112,8 @@ The answers to these questions are as complex as the environmental and political
    // opacity: stepperState === 'hero' ? 1 : 0,
    // background: 'url(static/images/background-1.jpg) no-repeat center center fixed',
  }` ]
-   [img style:`{width: "100vw", height:'auto', maxHeight: 'none'}` src:"static/images/17_fhd.jpg" /]
+   [img style:`{width: "100vw", height:'auto', maxHeight: 'none'}` src:"static/images/20_fhd.jpg" /]
+  //  [img style:`{width: "100vw", height:'auto', maxHeight: 'none'}` src:"static/images/17_fhd.jpg" /]
 
  [/div]
 [/Graphic]
@@ -128,59 +130,48 @@ At Cambodia's capital Phnom Penh, the river splits into branches to fan out into
 
 [/Step]
 
-[Step]
+[/Scroller]
+
+
+// [Step]
 
 In its wetland habitats, biodiversity flourishes - and agriculture. Over eighteen million people live in the delta, but it supplies over 200 million with rice, fruit, vegetables and fish throughout Cambodia and Vietnam. Agricultural products from the area also bolster international exports for both countries.
+
 
 The abundant fertility of the Mekong delta is based on the annual Monsoon cycle. Fed by torrential rains, the Mekong begins to swell in June, overbrimming its banks and inundating the surrounding floodplains. The land remains underwater for several months, until the flood begins to recede in October to November.
 
 Far from being a disaster, these inundations are welcomed by the local population.
 
+
+
+// [/Step]
+// [/Scroller]
+
+// Insert juxtapose image slider from  https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=7e4b9a76-6ce0-11ea-b9b8-0edaf8f81e27
+[ParametricGraphic fullWidth:true hed:"Compare Inundation Extents" subhed:"More context, why do we care?" source:"Source of the data"]
+
+  // Fits better without the ParametricGraphic (and setting fullWidth:true on the iframe instead), but doesn't integrate as well.
+  [iframe fullWidth:true frameborder:"0" class:"juxtapose" style:`{width: 'calc(100% + 50px)', height: '60vh', margin: '1em -25px', overflowY: 'hidden'}` src:"https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=7e4b9a76-6ce0-11ea-b9b8-0edaf8f81e27"][/iframe]
+  // original params: width - 1366px, height - 796px , which resulted in scroll bars
+  // a simple solution would be to just make the original images smaller and create a new juxtapose on knightlab.
+
+  [MattNote]
+    @Christina can we make a new juxtapose with a wider aspect ration so it fits the page a little better? It might be nice to make a vertically oriented one for mobile too
+  [/MattNote]
+
+[/ParametricGraphic]
+
+// END Living with the River
 During the wet season, the delta is replenished. Fish populations explode. Water infiltrates the soil, dusty from months of little to no precipitation, and is stored in canals and lowland areas. The sediments left behind at the end of the wet season are full of nutrients. In the rich, muddy earth that emerges from the receding floods, farmers plant rice and vegetables, marking the beginning of the new agricultural year.
 
-[/Step]
-
-[Step]
 
 This cycle is so deeply ingrained in the consciousness and identity of the people that it forms the basis of some of the region's most important cultural traditions. In Cambodia, the Water Festival (Bon Om Touk) is celebrated in November. It marks the beginning of the flood recession with fireworks, boat races and nautical parades.
+
 
 These traditions reach back to the Khmer empire of the 9th-15th century. They illustrate the central importance of the yearly flood pulse for the delta, and how it has been rooted in local consciousness for hundreds of years.
 
 Today, the hydrological balance in the delta is shifting.
 
-[/Step]
-
-[/Scroller]
-
-// Insert juxtapose image slider from  https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=7e4b9a76-6ce0-11ea-b9b8-0edaf8f81e27
-[ParametricGraphic fullWidth:true hed:"Compare Inundation Extents" subhed:"More context, why do we care?" source:"Source of the data"]
-  // Fits better without the ParametricGraphic (and setting fullWidth:true on the iframe instead), but doesn't integrate as well.
-  [iframe frameborder:"0" class:"juxtapose" width:"1380px" height:"820px" src:"https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=7e4b9a76-6ce0-11ea-b9b8-0edaf8f81e27"][/iframe]
-  // original params: width - 1366px, height - 796px , which resulted in scroll bars
-  // a simple solution would be to just make the original images smaller and create a new juxtapose on knightlab.
-[/ParametricGraphic]
-
-// END Living with the River
-
-// BEGIN Droughts, Dams, and the Distribution of Rain
-[Scroller currentStep:scrollerIndex]
-[Graphic]
- [div fullWidth:true style:`{
-   width: '100vw',
-   height: '100vh',
-   // position: 'fixed',
-   transition: 'opacity 1s',
-   display: 'flex',
-   flexDirection: 'row',
-   alignItems:' center'
-   // opacity: stepperState === 'hero' ? 1 : 0,
-   // background: 'url(static/images/background-1.jpg) no-repeat center center fixed',
- }` ]
-   [img style:`{width: "100vw", height:'auto', maxHeight: 'none'}` src:"static/images/88_fhd.jpg" /]
- [/div]
-[/Graphic]
-
-[Step]
 
 ##Droughts, Dams, and the Distribution of Rain
 
@@ -188,11 +179,44 @@ At the beginning of August 2019, the delta was still dry.
 
 Endless water surfaces should have been stretching into the horizon. Instead, the bare earth of the floodplains was cracked with heat.
 
+[img fullWidth:true style:`{width: "67vw", height:'auto', maxHeight: 'none', margin: '1em auto'}` src:"static/images/88_fhd.jpg" /]
+
+
 Satellite data from ESA’s Sentinel mission shows the flooded areas of July and August 2019 in stark contrast to those of previous years. On XXXX 2018, XXXX square miles of the delta were inundated. On the same day a year later, it was only XXXX square miles. In tandem, the water levels of the Mekong stayed low well into August.
 
-[/Step]
 
-[/Scroller]
+// // BEGIN Droughts, Dams, and the Distribution of Rain
+// [Scroller currentStep:scrollerIndex]
+// [Graphic]
+//  [div fullWidth:true style:`{
+//    width: '100vw',
+//    height: '100vh',
+//    // position: 'fixed',
+//    transition: 'opacity 1s',
+//    display: 'flex',
+//    flexDirection: 'row',
+//    alignItems:' center'
+//    // opacity: stepperState === 'hero' ? 1 : 0,
+//    // background: 'url(static/images/background-1.jpg) no-repeat center center fixed',
+//  }` ]
+//    [img style:`{width: "100vw", height:'auto', maxHeight: 'none'}` src:"static/images/88_fhd.jpg" /]
+//  [/div]
+// [/Graphic]
+
+// [Step]
+
+// ##Droughts, Dams, and the Distribution of Rain
+
+// At the beginning of August 2019, the delta was still dry.
+
+// Endless water surfaces should have been stretching into the horizon. Instead, the bare earth of the floodplains was cracked with heat.
+
+// Satellite data from ESA’s Sentinel mission shows the flooded areas of July and August 2019 in stark contrast to those of previous years. On XXXX 2018, XXXX square miles of the delta were inundated. On the same day a year later, it was only XXXX square miles. In tandem, the water levels of the Mekong stayed low well into August.
+
+// [/Step]
+
+// [/Scroller]
+
    // insert the satellite extents
 
    // CHART: Inundation extents
@@ -326,23 +350,31 @@ Satellite data from ESA’s Sentinel mission shows the flooded areas of July and
 
       The delay in itself was already a major problem for the many farmers of wet season rice, a crop which depends on the inundations starting at the right time. What’s worse, the flood began to drain away at roughly the usual time, spelling disaster on a larger scale. As the flood curves of the Mekong water levels show, the 2019 flood pulse was only about half as long as in past years.
 
+    [/Step]
+
+    [Step]
+
       The combined effects of the late arrival and short duration of last year's flood now reverberate through the landscape in a cascade of negative impacts.
 
       While farmers did mostly succeed in growing crops directly after the flood, many of them now face worries about the rest of the agricultural year. The flood was too short to infiltrate deeply into the soil, leaving it thirsty for irrigation. In addition to the drought, pests usually decimated by the flood are now threatening crops. Rats in particular survived in far higher numbers than usual, and are now attacking vegetable and rice crops.
 
-      How could this all happen?
 
       [/Step]
 
-      [Step]
+    [Step]
+      How could this all happen?
+    [/Step]
 
-      The chain of causality is a long one, reaching from a dam cascade being built upstream, to land-use changes in the Mekong basin. Climate change casts an additional shadow on every link in the chain.
+    [/Scroller]
 
-      To begin with, average temperatures in Southeast Asia have risen continuously over the last few decades, in line with global warming. In Viet Nam, the annual average temperature rise has been 0.1 °C per decade since 1900, ramping up to 0.14 °C per decade towards the end of the century. Summer temperature increases are even higher, with average monthly temperatures climbing by 0.1–0.3 °C per decade.
 
-      Temperature increase is not the only contributor to the droughts that have struck the region in recent years.
+    The chain of causality is a long one, reaching from a dam cascade being built upstream, to land-use changes in the Mekong basin. Climate change casts an additional shadow on every link in the chain.
 
-      Satellite rain measurements over the Mekong basin show that macro-scale precipitation distribution in 2019 differed significantly from previous years. The torrential Monsoon rains in the catchment area of the Mekong, which generally set in towards the end of May, were sparse in the spring and early summer of 2019. On XXXX 2018, a cumulative XXXX of rain had fallen over the basin area that year - but only XXXX on the same date in 2019.
+    To begin with, average temperatures in Southeast Asia have risen continuously over the last few decades, in line with global warming. In Viet Nam, the annual average temperature rise has been 0.1 °C per decade since 1900, ramping up to 0.14 °C per decade towards the end of the century. Summer temperature increases are even higher, with average monthly temperatures climbing by 0.1–0.3 °C per decade.
+
+    Temperature increase is not the only contributor to the droughts that have struck the region in recent years.
+
+    Satellite rain measurements over the Mekong basin show that macro-scale precipitation distribution in 2019 differed significantly from previous years. The torrential Monsoon rains in the catchment area of the Mekong, which generally set in towards the end of May, were sparse in the spring and early summer of 2019. On XXXX 2018, a cumulative XXXX of rain had fallen over the basin area that year - but only XXXX on the same date in 2019.
 
 
 
@@ -384,13 +416,14 @@ Satellite data from ESA’s Sentinel mission shows the flooded areas of July and
         You can move the range slider to change the starting value of the *y-axis*, currently set to [dynamic min:0 max:1200 step:10 value:aP_yStart /].
      [/ParametricGraphic]
 
-     [/Step]
-
-     [Step]
+    [br/]
 
      El Nino'd IdyllVegaLite chart. //Data source: https://ggweather.com/enso/oni.htm
      Something's off here: the slider drops the bars through the x-axis. Probably has to do with the color hack I used here.
      Should use a layered chart instead.
+
+     [br/]
+
      [var name:"aP_enso_yStart" value:0 /]
 
      [ParametricGraphic fullWidth:true hed:"Title of Graphic" subhed:"More context, why do we care?" source:"Source of the data"]
@@ -423,9 +456,7 @@ Satellite data from ESA’s Sentinel mission shows the flooded areas of July and
        [/Inset]
      [/ParametricGraphic]
 
-     [/Step]
 
-  [/Scroller]
   [Scroller]
      // Add video comparison of rainfall over the Mekong Basin (annotate grey area to say something along the lines of ‘all rain that falls here eventually flows into the Mekong)
      // VIDEO
