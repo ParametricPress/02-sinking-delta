@@ -283,7 +283,7 @@ The delay in itself was already a major problem for the many farmers of wet seas
           { // time series layer
             mark: {
               type: "area",
-              line: {color: "#000000"},
+              line: {color: "#adadad"},
               //tooltip: true,
               color: {
                 x1: 1,
@@ -659,8 +659,6 @@ The delay in itself was already a major problem for the many farmers of wet seas
 
 
 
-  [Recirc slug:parametricSlug /]
-
 // [/Step]
 
 ##Rising Seas and Sinking Lands
@@ -691,6 +689,8 @@ The delay in itself was already a major problem for the many farmers of wet seas
         //  [/Step]
 
 
+  [Recirc slug:parametricSlug /]
+
         //  [Step]
 
          While the sea is rising, the land is also sinking due to subsidence. The landscape loses elevation, either because sediments are being compacted, or because subterranean voids collapse. These voids can either exist naturally - such as cave systems in limestone - or originate from human activities, such as the extraction of oil or groundwater.
@@ -716,6 +716,9 @@ The delay in itself was already a major problem for the many farmers of wet seas
 
 
         //  [Step]
+
+    [img fullWidth:true style:`{maxWidth: 960, height:'auto', maxHeight: 'none', margin: '1em auto'}` src:"static/images/62_fhd.jpg" /]
+
 
          The effects are already being felt: Storm floods are sweeping across the delta ever more frequently, and much farther inland than before. The coastline, renowned for its beauty and a popular tourist destination, is slowly eroding away. Salty seawater encroaches into the river system, tilting the balance in ecosystems, and threatening agriculture and freshwater fisheries.
 
