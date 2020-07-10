@@ -72,3 +72,4 @@ fugazi.idyll
 dev/
 data/archive/
 static/images/large/
+index.idyll.backup*

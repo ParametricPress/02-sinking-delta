@@ -164,18 +164,30 @@ The abundant fertility of the Mekong delta is based on the annual Monsoon cycle.
 
 
 // Insert juxtapose image slider from https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=7e4b9a76-6ce0-11ea-b9b8-0edaf8f81e27
+
+
 [ParametricGraphic fullWidth:true style:`{maxWidth: 960, margin: '1em auto'}` hed:"Compare Inundation Extents" subhed:"More context, why do we care?" source:"Source of the data"]
 
   // Fits better without the ParametricGraphic (and setting fullWidth:true on the iframe instead), but doesn't integrate as well.
-  [iframe frameborder:"0" class:"juxtapose" style:`{width: 'calc(100% + 50px)', height: '60vh', margin: '1em -25px', overflowY: 'hidden'}` src:"https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=7e4b9a76-6ce0-11ea-b9b8-0edaf8f81e27"][/iframe]
-  // original params: width - 1366px, height - 796px , which resulted in scroll bars
-  // a simple solution would be to just make the original images smaller and create a new juxtapose on knightlab.
+  //Original
+    //[iframe frameborder:"0" class:"juxtapose" style:`{width: 'calc(100% + 50px)', height: '60vh', margin: '1em -25px', overflowY: 'hidden'}` src:"https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=7e4b9a76-6ce0-11ea-b9b8-0edaf8f81e27"][/iframe]
+
+  //V2 vertical
+  [Conditional if:`!isMobile `]
+    [iframe frameborder:"0" class:"juxtapose" width:"100%" height:"570" src:"https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=62914f70-c2b6-11ea-bf88-a15b6c7adf9a"][/iframe]
+  [/Conditional]
+
+  //V2 horizontal
+  //[Conditional if:`isMobile `]
+    [iframe frameborder:"0" class:"juxtapose" width:"100%" height:"570" src:"https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=3ae05cf4-c2b7-11ea-bf88-a15b6c7adf9a"][/iframe]
+  //[/Conditional]
 
   [MattNote]
     @Christina can we make a new juxtapose with a wider aspect ration so it fits the page a little better? It might be nice to make a vertically oriented one for mobile too
   [/MattNote]
 
 [/ParametricGraphic]
+
 
 Far from being a disaster, these inundations are welcomed by the local population.
 
