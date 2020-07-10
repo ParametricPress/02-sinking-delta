@@ -178,9 +178,9 @@ The abundant fertility of the Mekong delta is based on the annual Monsoon cycle.
   [/Conditional]
 
   //V2 horizontal
-  //[Conditional if:`isMobile `]
+  [Conditional if:`isMobile `]
     [iframe frameborder:"0" class:"juxtapose" width:"100%" height:"570" src:"https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=3ae05cf4-c2b7-11ea-bf88-a15b6c7adf9a"][/iframe]
-  //[/Conditional]
+  [/Conditional]
 
   [MattNote]
     @Christina can we make a new juxtapose with a wider aspect ration so it fits the page a little better? It might be nice to make a vertically oriented one for mobile too
