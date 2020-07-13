@@ -170,21 +170,17 @@ The abundant fertility of the Mekong delta is based on the annual Monsoon cycle.
 
   // Fits better without the ParametricGraphic (and setting fullWidth:true on the iframe instead), but doesn't integrate as well.
   //Original
-    //[iframe frameborder:"0" class:"juxtapose" style:`{width: 'calc(100% + 50px)', height: '60vh', margin: '1em -25px', overflowY: 'hidden'}` src:"https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=7e4b9a76-6ce0-11ea-b9b8-0edaf8f81e27"][/iframe]
+    //[iframe frameBorder:"0" className:"juxtapose" style:`{width: 'calc(100% + 50px)', height: '60vh', margin: '1em -25px', overflowY: 'hidden'}` src:"https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=7e4b9a76-6ce0-11ea-b9b8-0edaf8f81e27"][/iframe]
 
   //V2 vertical
   [Conditional if:`!isMobile `]
-    [iframe frameborder:"0" class:"juxtapose" width:"100%" height:"570" src:"https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=62914f70-c2b6-11ea-bf88-a15b6c7adf9a"][/iframe]
+    [iframe frameBorder:"0" className:"juxtapose" width:"100%" height:"491" src:"https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=62914f70-c2b6-11ea-bf88-a15b6c7adf9a"][/iframe]
   [/Conditional]
 
   //V2 horizontal
   [Conditional if:`isMobile `]
-    [iframe frameborder:"0" class:"juxtapose" width:"100%" height:"570" src:"https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=3ae05cf4-c2b7-11ea-bf88-a15b6c7adf9a"][/iframe]
+    [iframe frameBorder:"0" className:"juxtapose" width:"100%" height:"491" src:"https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=3ae05cf4-c2b7-11ea-bf88-a15b6c7adf9a"][/iframe]
   [/Conditional]
-
-  [MattNote]
-    @Christina can we make a new juxtapose with a wider aspect ration so it fits the page a little better? It might be nice to make a vertically oriented one for mobile too
-  [/MattNote]
 
 [/ParametricGraphic]
 
@@ -286,91 +282,102 @@ The delay in itself was already a major problem for the many farmers of wet seas
       [derived name:"rolling_mean_date_b" value:`inex[date_b_index].rolling_mean` /]
 
    // Graphic Wrapper: With chart and slide controls
-   [ParametricGraphic fullWidth:true  style:`{maxWidth: 960, margin: '1em auto'}` hed:"Compare Inundation Extents" subhed:"More context, why do we care?" source:"Source of the data"]
-      // Actual Chart
-      [IdyllVegaLite data:inex width:"container" height:"200" spec:`{
-        config: vlConfig,
-        layer: [
-          { // time series layer
-            mark: {
-              type: "area",
-              line: {color: "#adadad"},
-              //tooltip: true,
-              color: {
-                x1: 1,
-                y1: 1,
-                x2: 1,
-                y2: 0.5,
-                gradient: "linear",
-                stops: [
-                  {
-                    offset: 0,
-                    color: "#000000"
-                  },
-                  {
-                    offset: 1,
-                    color: "#000000"
-                  }
-                ]
-              }
-            },
-            encoding: {
-              x: {
-                field: "date",
-                type: "temporal",
-                axis: {
-                  title: "Date",
-                  labelAngle: -45,
-                  tickCount: {interval: "year"}
-                }
-              },
-              y: {
-                field: "rolling_mean",
-                type: "quantitative",
-                axis: {title: "Delta flooded [%]"},
-                scale: {domain: [15, 55] }
-              }
-            } // end encoding
-          }, // end time series layer
-          { // highlight layer
-            data: {values: [
-              {"date": date_a, "rolling_mean": rolling_mean_date_a},
-              {"date": date_b, "rolling_mean": rolling_mean_date_b}
-              ]},
-            mark: {
-              type: "point",
-              filled: true,
-              color: "black",
-              tooltip: true
-              },
-            encoding: {
-              x: {
-                field: "date",
-                //timeUnit: "year",
-                type: "temporal"
-              },
-              y: {
-                field: "rolling_mean",
-                type: "quantitative"
-              }
-            } // end encoding
-          } // end highlight layer
-        ] // end layer composer
-      }` /] // end IdyllVegaLite
+   [ParametricGraphic fullWidth:true  style:`{maxWidth: 960, margin: '1em auto'}` hed:"Volatile Innundation, Outlier or Sign of Things to Come?" subhed:"TK The highest high and the lowest low for 2020..." source:"Source of the data"]
 
-      // Sliders
-      [div style:`{display: 'flex', flexDirection: 'row'}`]
-        [div]
-          [Display value:`date_first ` /] [Range min:0 max:row_count step:1 value:date_a_index /] [Display value:`date_last ` /]
-        [/div]
-        [div]
-          [Display value:`date_first ` /] [Range min:0 max:row_count step:1 value:date_b_index /] [Display value:`date_last ` /]
-        [/div]
+
+      // Actual Chart
+      [div]
+        [IdyllVegaLite actions:false data:inex width:"container" height:"200" spec:`{
+          config: vlConfig,
+          layer: [
+            { // time series layer
+              mark: {
+                type: "area",
+                //tooltip: true,
+                fill: '#333333'
+              },
+              encoding: {
+                x: {
+                  field: "date",
+                  type: "temporal",
+                  axis: {
+                    title: "Date",
+                    labelAngle: -45,
+                    tickCount: {interval: "year"}
+                  }
+                },
+                y: {
+                  field: "rolling_mean",
+                  type: "quantitative",
+                  axis: {title: "Delta flooded [%]"},
+                  scale: {domain: [15, 55] }
+                }
+              } // end encoding
+            }, // end time series layer
+            { // time series highlight layer
+              mark: {
+                type: "line",
+                color: "#D8FFA2"
+              },
+              encoding: {
+                x: {
+                  field: "date",
+                  type: "temporal",
+                  axis: {
+                    title: "Date",
+                    labelAngle: -45,
+                    tickCount: {interval: "year"}
+                  }
+                },
+                y: {
+                  field: "rolling_mean",
+                  type: "quantitative",
+                  axis: {title: "Delta flooded [%]"},
+                  scale: {domain: [15, 55] }
+                }
+              } // end encoding
+            }, // end time series layer
+            { // highlight layer
+              data: {values: [
+                {"date": date_a, "rolling_mean": rolling_mean_date_a},
+                {"date": date_b, "rolling_mean": rolling_mean_date_b}
+                ]},
+              mark: {
+                type: "point",
+                filled: true,
+                color: "D8FFA2",
+                tooltip: true
+                },
+              encoding: {
+                x: {
+                  field: "date",
+                  //timeUnit: "year",
+                  type: "temporal"
+                },
+                y: {
+                  field: "rolling_mean",
+                  type: "quantitative"
+                }
+              } // end encoding
+            } // end highlight layer
+          ] // end layer composer
+        }` /] // end IdyllVegaLite
       [/div]
 
-      // Text display
-      On [Display value:`date_a` /], [Display value:`rolling_mean_date_a` format:".1f"/]% of the delta were flooded, while [Display value:`rolling_mean_date_b` format:".1f"/]% were flooded on [Display value:`date_b` /].
-
+      [div style:`{fontSize: '1.25em', lineHeight: 1.5}` ]
+        // Text display
+        // TODO - create a datepicker class
+        On [Display value:`date_a.toLocaleString()` /], [Display value:`rolling_mean_date_a` format:".1f"/]% of the delta were flooded, while [Display value:`rolling_mean_date_b` format:".1f"/]% were flooded on [Display value:`date_b` /].
+      [/div]
+      // // Sliders
+      // [div style:`{display: 'flex', flexDirection: 'row'}`]
+      //   [div]
+      //     [Display value:`date_first ` /] [Range min:0 max:row_count step:1 value:date_a_index /] [Display value:`date_last ` /]
+      //   [/div]
+      //   [div]
+      //     [Display value:`date_first ` /] [Range min:0 max:row_count step:1 value:date_b_index /] [Display value:`date_last ` /]
+      //   [/div]
+      // [/div]
     [/ParametricGraphic]
 
 
@@ -516,7 +523,7 @@ The delay in itself was already a major problem for the many farmers of wet seas
 
 
      [ParametricGraphic  style:`{maxWidth: 720, margin: '1em auto'}` fullWidth:true hed:"Title of Graphic" subhed:"More context, why do we care?" source:"Source of the data"]
-       [IdyllVegaLite data:aPrecip width:"container" height:"300" spec:`{
+       [IdyllVegaLite actions:false data:aPrecip width:"container" height:"300" spec:`{
          config: vlConfig,
          mark: {
            type: "bar",
@@ -587,7 +594,8 @@ The delay in itself was already a major problem for the many farmers of wet seas
 
       // Actual chart:
       [ParametricGraphic hed:"Title of Graphic" subhed:"More context, why do we care?" source:"Source of the data"]
-      [IdyllVegaLite data:dams spec:`{
+      [IdyllVegaLite actions:false data:dams width:"container" spec:`{
+        config: vlConfig,
         encoding: {
           x: {
             field: "year",

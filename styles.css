@@ -251,3 +251,12 @@ video {
 .parametric-graphic-dek {
   color: #222222;
 }
+.parametric-graphic-hed {
+  font-family: 'Editorial New';
+}
+
+.idyll-display {
+  font-family: inherit;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
