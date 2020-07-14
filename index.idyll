@@ -64,20 +64,20 @@
 
 [LedeA]
 
-River deltas are among the most fertile and biodiverse areas on the planet. Where a large river transitions into the sea, and a dendritic web of watercourses stretches over floodplains, both animal and plant life thrive.
+River deltas are among the most fertile and biodiverse ecosystems on the planet. Where a large river transitions into the sea, and a dendritic web of watercourses stretches over floodplains, both animal and plant life thrive.
 
 [/LedeA]
 
 [br/]
 
 [LedeB]
-Deltas have always been hubs of human development. Ancient civilizations flourished in the Nile and the Ganges deltas, and today, half a billion people call them home - even though they cover only 1 % of the earth's land surface. With rich crops and abundant fish, deltas are crucial to food security and economic development.
+Deltas have always been hubs of human development. Ancient civilizations flourished in the Nile and the Ganges deltas. Today, half a billion people call deltas home - even though they cover only 1% of the earth's land surface. With rich crops and abundant fish, deltas are crucial to food security and economic development.
 
 // [/Step]
 
 // [Step]
 
-Deltas are also extremely vulnerable.
+However, deltas are also extremely vulnerable.
 
 [/LedeB]
 
@@ -86,35 +86,24 @@ Deltas are also extremely vulnerable.
 
 // [Step]
 
-This is because they are located at the intersection of terrestrial and aquatic ecosystems. Their entire existence depends on a delicate balance of factors: temperature, freshwater and saltwater, precipitation and river flow. It is a balance only too easily disturbed.
+Located at the intersection of terrestrial and aquatic ecosystems, a delta's entire existence depends on a delicate balance of factors: Temperature. Freshwater and saltwater. Precipitation and river flow.
 
-That is exactly what is happening in the delta of the Mekong. The delta of Southeast-Asia's largest river is out of joint, and both sinking and drying out at the same time. While ever-rising waves lap away at the coastline, and higher sea levels push salty water into the delta, severe droughts are leaving the landscape parched.
+In the Mekong delta, this balance has been disturbed. As a consequenc, the delta of Southeast-Asia's largest river is both sinking and drying out at the same time. While ever-rising waves lap away at the coastline, and higher sea levels push salty water into the delta, severe droughts are leaving the landscape parched.
 
-But what exactly causes this double threat? And what can be done about it?
+But what exactly causes this double threat? And what can be done about them?
 
-The answers to these questions are as complex as the environmental and political problems casting their shadows over the region. At their core - climate change.
+The answers to these questions are as complex as the environmental and political problems casting their shadows over the region.
+
+At the heart of the issue lies - climate change.
 
 
 
 ##Living with the River
 
-Springing from the vast Tibetan plateau at the foot of the Himalayas, the Mekong River winds its way over 2,700 miles through China, Myanmar, Laos, Thailand, Cambodia and Vietnam.
+Springing from the vast Tibetan plateau at the foot of the Himalayas, the Mekong river winds its way over 2,700 miles through China, Myanmar, Laos, Thailand, Cambodia and Vietnam.
 
 // [/Scroller]
 // END Intro
-
-
-// [img fullWidth:true style:`{maxWidth: 960, margin: '1em auto', height:'auto', maxHeight: 'none'}` src:"static/images/35_lq.jpg" /]
-
-// At Cambodia's capital Phnom Penh, the river splits into branches to fan out into the fertile delta plain defining the landscapes of southern Cambodia and Vietnam.
-
-// In its wetland habitats, biodiversity flourishes - and agriculture. Over eighteen million people live in the delta, but it supplies over 200 million with rice, fruit, vegetables and fish throughout Cambodia and Vietnam. Agricultural products from the area also bolster international exports for both countries.
-
-
-// [img fullWidth:true style:`{maxWidth: '100vw', height:'auto', margin: '1em auto', maxHeight: 'none'}` src:"static/images/67_lq.jpg" /]
-
-
-
 
 [var name:"firstScrollerIndex" value:0 /]
 [derived name:"firstScrollerIndexBG" value:`({ 0: '35_lq.jpg', 1: '67_lq.jpg' })[firstScrollerIndex]` /]
@@ -144,7 +133,7 @@ Springing from the vast Tibetan plateau at the foot of the Himalayas, the Mekong
 
 [Step]
 
-At Cambodia's capital Phnom Penh, the river splits into branches to fan out into the fertile delta plain defining the landscapes of southern Cambodia and Vietnam.
+At Cambodia's capital Phnom Penh, the river splits into branches that fan out over the fertile delta plains, defining the landscapes of southern Cambodia and Vietnam.
 
 
   // insert overview figure
@@ -153,20 +142,20 @@ At Cambodia's capital Phnom Penh, the river splits into branches to fan out into
 
 [Step]
 
-  In its wetland habitats, biodiversity flourishes - and agriculture. Over eighteen million people live in the delta, but it supplies over 200 million with rice, fruit, vegetables and fish throughout Cambodia and Vietnam. Agricultural products from the area also bolster international exports for both countries.
+  In these plains, both biodiversity and agriculture flourish. Over eighteen million people live in the delta, and it supplies over 200 million Cambodians and Vietnamese with rice, fruit, vegetables and fish. Agricultural products from the area also bolster international exports for both countries.
 
 [/Step]
 
 [/Scroller]
 
 [br /]
-The abundant fertility of the Mekong delta is based on the annual Monsoon cycle. Fed by torrential rains, the Mekong begins to swell in June, overbrimming its banks and inundating the surrounding floodplains. The land remains underwater for several months, until the flood begins to recede in October to November.
+The abundant fertility of the Mekong delta is based on the annual Monsoon cycle.
 
+Fed by torrential rains, the Mekong begins to swell in June, overbrimming its banks and inundating the surrounding floodplains. The land remains underwater for several months, until the flood begins to recede in October to November.
 
-// Insert juxtapose image slider from https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=7e4b9a76-6ce0-11ea-b9b8-0edaf8f81e27
+Satellite images of the same area during the dry and wet seasons show a stark contrast: One image shows lush, green fields. The other, wide expanses of open water.
 
-
-[ParametricGraphic fullWidth:true style:`{maxWidth: 960, margin: '1em auto'}` hed:"Compare Inundation Extents" subhed:"More context, why do we care?" source:"Source of the data"]
+[ParametricGraphic fullWidth:true style:`{maxWidth: 960, margin: '1em auto'}` hed:"Monsoon Flood Comparison" subhed:"Slide to see lush green during dry season, open water during wet season" source:"ESA, Sentinel 2 mission"]
 
   // Fits better without the ParametricGraphic (and setting fullWidth:true on the iframe instead), but doesn't integrate as well.
   //Original
@@ -191,18 +180,16 @@ During the wet season, the delta is replenished. Fish populations explode. Water
 
 The sediments left behind at the end of the wet season are full of nutrients. In the rich, muddy earth that emerges from the receding floods, farmers plant rice and vegetables, marking the beginning of the new agricultural year.
 
-
-
 [img fullWidth:true style:`{maxWidth: '100vw', height:'auto', margin: '1em auto', maxHeight: 'none'}` src:"static/images/67_lq.jpg" /]
 
 // [/Step]
 // [/Scroller]
 
-
 This cycle is so deeply ingrained in the consciousness and identity of the people that it forms the basis of some of the region's most important cultural traditions. In Cambodia, the Water Festival (Bon Om Touk) is celebrated in November. It marks the beginning of the flood recession with fireworks, boat races and nautical parades.
 
-
 These traditions reach back to the Khmer empire of the 9th-15th century. They illustrate the central importance of the yearly flood pulse for the delta, and how it has been rooted in local consciousness for hundreds of years.
+
+// Possibly insert Bon Om Touk picture
 
 Today, the hydrological balance in the delta is shifting.
 
@@ -211,7 +198,9 @@ Today, the hydrological balance in the delta is shifting.
 
 ##Droughts, Dams, and the Distribution of Rain
 
-Officially, the arrival of the 2019 flood was two weeks late. During this time, the Mekong water levels dropped to their lowest in 100 years.Endless water surfaces should have been stretching into the horizon. Instead, the bare earth of the floodplains was cracked with heat.
+Officially, the arrival of the 2019 flood was two weeks late. During this time, the Mekong water levels dropped to their lowest in 100 years.
+
+Endless water surfaces should have been stretching into the horizon. Instead, the bare earth of the floodplains was cracked with heat.
 
 At the beginning of August 2019, the delta was still dry.
 
@@ -380,11 +369,9 @@ The delay in itself was already a major problem for the many farmers of wet seas
       // [/div]
     [/ParametricGraphic]
 
+      The combined effects of the late arrival and short duration of last year's flood reverberated through the landscape in a cascade of negative impacts.
 
-
-      The combined effects of the late arrival and short duration of last year's flood now reverberate through the landscape in a cascade of negative impacts.
-
-      While farmers did mostly succeed in growing crops directly after the flood, many of them now face worries about the rest of the agricultural year.
+      While farmers did mostly succeed in growing crops directly after the flood, many of them faced worries for the rest of the agricultural year.
 
 
     [Scroller currentStep:scrollerIndex]
@@ -407,7 +394,7 @@ The delay in itself was already a major problem for the many farmers of wet seas
     [Step]
       The flood was too short to infiltrate deeply into the soil, leaving it thirsty for irrigation.
 
-      In addition to the drought, pests usually decimated by the flood are now threatening crops. Rats in particular survived in far higher numbers than usual, and are now attacking vegetable and rice crops.
+      In addition to the drought, pests usually decimated by the flood threatened crops. Rats in particular survived in far higher numbers than usual, and subsequently attacked vegetable and rice crops.
     [/Step]
 
     [Step]
@@ -417,14 +404,13 @@ The delay in itself was already a major problem for the many farmers of wet seas
     [/Scroller]
 
 
-    The chain of causality is a long one, reaching from a dam cascade being built upstream, to land-use changes in the Mekong basin. Climate change casts an additional shadow on every link in the chain.
+    The list of causes is a long one, ranging from the dam cascade being built upstream to land use changes in the Mekong basin.
+
+    Climate change, too, is a critical ingredient.
 
     To begin with, average temperatures in Southeast Asia have risen continuously over the last few decades, in line with global warming. In Vietnam, the annual average temperature rise has been 0.1 °C per decade since 1900, ramping up to 0.14 °C per decade towards the end of the century. Summer temperature increases are even higher, with average monthly temperatures climbing by 0.1–0.3 °C per decade.
 
     Temperature increase is not the only contributor to the droughts that have struck the region in recent years.
-
-
-
 
   [Scroller]
      // Add video comparison of rainfall over the Mekong Basin (annotate grey area to say something along the lines of ‘all rain that falls here eventually flows into the Mekong)
@@ -461,7 +447,8 @@ The delay in itself was already a major problem for the many farmers of wet seas
      [Step]
          Satellite rain measurements over the Mekong basin show that macro-scale precipitation distribution in 2019 differed significantly from previous years.
 
-         The torrential Monsoon rains in the catchment area of the Mekong, which generally set in towards the end of May, were sparse in the spring and early summer of 2019. On XXXX 2018, a cumulative XXXX of rain had fallen over the basin area that year - but only XXXX on the same date in 2019.
+         The torrential Monsoon rains in the catchment area of the Mekong, which generally set in towards the end of May, were sparse in the spring and early summer of 2019.
+         // On XXXX 2018, a cumulative XXXX of rain had fallen over the basin area that year - but only XXXX on the same date in 2019.
       [/Step]
 
 
@@ -469,9 +456,6 @@ The delay in itself was already a major problem for the many farmers of wet seas
 [/Scroller]
 
       Meteorological experts trace the immediate cause for this back to the El Niño Southern Oscillation (ENSO). Approximately occurring every four years, El Niño is a global weather event with impacts on local weather. It is caused by a change in temperature distributions in the Pacific Ocean. Oceanic and atmospheric conditions interact to invert the usual east-west direction of ocean surface winds. Now blowing from west to east, they drive warm equatorial waters towards the eastern Pacific. This, in turn, has impacts on weather patterns such as the Monsoon rains over Southeast Asia.
-
-
-
 
      ///Add slider graph of cumulative rainfall, and illustration of rainfall in comparison of years Data extracted from CHIRPS precipitation satellite measurements through Google Earth Engine
      // CHART: Annual precipitation
@@ -522,7 +506,9 @@ The delay in itself was already a major problem for the many farmers of wet seas
      [var name:"aP_enso_yStart" value:0 /]
 
 
-     [ParametricGraphic  style:`{maxWidth: 720, margin: '1em auto'}` fullWidth:true hed:"Title of Graphic" subhed:"More context, why do we care?" source:"Source of the data"]
+     [ParametricGraphic  style:`{maxWidth: 720, margin: '1em auto'}` fullWidth:true hed:"Yearly rainfall in the Mekong basin since 1981" subhed:"In El Niño years, there is generally less cumulative rainfall in the river basin.
+
+     In Southeast Asia, 2015/16 saw a drought similarly severe as that of 2019. This period also saw the strongest-ever El Niño event, also referred to as a Super El Niño." source:"CHIRPS precipitation data, XXXX for ENSO years"]
        [IdyllVegaLite actions:false data:aPrecip width:"container" height:"300" spec:`{
          config: vlConfig,
          mark: {
@@ -556,12 +542,13 @@ The delay in itself was already a major problem for the many farmers of wet seas
 
     El Niño is a periodic natural phenomenon, which has been continuously observed over the past 120 years. But here, climate change enters the equation for the second time.
 
+    Scientists warn that global warming could exacerbate El Niño to make the events positively devastating. A recent study published in Nature Geoscience assessed the last 400 years of El Niño on the basis of coral reef growth. Its results show that in recent decades, the events have grown both more frequent and far more severe.
 
-        Scientists warn that global warming could exacerbate El Niño to make the events positively devastating. A recent study published in Nature Geoscience assessed the last 400 years of El Niño by researching coral reef growth. Its results show that in recent decades, the events have grown both more frequent and far more severe. A major cause of this trend?
+    Climate change is thought to be a major contributing factor.
 
-       In Southeast Asia, 2015/16 saw a drought similarly severe as that of 2019. This period also saw the strongest-ever El Niño, also referred to as a Super El Niño event.
+    The effects of anthropogenic climate change on the Mekong basin are undeniable. But humans also have more direct impacts on the delta, which further aggravate floods droughts.
 
-        The effects of anthropogenic climate change on the Mekong basin are undeniable. But humans also have more direct impacts on the delta, which further aggravate floods droughts.
+    First and foremost, hydropower projects have been increasingly damming up the Mekong and its tributaries.
 
 //BEGIN Rising Seas and Sinking Lands
 
@@ -593,7 +580,7 @@ The delay in itself was already a major problem for the many farmers of wet seas
       [data name:"dams" source:"dams.json" /]
 
       // Actual chart:
-      [ParametricGraphic hed:"Title of Graphic" subhed:"More context, why do we care?" source:"Source of the data"]
+      [ParametricGraphic hed:"Hydropower development on Mekong and its tributaries" subhed:"The first dams were built in the 1960s, and for decades both the number of dams and the amount of river water they hold back remained limited. Now, there are nearly 100. Another 30 are currently under construction." source:"CGAR"]
       [IdyllVegaLite actions:false data:dams width:"container" spec:`{
         config: vlConfig,
         encoding: {
@@ -647,9 +634,9 @@ The delay in itself was already a major problem for the many farmers of wet seas
       }` /]
       [/ParametricGraphic]
 
-      First and foremost, hydropower projects have been increasingly damming up the Mekong and its tributaries. The first dams were built in the 1960s, and for decades both the number of dams and the amount of river water they hold back remained limited. But in the early 2000, both the number of dams and their capacity skyrocketed. In 2005, there were 16 dams on the Mekong and its tributaries. Now, there are nearly 100.  Another 30 are currently under construction.
+      The first dams were built in the 1960s, and for decades both the number of dams and the amount of river water they hold back remained limited. But in the early 2000s, both the number of dams and their capacity skyrocketed. In 2005, there were 16 dams on the Mekong and its tributaries. Now, there are nearly 100. Another 30 are currently under construction.
 
-      Overall, these hydropower stations have the potential to generate 13,000 MW of electricity - more than enough to power the whole of New York City. According to a 2018 study, the percentage of river water stored for hydropower will rise tenfold from 2% in 2008 to almost 20% in 2025.
+      Overall, hydropower stations in the Mekong basin have the potential to generate 13,000 MW of electricity - more than enough to power the whole of New York City. According to a 2018 study, the percentage of river water stored for hydropower will rise tenfold from 2% in 2008 to almost 20% in 2025.
 
 
       2019 also saw the opening of Xayaburi in Laos, the first of eleven dams built directly on the Mekong mainstream. Its construction originally began in 2012 but was fraught with complaints from environmentalists and citizens' groups.
@@ -662,9 +649,9 @@ The delay in itself was already a major problem for the many farmers of wet seas
 
   [MattNote]Will update the style of this thing so it isn't so visually loud[/MattNote]
 
-      The predominance of hydropower projects is also a result of Chinese influence over Southeast Asia. Chinese companies and government initiatives invest heavily in infrastructure projects in countries like Laos and Cambodia. Local politicians welcome funding with open arms - seeing it as a safeguard for their citizens' prosperity, and their own re-election.
+      The predominance of hydropower projects is also a result of Chinese influence over Southeast Asia. Chinese companies and government initiatives invest heavily in infrastructure projects in countries like Laos and Cambodia. Local politicians welcome funding with open arms - seeing it as a safeguard for both their citizens' prosperity and their own political future.
 
-      Land-use changes further exacerbate the adverse effects of climate change in Southeast Asia.
+      Another factor that further exacerbates the adverse effects of climate change in Southeast Asia is land use.
 
       In recent years, natural vegetation has been removed from vast swaths of land, and agriculture has been intensified. The spread of urban centers like Phnom Penh and Ho Chi Minh City has swallowed up huge tracts of land. Cumulatively, the modified land surface contributes to hydrological imbalances. Temperatures increase due to the sunlight absorbed by urban areas and open fields rather than reflected by natural vegetation.
 
@@ -688,7 +675,7 @@ The delay in itself was already a major problem for the many farmers of wet seas
 
          Oceanographers and climatologists at NOAA have developed six scenarios for future Global Mean Sea Levels (GMSL). These scenarios are based on the projected greenhouse gas emissions, depending on how humans decide to handle climate change. They also went a step further and assigned likelihoods to each of the scenarios. In the most likely scenario, they calculated, global average sea-level rise by the end of this century will tally in at 3.3 feet.
 
-         This spells doom for coastal populations around the world, but especially for deltas, where the average elevation of the land is only a few feet above sea level. Here, small increases can reach far inland.
+         This spells doom for coastal populations around the world, but especially for deltas, where the average elevation of the land is only a few feet above sea level. Here, minimal increases can have effects far inland.
 
     [img fullWidth:true style:`{maxWidth: 960, height:'auto', maxHeight: 'none', margin: '1em auto'}` src:"static/images/62_fhd.jpg" /]
 
@@ -710,27 +697,31 @@ The delay in itself was already a major problem for the many farmers of wet seas
 
         //  [Step]
 
-         While the sea is rising, the land is also sinking due to subsidence. The landscape loses elevation, either because sediments are being compacted, or because subterranean voids collapse. These voids can either exist naturally - such as cave systems in limestone - or originate from human activities, such as the extraction of oil or groundwater.
+     While the sea is rising, the land is also sinking due to subsidence. The landscape loses elevation either because sediments are being compacted, or because subterranean voids collapse. These voids can either exist naturally - such as cave systems in limestone - or originate from human activities, such as the extraction of oil or groundwater.
 
-         In the Mekong delta, some land subsidence is natural, caused by tectonics and the settling of sediments deposited by the river since the last Ice Age. The majority, however, can be traced back to human actions. The expanding urban infrastructure is heavy, putting pressure on the delta and accelerating compaction. At the same time, the groundwater bodies in the Vietnamese Mekong delta are among the most exploited in the world.
+     In the Mekong delta, some land subsidence is natural, caused by tectonics and the settling of sediments deposited by the river since the last Ice Age. The majority, however, can be traced back to human activities.
 
-         After Vietnam's transition to a market economy in 1986, economic growth increased the need for water. Groundwater is used for domestic, agricultural and industrial purposes. The effects are already being felt throughout the delta. In 2017, a study using a 3D hydro-geological model found that over the past 25 years, the land has sunk by an average of 7 inches. Currently, around 660 million gallons of groundwater are being extracted from the Vietnamese Mekong delta every single day.
+     The expanding infrastructure of the urban centers in the region is heavy, putting pressure on the delta and accelerating compaction. At the same time, the groundwater bodies in the Vietnamese Mekong delta are among the most exploited in the world.
+
+     After Vietnam's transition to a market economy in 1986, economic growth increased the need for water. Groundwater is used for domestic, agricultural and industrial purposes.
+     //The effects are already being felt throughout the delta.
+    In 2017, a study using a 3D hydro-geological model found that over the past 25 years, the land has sunk by an average of 7 inches. Currently, around 660 million gallons of groundwater are being extracted from the Vietnamese Mekong delta every single day.
 
 
-         Subsidence due to groundwater extraction is extremely dangerous in that it continues beyond the end of the practice. A 2020 study found that even when ceasing all groundwater as quickly as possible, and implementing mitigation measures, the land would lose at least another 6 inches of elevation until 2100.
+     Subsidence due to groundwater extraction is extremely dangerous in that it continues beyond the end of the practice. A 2020 study found that even when ceasing all groundwater extraction as quickly as possible, and implementing mitigation measures, the land would lose at least another 6 inches of elevation until 2100.
 
-         Currently, extraction grows 4% per year. If unchecked, the subsidence by the end of the century could tally in at over three feet.
+     Currently, extraction increases by 4% every year. If unchecked, the subsidence by the end of the century could tally in at over three feet.
 
-         Again, rising sea levels and land subsidence are not the only elements in the equation. They are tightly interlinked with other aspects of global warming and power generation.
+     Again, rising sea levels and land subsidence are not the only elements in the equation. They are tightly interlinked with other aspects of global warming and power generation.
 
-         Higher temperatures and more frequent droughts have increased the demand for irrigation, in turn revving up the groundwater extraction rate.
+     Higher temperatures and more frequent droughts have increased the demand for irrigation, in turn revving up the groundwater extraction rate.
 
-         Dams not only hold water back in upstream reservoirs, but also trap sediment. This sediment would usually be deposited on the floodplains, somewhat counteracting subsidence.
+     Dams not only hold water back in upstream reservoirs, but also trap sediment. This sediment would usually be deposited on the floodplains, somewhat counteracting subsidence.
 
-         Economic interests are also eating away at the delta - with sand extraction for concrete production, according to recent research published in Nature.
+     Economic interests are also eating away at the delta - with sand extraction for concrete production, according to recent research published in Nature. XXX something missing, link XXX
 
-         All this leaves the Mekong delta set to disappear beneath the waves.
-        //  [/Step]
+     All this leaves the Mekong delta set to disappear beneath the waves.
+    //  [/Step]
 
 
         //  [Step]
@@ -739,9 +730,9 @@ The delay in itself was already a major problem for the many farmers of wet seas
 
          The effects are already being felt: Storm floods are sweeping across the delta ever more frequently, and much farther inland than before. The coastline, renowned for its beauty and a popular tourist destination, is slowly eroding away. Salty seawater encroaches into the river system, tilting the balance in ecosystems, and threatening agriculture and freshwater fisheries.
 
-         A UN report released in February 2020 outlines the threats of the compound effects of droughts and saltwater intrusion in the Vietnamese Mekong Delta. It also warns of the destructive societal impacts, ranging from children being pulled out of school, to a sharp rise in poverty rates. In a worst-case scenario, the February estimates said, saltwater would intrude up to 70 km inland.
+         A UN report released in February 2020 outlines the threats of the compound effects of droughts and saltwater intrusion in the Vietnamese Mekong Delta. It also warns of the destructive societal impacts, ranging from children being pulled out of school, to a sharp rise in poverty rates. In a worst-case scenario, the February estimates said, saltwater would intrude up to 70 km inland. XXX we're measuring in miles elsewhere XXX
 
-         But by mid-March, the situation deteriorated even further, and saltwater intrusion reached the 110 km mark - 30 km further than the previous maximum distance. As a result, almost 40,000 hectares of rice paddies were destroyed. When the crisis peaked in early April, over 95,000 households were affected, facing shortages or even a lack of drinking water.
+         But by mid-March, the situation had deteriorated even further, and saltwater intrusion reached the 110 km mark - 30 km further than the previous maximum distance. As a result, almost 40,000 hectares of rice paddies were destroyed. When the crisis peaked in early April, over 95,000 households were affected, experiencing shortages of drinking water or even a total lack thereof.
 
          Faced with such current reminders of the fragility of the situation, the future gives cause for worry.
 
@@ -782,9 +773,9 @@ The delay in itself was already a major problem for the many farmers of wet seas
 
 // ##What Will the Future Hold?
 
-            The degrees to which the present crisis in the Mekong delta will morph into a future catastrophe is not yet certain. Many of the projections on which future scenarios are based are still wide open to human influence, on a local, regional, and global level.
+            The degree to which the present crisis in the Mekong delta will morph into a future catastrophe is not yet certain. Many of the projections on which future scenarios are based are still wide open to human influence, on a local, regional, and global level.
 
-            Locally, many communes in the delta are arming against droughts and salinity intrusion through infrastructure developments. They are constructing sluice gates to control the inflow of salty water during the dry season and extending water distribution systems. Farmers are increasingly also switching their crops to drought- and salt-resistant varieties.
+            Locally, many communes in the delta are arming against droughts and salinity intrusion through infrastructure developments. They are constructing sluice gates to restrict the inflow of salty water during the dry season, and extending water distribution systems. Farmers are increasingly also switching their crops to drought- and salt-resistant varieties.
 
             On a regional and national level, measures could be taken to tackle the problems at their sources. Reducing the rates of groundwater extractions to restrict land subsidence, developing information campaigns, emergency plans, and regulations to coordinate irrigation and saltwater regulations are all steps that have been suggested. The adverse effects of the upstream dams might be mitigated through diplomacy.
 
@@ -798,7 +789,7 @@ The delay in itself was already a major problem for the many farmers of wet seas
 
             Some consequences have already become irreversible, such as a certain amount of land subsidence, or a globally increased frequency of El Niño Events.
 
-            Right now, a chance still exists to create a sustainable future for the Mekong delta and itsx inhabitants. The question is whether the delta's inhabitants, its political leaders, and the global community as a whole are willing and able to take the steps needed to grasp this chance.
+            Right now, a chance still exists to create a sustainable future for the Mekong delta and its inhabitants. The question is whether the delta's inhabitants, its political leaders, and the global community as a whole are willing and able to take the steps needed to grasp this chance.
 
             // [/Step]
             // [/Scroller]
@@ -806,7 +797,7 @@ The delay in itself was already a major problem for the many farmers of wet seas
 
 [AuthorBio]
 
-[b][a href:""]Your Name[/a][/b] is _TK insert bio here_.
+[b][a href:""]Christina Orieschnig[/a][/b] is _TK insert bio here_.
 
 Edited by TK editor list.
 [/AuthorBio]
