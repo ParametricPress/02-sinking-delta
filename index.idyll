@@ -118,7 +118,7 @@ Springing from the vast Tibetan plateau at the foot of the Himalayas, the Mekong
 
 [var name:"firstScrollerIndex" value:0 /]
 [derived name:"firstScrollerIndexBG" value:`({ 0: '35_lq.jpg', 1: '67_lq.jpg' })[firstScrollerIndex]` /]
-
+[br /]
 // BEGIN Living with the River
 [Scroller currentStep:firstScrollerIndex]
 [Graphic fullWidth:true]
@@ -159,7 +159,7 @@ At Cambodia's capital Phnom Penh, the river splits into branches to fan out into
 
 [/Scroller]
 
-
+[br /]
 The abundant fertility of the Mekong delta is based on the annual Monsoon cycle. Fed by torrential rains, the Mekong begins to swell in June, overbrimming its banks and inundating the surrounding floodplains. The land remains underwater for several months, until the flood begins to recede in October to November.
 
 
