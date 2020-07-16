@@ -556,7 +556,18 @@ The delay in itself was already a major problem for the many farmers of wet seas
 
      // end water level chart
 
+     [ParametricGraphic fullWidth:true style:`{maxWidth: 960, margin: '1em auto'}` hed:"xxx" subhed:"xxx" source:"ESA, Sentinel mission"]
+       //Vertical
+       [Conditional if:`!isMobile `]
+         [iframe frameBorder:"0" className:"juxtapose" width:"100%" height:"491" src:"https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=f2a399b2-c782-11ea-bf88-a15b6c7adf9a"][/iframe]
+       [/Conditional]
 
+       //Horizontal
+       [Conditional if:`isMobile `]
+         [iframe frameBorder:"0" className:"juxtapose" width:"100%" height:"491" src:"https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=7e7ebc0e-c798-11ea-bf88-a15b6c7adf9a"][/iframe]
+       [/Conditional]
+
+     [/ParametricGraphic]
 
 
       The combined effects of the late arrival and short duration of last year's flood reverberated through the landscape in a cascade of negative impacts.
