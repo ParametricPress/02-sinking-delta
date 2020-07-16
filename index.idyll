@@ -401,7 +401,7 @@ The delay in itself was already a major problem for the many farmers of wet seas
                  y: {
                    field: "wl",
                    type: "quantitative",
-                   axis: {title: "Delta flooded [%]"},
+                   axis: {title: "Mekong River Level [m]"},
                    scale: {domain: [0, 9] }
                  }
                } // end encoding
@@ -424,7 +424,7 @@ The delay in itself was already a major problem for the many farmers of wet seas
                  y: {
                    field: "wl",
                    type: "quantitative",
-                   axis: {title: "Delta flooded [%]"},
+                   axis: {title: "Mekong River Level [m]"},
                    scale: {domain: [0, 9] }
                  }
                } // end encoding
@@ -448,6 +448,93 @@ The delay in itself was already a major problem for the many farmers of wet seas
                  },
                  y: {
                    field: "wl",
+                   type: "quantitative"
+                 }
+               } // end encoding
+             } // end highlight layer
+           ] // end layer composer
+         }` /] // end IdyllVegaLite
+       [/div]
+
+       // Using rolling mean
+       [div]
+         [IdyllVegaLite actions:false data:wlvl width:"container" height:"200" spec:`{
+           config: vlConfig,
+           transform: [{
+             frame: [29, 0], //items to include before, after datapoint
+             window: [{
+                field: "wl",
+                op: "mean",
+                as: "rg_mean"
+              }]
+              }],
+           layer: [
+             { // time series layer
+               mark: {
+                 type: "area",
+                 //tooltip: true,
+                 fill: '#333333'
+               },
+               encoding: {
+                 x: {
+                   field: "date",
+                   type: "temporal",
+                   axis: {
+                     title: "Date",
+                     labelAngle: -45,
+                     tickCount: {interval: "year"}
+                   }
+                 },
+                 y: {
+                   field: "rg_mean",
+                   type: "quantitative",
+                   axis: {title: "Mekong River Level [m]"},
+                   scale: {domain: [0, 9] }
+                 }
+               } // end encoding
+             }, // end time series layer
+             { // time series highlight layer
+               mark: {
+                 type: "line",
+                 color: "#D8FFA2"
+               },
+               encoding: {
+                 x: {
+                   field: "date",
+                   type: "temporal",
+                   axis: {
+                     title: "Date",
+                     labelAngle: -45,
+                     tickCount: {interval: "year"}
+                   }
+                 },
+                 y: {
+                   field: "rg_mean",
+                   type: "quantitative",
+                   axis: {title: "Mekong River Level [m]"},
+                   scale: {domain: [0, 9] }
+                 }
+               } // end encoding
+             }, // end time series layer
+             { // highlight layer
+               data: {values: [
+                 {"date": date_a, "rolling_mean": rolling_mean_date_a},
+                 {"date": date_b, "rolling_mean": rolling_mean_date_b}
+                 ]},
+               mark: {
+                 type: "point",
+                 filled: true,
+                 color: "D8FFA2",
+                 tooltip: true
+                 },
+               encoding: {
+                 x: {
+                   field: "date",
+                   //timeUnit: "year",
+                   type: "temporal"
+                 },
+                 y: {
+                   field: "rg_mean",
                    type: "quantitative"
                  }
                } // end encoding
