@@ -155,7 +155,7 @@ Fed by torrential rains, the Mekong begins to swell in June, overbrimming its ba
 
 Satellite images of the same area during the dry and wet seasons show a stark contrast: One image shows lush, green fields. The other, wide expanses of open water.
 
-[ParametricGraphic fullWidth:true style:`{maxWidth: 960, margin: '1em auto'}` hed:"Monsoon Flood Comparison" subhed:"Slide to see lush green during dry season, open water during wet season" source:"ESA, Sentinel 2 mission"]
+[ParametricGraphic fullWidth:true style:`{maxWidth: 960, margin: '1em auto'}` hed:"Monsoon Flood Comparison" subhed:"Slide to see lush green during dry season, open water during wet season" source:"ESA, Sentinel mission"]
 
   // Fits better without the ParametricGraphic (and setting fullWidth:true on the iframe instead), but doesn't integrate as well.
   //Original
@@ -270,94 +270,94 @@ The delay in itself was already a major problem for the many farmers of wet seas
       [derived name:"rolling_mean_date_a" value:`inex[date_a_index].rolling_mean` /]
       [derived name:"rolling_mean_date_b" value:`inex[date_b_index].rolling_mean` /]
 
-   // Graphic Wrapper: With chart and slide controls
-   [ParametricGraphic fullWidth:true  style:`{maxWidth: 960, margin: '1em auto'}` hed:"Volatile Inundation, Outlier or Sign of Things to Come?" subhed:"TK The highest high and the lowest low for 2020..." source:"Source of the data"]
+   // // Graphic Wrapper: With chart and slide controls
+   //[ParametricGraphic fullWidth:true  style:`{maxWidth: 960, margin: '1em auto'}` hed:"Volatile Inundation, Outlier or Sign of Things to Come?" subhed:"TK The highest high and the lowest low for 2020..." source:"Source of the data"]
 
 
-      // Actual Chart
-      [div]
-        [IdyllVegaLite actions:false data:inex width:"container" height:"200" spec:`{
-          config: vlConfig,
-          layer: [
-            { // time series layer
-              mark: {
-                type: "area",
-                //tooltip: true,
-                fill: '#333333'
-              },
-              encoding: {
-                x: {
-                  field: "date",
-                  type: "temporal",
-                  axis: {
-                    title: "Date",
-                    labelAngle: -45,
-                    tickCount: {interval: "year"}
-                  }
-                },
-                y: {
-                  field: "rolling_mean",
-                  type: "quantitative",
-                  axis: {title: "Delta flooded [%]"},
-                  scale: {domain: [15, 55] }
-                }
-              } // end encoding
-            }, // end time series layer
-            { // time series highlight layer
-              mark: {
-                type: "line",
-                color: "#D8FFA2"
-              },
-              encoding: {
-                x: {
-                  field: "date",
-                  type: "temporal",
-                  axis: {
-                    title: "Date",
-                    labelAngle: -45,
-                    tickCount: {interval: "year"}
-                  }
-                },
-                y: {
-                  field: "rolling_mean",
-                  type: "quantitative",
-                  axis: {title: "Delta flooded [%]"},
-                  scale: {domain: [15, 55] }
-                }
-              } // end encoding
-            }, // end time series layer
-            { // highlight layer
-              data: {values: [
-                {"date": date_a, "rolling_mean": rolling_mean_date_a},
-                {"date": date_b, "rolling_mean": rolling_mean_date_b}
-                ]},
-              mark: {
-                type: "point",
-                filled: true,
-                color: "D8FFA2",
-                tooltip: true
-                },
-              encoding: {
-                x: {
-                  field: "date",
-                  //timeUnit: "year",
-                  type: "temporal"
-                },
-                y: {
-                  field: "rolling_mean",
-                  type: "quantitative"
-                }
-              } // end encoding
-            } // end highlight layer
-          ] // end layer composer
-        }` /] // end IdyllVegaLite
-      [/div]
+      // // Actual Chart
+      // [div]
+      //   [IdyllVegaLite actions:false data:inex width:"container" height:"200" spec:`{
+      //     config: vlConfig,
+      //     layer: [
+      //       { // time series layer
+      //         mark: {
+      //           type: "area",
+      //           //tooltip: true,
+      //           fill: '#333333'
+      //         },
+      //         encoding: {
+      //           x: {
+      //             field: "date",
+      //             type: "temporal",
+      //             axis: {
+      //               title: "Date",
+      //               labelAngle: -45,
+      //               tickCount: {interval: "year"}
+      //             }
+      //           },
+      //           y: {
+      //             field: "rolling_mean",
+      //             type: "quantitative",
+      //             axis: {title: "Delta flooded [%]"},
+      //             scale: {domain: [15, 55] }
+      //           }
+      //         } // end encoding
+      //       }, // end time series layer
+      //       { // time series highlight layer
+      //         mark: {
+      //           type: "line",
+      //           color: "#D8FFA2"
+      //         },
+      //         encoding: {
+      //           x: {
+      //             field: "date",
+      //             type: "temporal",
+      //             axis: {
+      //               title: "Date",
+      //               labelAngle: -45,
+      //               tickCount: {interval: "year"}
+      //             }
+      //           },
+      //           y: {
+      //             field: "rolling_mean",
+      //             type: "quantitative",
+      //             axis: {title: "Delta flooded [%]"},
+      //             scale: {domain: [15, 55] }
+      //           }
+      //         } // end encoding
+      //       }, // end time series layer
+      //       { // highlight layer
+      //         data: {values: [
+      //           {"date": date_a, "rolling_mean": rolling_mean_date_a},
+      //           {"date": date_b, "rolling_mean": rolling_mean_date_b}
+      //           ]},
+      //         mark: {
+      //           type: "point",
+      //           filled: true,
+      //           color: "D8FFA2",
+      //           tooltip: true
+      //           },
+      //         encoding: {
+      //           x: {
+      //             field: "date",
+      //             //timeUnit: "year",
+      //             type: "temporal"
+      //           },
+      //           y: {
+      //             field: "rolling_mean",
+      //             type: "quantitative"
+      //           }
+      //         } // end encoding
+      //       } // end highlight layer
+      //     ] // end layer composer
+      //   }` /] // end IdyllVegaLite
+      // [/div]
 
-      [div style:`{fontSize: '1.25em', lineHeight: 1.5}` ]
-        // Text display
-        // TODO - create a datepicker class
-        On [Display value:`date_a.toLocaleString()` /], [Display value:`rolling_mean_date_a` format:".1f"/]% of the delta were flooded, while [Display value:`rolling_mean_date_b` format:".1f"/]% were flooded on [Display value:`date_b` /].
-      [/div]
+    //  [div style:`{fontSize: '1.25em', lineHeight: 1.5}` ]
+    //    // Text display
+    //    // TODO - create a datepicker class
+    //    On [Display value:`date_a.toLocaleString()` /], [Display value:`rolling_mean_date_a` format:".1f"/]% of the delta were flooded, while [Display value:`rolling_mean_date_b` format:".1f"/]% were flooded on [Display value:`date_b` /].
+    //  [/div]
       // // Sliders
       // [div style:`{display: 'flex', flexDirection: 'row'}`]
       //   [div]
@@ -368,111 +368,121 @@ The delay in itself was already a major problem for the many farmers of wet seas
       //   [/div]
       // [/div]
 
-    [/ParametricGraphic]
+    // [/ParametricGraphic]
 
     [br /]
 
     // Trying another type of chart (with river water levels instead)
     [data name:"wlvl" source:"water_level_orig.csv" /] // not a JS object, but an Array of them
 
-    [ParametricGraphic fullWidth:true  style:`{maxWidth: 960, margin: '1em auto'}` hed:"Mekong river water levels" subhed:"TK The highest high and the lowest low for 2020..." source:"XXX"]
+    //[ParametricGraphic fullWidth:true  style:`{maxWidth: 960, margin: '1em auto'}` hed:"Mekong river water levels" subhed:"TK The highest high and the lowest low for 2020..." source:"XXX"]
 
-       // Actual Chart
-       [div]
-         [IdyllVegaLite actions:false data:wlvl width:"container" height:"200" spec:`{
-           config: vlConfig,
-           layer: [
-             { // time series layer
-               mark: {
-                 type: "area",
-                 //tooltip: true,
-                 fill: '#333333'
-               },
-               encoding: {
-                 x: {
-                   field: "date",
-                   type: "temporal",
-                   axis: {
-                     title: "Date",
-                     labelAngle: -45,
-                     tickCount: {interval: "year"}
-                   }
-                 },
-                 y: {
-                   field: "wl",
-                   type: "quantitative",
-                   axis: {title: "Mekong River Level [m]"},
-                   scale: {domain: [0, 9] }
-                 }
-               } // end encoding
-             }, // end time series layer
-             { // time series highlight layer
-               mark: {
-                 type: "line",
-                 color: "#D8FFA2"
-               },
-               encoding: {
-                 x: {
-                   field: "date",
-                   type: "temporal",
-                   axis: {
-                     title: "Date",
-                     labelAngle: -45,
-                     tickCount: {interval: "year"}
-                   }
-                 },
-                 y: {
-                   field: "wl",
-                   type: "quantitative",
-                   axis: {title: "Mekong River Level [m]"},
-                   scale: {domain: [0, 9] }
-                 }
-               } // end encoding
-             }, // end time series layer
-             { // highlight layer
-               data: {values: [
-                 {"date": date_a, "rolling_mean": rolling_mean_date_a},
-                 {"date": date_b, "rolling_mean": rolling_mean_date_b}
-                 ]},
-               mark: {
-                 type: "point",
-                 filled: true,
-                 color: "D8FFA2",
-                 tooltip: true
-                 },
-               encoding: {
-                 x: {
-                   field: "date",
-                   //timeUnit: "year",
-                   type: "temporal"
-                 },
-                 y: {
-                   field: "wl",
-                   type: "quantitative"
-                 }
-               } // end encoding
-             } // end highlight layer
-           ] // end layer composer
-         }` /] // end IdyllVegaLite
-       [/div]
+       // // Full raw timeline chart
+       // // Actual Chart
+       // [div]
+       //   [IdyllVegaLite actions:false data:wlvl width:"container" height:"200" spec:`{
+       //     config: vlConfig,
+       //     layer: [
+       //       { // time series layer
+       //         mark: {
+       //           type: "area",
+       //           //tooltip: true,
+       //           fill: '#333333',
+       //           clip: true
+       //         },
+       //         encoding: {
+       //           x: {
+       //             field: "date",
+       //             type: "temporal",
+       //             axis: {
+       //               title: "Date",
+       //               labelAngle: -45,
+       //               tickCount: {interval: "year"}
+       //             },
+       //             scale: {domain: [2000,2021]}
+       //           },
+       //           y: {
+       //             field: "wl",
+       //             type: "quantitative",
+       //             axis: {title: "Mekong River Level [m]"},
+       //             scale: {domain: [0, 9] }
+       //           }
+       //         } // end encoding
+       //       }, // end time series layer
+       //       { // time series highlight layer
+       //         mark: {
+       //           type: "line",
+       //           color: "#D8FFA2"
+       //         },
+       //         encoding: {
+       //           x: {
+       //             field: "date",
+       //             type: "temporal",
+       //             axis: {
+       //               title: "Date",
+       //               labelAngle: -45,
+       //               tickCount: {interval: "year"}
+       //             }
+       //           },
+       //           y: {
+       //             field: "wl",
+       //             type: "quantitative",
+       //             axis: {title: "Mekong River Level [m]"},
+       //             scale: {domain: [0, 9] }
+       //           }
+       //         } // end encoding
+       //       }, // end time series layer
+       //       { // highlight layer
+       //         data: {values: [
+       //           {"date": date_a, "rolling_mean": rolling_mean_date_a},
+       //           {"date": date_b, "rolling_mean": rolling_mean_date_b}
+       //           ]},
+       //         mark: {
+       //           type: "point",
+       //           filled: true,
+       //           color: "D8FFA2",
+       //           tooltip: true
+       //           },
+       //         encoding: {
+       //           x: {
+       //             field: "date",
+       //             //timeUnit: "year",
+       //             type: "temporal"
+       //           },
+       //           y: {
+       //             field: "wl",
+       //             type: "quantitative"
+       //           }
+       //         } // end encoding
+       //       } // end highlight layer
+       //     ] // end layer composer
+       //   }` /] // end IdyllVegaLite
+       // [/div]
 
        // Using rolling mean
+ [ParametricGraphic fullWidth:true style:`{maxWidth: 960, margin: '1em auto'}` hed:"Mekong River Water levels - Short and Sharp" subhed:"TK The highest high and the lowest low for 2019..." source:"XXX"]
+
        [div]
          [IdyllVegaLite actions:false data:wlvl width:"container" height:"200" spec:`{
            config: vlConfig,
-           transform: [{
-             frame: [29, 0], //items to include before, after datapoint
-             window: [{
-                field: "wl",
-                op: "mean",
-                as: "rg_mean"
-              }]
-              }],
+           transform: [
+             {
+               filter: {timeUnit:"year", field:"date", gte:2015}
+             },
+             {
+               window: [{
+                 field: "wl",
+                 op: "mean",
+                 as: "rg_mean"
+                 }],
+              frame: [-9, 0] //items to include before, after datapoint
+             }
+           ], // end transforms
            layer: [
              { // time series layer
                mark: {
                  type: "area",
-                 //tooltip: true,
+                 // tooltip: true,
                  fill: '#333333'
                },
                encoding: {
@@ -545,6 +555,8 @@ The delay in itself was already a major problem for the many farmers of wet seas
      [/ParametricGraphic]
 
      // end water level chart
+
+
 
 
       The combined effects of the late arrival and short duration of last year's flood reverberated through the landscape in a cascade of negative impacts.
