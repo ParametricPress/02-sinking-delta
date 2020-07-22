@@ -155,7 +155,7 @@ Fed by torrential rains, the Mekong begins to swell in June, overbrimming its ba
 
 Satellite images of the same area during the dry and wet seasons show a stark contrast: One image shows lush, green fields. The other, wide expanses of open water.
 
-[ParametricGraphic fullWidth:true style:`{maxWidth: 960, margin: '1em auto'}` hed:"Monsoon Flood Comparison" subhed:"Slide to see lush green during dry season, open water during wet season" source:"ESA, Sentinel mission"]
+[ParametricGraphic fullWidth:true style:`{maxWidth: 960, margin: '1em auto'}` hed:"A Landscape: Flooded and Dry" subhed:"A stark contrast between wet and dry season: Drag the slider to see lush rice paddies and other crops, and the Monsoon flood that enables that fertility." source:"ESA, Sentinel-2"]
 
   // Fits better without the ParametricGraphic (and setting fullWidth:true on the iframe instead), but doesn't integrate as well.
   //Original
@@ -206,12 +206,6 @@ At the beginning of August 2019, the delta was still dry.
 
 
 [img fullWidth:true style:`{maxWidth: 960, height:'auto', maxHeight: 'none', margin: '1em auto'}` src:"static/images/88_fhd.jpg" /]
-
-Satellite data from ESA’s Sentinel mission shows the flooded areas of July and August 2019 in stark contrast to those of previous years. On XXXX 2018, XXXX square miles of the delta were inundated. On the same day a year later, it was only XXXX square miles. In tandem, the water levels of the Mekong stayed low well into August.
-
-The delay in itself was already a major problem for the many farmers of wet season rice, a crop which depends on the inundations starting at the right time. What’s worse, the flood began to drain away at roughly the usual time, spelling disaster on a larger scale. As the flood curves of the Mekong water levels show, the 2019 flood pulse was only about half as long as in past years.
-
-
 
 // // // BEGIN Droughts, Dams, and the Distribution of Rain
 // [Scroller currentStep:scrollerIndex]
@@ -460,7 +454,7 @@ The delay in itself was already a major problem for the many farmers of wet seas
        // [/div]
 
        // Using rolling mean
- [ParametricGraphic fullWidth:true style:`{maxWidth: 960, margin: '1em auto'}` hed:"Mekong River Water levels - Short and Sharp" subhed:"TK The highest high and the lowest low for 2019..." source:"XXX"]
+ [ParametricGraphic fullWidth:true style:`{maxWidth: 960, margin: '1em auto'}` hed:"Mekong River Water Levels at North End of the Delta" subhed:"The flood peak of the 2019 wet season occured much later and was much shorter than in previous years." source:"Mekong River Commission"]
 
        [div]
          [IdyllVegaLite actions:false data:wlvl width:"container" height:"200" spec:`{
@@ -556,7 +550,7 @@ The delay in itself was already a major problem for the many farmers of wet seas
 
      // end water level chart
 
-     [ParametricGraphic fullWidth:true style:`{maxWidth: 960, margin: '1em auto'}` hed:"xxx" subhed:"xxx" source:"ESA, Sentinel mission"]
+     [ParametricGraphic fullWidth:true style:`{maxWidth: 960, margin: '1em auto'}` hed:"Comparing Flood Extents Using Radar Data" subhed:"Satellite data from the Sentinel-1 mission run by the European Space Agency (ESA) shows the flooded areas (in black) of early August 2019 in stark contrast to those of the previous year. Sentinel-1's Synthetic Aperture Radar (SAR) can penetrate the thick cloud cover over the region during this period." source:"ESA, Sentinel-1"]
        //Vertical
        [Conditional if:`!isMobile `]
          [iframe frameBorder:"0" className:"juxtapose" width:"100%" height:"491" src:"https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=f2a399b2-c782-11ea-bf88-a15b6c7adf9a"][/iframe]
@@ -569,6 +563,7 @@ The delay in itself was already a major problem for the many farmers of wet seas
 
      [/ParametricGraphic]
 
+The delay in itself was already a major problem for the many farmers of wet season rice, a crop which depends on the inundations starting at the right time. What’s worse, the flood began to drain away at roughly the usual time, spelling disaster on a larger scale. As the flood curves of the Mekong water levels show, the 2019 flood pulse was only about half as long as in past years.
 
       The combined effects of the late arrival and short duration of last year's flood reverberated through the landscape in a cascade of negative impacts.
 
@@ -628,7 +623,7 @@ The delay in itself was already a major problem for the many farmers of wet seas
          opacity: hideVideo ? 0 : 1,
          // background: 'url(static/images/hero.jpg) no-repeat center center fixed',
        }` ]
-        [video style:`{width: "100vw", height:'auto', maxHeight: 'none'}` src:"static/videos/precipitation-4.mp4" /]
+        [video style:`{width: "100vw", height:'auto', maxHeight: 'none'}` src:"static/videos/PrecipFilmFinal.mov" /]
 
        [/div]
      [/Graphic]
@@ -704,12 +699,12 @@ The delay in itself was already a major problem for the many farmers of wet seas
 
     //  [br/]
 
-     [var name:"aP_enso_yStart" value:0 /]
+      [var name:"aP_enso_yStart" value:0 /]
 
 
      [ParametricGraphic  style:`{maxWidth: 720, margin: '1em auto'}` fullWidth:true hed:"Yearly rainfall in the Mekong basin since 1981" subhed:"In El Niño years, there is generally less cumulative rainfall in the river basin.
 
-     In Southeast Asia, 2015/16 saw a drought similarly severe as that of 2019. This period also saw the strongest-ever El Niño event, also referred to as a Super El Niño." source:"CHIRPS precipitation data, XXXX for ENSO years"]
+     In Southeast Asia, 2015/16 saw a drought similarly severe as that of 2019. This period also saw the strongest-ever El Niño event, also referred to as a Super El Niño." source:"CHIRPS precipitation data, NOAA ONI data"]
        [IdyllVegaLite actions:false data:aPrecip width:"container" height:"300" spec:`{
          config: vlConfig,
          mark: {
@@ -730,13 +725,15 @@ The delay in itself was already a major problem for the many farmers of wet seas
            },
            color: {
              field: "color",
-             scale: {domain: ["black", "yellow"], range: ["#222222", '#ccc'] }
+             scale: {domain: ["black", "yellow"], range: ["#222222", '#ccc'] },
+             legend: null
            }
          }
        }` /]
-       [Inset]
-       Y-axis: 0 [Range min:0 max:1200 step:10 value:aP_enso_yStart /] 1200
-       [/Inset]
+       Marked in color XXX are the years in which wet season rainfall was affected by El Ninos, according to the 3-month mean of the Oceanic Niño Index (ONI) published by NOAA.
+       // [Inset]
+       // Y-axis: 0 [Range min:0 max:1200 step:10 value:aP_enso_yStart /] 1200
+       // [/Inset]
      [/ParametricGraphic]
 
 
@@ -824,7 +821,9 @@ The delay in itself was already a major problem for the many farmers of wet seas
                 type: "quantitative",
                 axis: {
                   title: "Number of dams",
-                  orient: "right"
+                  orient: "right",
+                  labelColor: "blue",
+                  domainColor: "blue"
                   },
                 scale: {domain: [0, 180] }
               }
@@ -931,9 +930,9 @@ The delay in itself was already a major problem for the many farmers of wet seas
 
          The effects are already being felt: Storm floods are sweeping across the delta ever more frequently, and much farther inland than before. The coastline, renowned for its beauty and a popular tourist destination, is slowly eroding away. Salty seawater encroaches into the river system, tilting the balance in ecosystems, and threatening agriculture and freshwater fisheries.
 
-         A UN report released in February 2020 outlines the threats of the compound effects of droughts and saltwater intrusion in the Vietnamese Mekong Delta. It also warns of the destructive societal impacts, ranging from children being pulled out of school, to a sharp rise in poverty rates. In a worst-case scenario, the February estimates said, saltwater would intrude up to 70 km inland. XXX we're measuring in miles elsewhere XXX
+         A UN report released in February 2020 outlines the threats of the compound effects of droughts and saltwater intrusion in the Vietnamese Mekong Delta. It also warns of the destructive societal impacts, ranging from children being pulled out of school, to a sharp rise in poverty rates. In a worst-case scenario, the February estimates said, saltwater would intrude up to 44 miles inland.
 
-         But by mid-March, the situation had deteriorated even further, and saltwater intrusion reached the 110 km mark - 30 km further than the previous maximum distance. As a result, almost 40,000 hectares of rice paddies were destroyed. When the crisis peaked in early April, over 95,000 households were affected, experiencing shortages of drinking water or even a total lack thereof.
+         But by mid-March, the situation had deteriorated even further, and saltwater intrusion reached the 68 mile mark - 19 miles further than the previous maximum distance. As a result, almost 40,000 hectares of rice paddies were destroyed. When the crisis peaked in early April, over 95,000 households were affected, experiencing shortages of drinking water or even a total lack thereof.
 
          Faced with such current reminders of the fragility of the situation, the future gives cause for worry.
 
