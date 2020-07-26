@@ -155,9 +155,7 @@ The abundant fertility of the Mekong delta is based on the annual Monsoon cycle.
 
 Fed by torrential rains, the Mekong begins to swell in June, overbrimming its banks and inundating the surrounding floodplains. The land remains underwater for several months, until the flood begins to recede in October to November.
 
-Satellite images of the same area during the dry and wet seasons show a stark contrast: One image shows lush, green fields. The other, wide expanses of open water.
-
-[ParametricGraphic fullWidth:true style:`{maxWidth: 960, margin: '1em auto'}` hed:"A Landscape: Flooded and Dry" subhed:"A stark contrast between wet and dry season: Drag the slider to see lush rice paddies and other crops, and the Monsoon flood that enables that fertility." source:"ESA, Sentinel-2"]
+[ParametricGraphic fullWidth:true style:`{maxWidth: 960, margin: '1em auto'}` hed:"A Landscape: Flooded and Dry" subhed:"Satellite images of the same area during the dry and wet seasons show a stark contrast: One image shows lush, green fields. The other, wide expanses of open water." source:"ESA, Sentinel-2"]
   //original:
   //[iframe frameBorder:"0" className:"juxtapose" style:`{width: 'calc(100% + 50px)', height: '60vh', margin: '1em -25px', overflowY: 'hidden'}` src:"https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=7e4b9a76-6ce0-11ea-b9b8-0edaf8f81e27"][/iframe]
 
