@@ -225,21 +225,20 @@ What’s worse, after the flood finally did arrive, it did not stay for long. Th
 
 The combined effects of the late arrival and short duration of last year's flood reverberated through the landscape in a cascade of negative impacts.
 
-[ParametricGraphic fullWidth:true style:`{maxWidth: 960, margin: '1em auto'}` hed:"Comparing Flood Extents Using Radar Data" subhed:"Data from the Sentinel-1 satellite mission run by the European Space Agency (ESA) shows the flooded areas (in black) of early August 2019 in stark contrast to those of the previous year. Sentinel-1's Synthetic Aperture Radar (SAR) can penetrate the thick layer of clouds covering over the region during this period." source:"ESA, Sentinel-1"]
+[ParametricGraphic fullWidth:true style:`{maxWidth: 960, margin: '1em auto'}` hed:"Comparing Flood Extents Using Radar Data" subhed:"Data from the Sentinel-1 satellite mission run by the European Space Agency (ESA) shows the flooded areas (in black) of early August 2019 in stark contrast to those of the previous year. Sentinel-1's Synthetic Aperture Radar (SAR) can penetrate the thick layer of clouds covering the region during this period." source:"ESA, Sentinel-1"]
  //Vertical
  [Conditional if:`!isMobile `]
-   [iframe frameBorder:"0" className:"juxtapose" width:"100%" height:"491" src:"https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=f2a399b2-c782-11ea-bf88-a15b6c7adf9a"][/iframe]
+   [iframe frameBorder:"0" className:"juxtapose" width:"100%" height:"491" src:"https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=31fa0272-d02a-11ea-bf88-a15b6c7adf9a"][/iframe]
  [/Conditional]
 
  //Horizontal
  [Conditional if:`isMobile `]
-   [iframe frameBorder:"0" className:"juxtapose" width:"100%" height:"491" src:"https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=7e7ebc0e-c798-11ea-bf88-a15b6c7adf9a"][/iframe]
+   [iframe frameBorder:"0" className:"juxtapose" width:"100%" height:"491" src:"https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=45b4c838-d02a-11ea-bf88-a15b6c7adf9a"][/iframe]
  [/Conditional]
 
 [/ParametricGraphic]
 
 While farmers did mostly succeed in growing crops directly after the flood, many of them faced worries for the rest of the agricultural year.
-
 
 [Scroller currentStep:scrollerIndex]
   [Graphic]
@@ -362,7 +361,7 @@ First and foremost, hydropower projects have been increasingly damming up the Me
 [data name:"dams" source:"dams.json" /]
 
 // Actual chart:
-[ParametricGraphic hed:"Hydropower development on Mekong and its tributaries" subhed:"The first dams were built in the 1960s, and for decades both the number of dams and the amount of river water they hold back remained limited. Now, there are nearly 100. Another 30 are currently under construction." source:"CGAR"]
+[ParametricGraphic hed:"Hydropower development on Mekong and its tributaries" subhed:"The first dams were built in the 1960s, and for decades both the number of dams and the amount of river water they hold back remained limited. Now, there are nearly 100. Another 30 are currently under construction." source:"CGIAR"]
   [IdyllVegaLite actions:false data:dams width:"container" spec:`{
     config: vlConfig,
     encoding: {
