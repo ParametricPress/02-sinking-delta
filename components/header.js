@@ -22,7 +22,7 @@ class Header extends React.PureComponent {
                       {formatTitle(this.props.longTitle)}
                     </div>
                   </div>
-                  <div className="byline-container" style={{display: 'flex', flexDirection: 'row', color: '#000000', fontSize: 12, fontWeight: 500}}>
+                  <div className="byline-container" style={{display: 'flex', flexDirection: 'row', color: '#000000', fontWeight: 500}}>
                     <div>
                       <div style={{fontWeight: 'bold'}}>
                         Created by

@@ -1,55 +1,4 @@
 
-/* FONTS */
-
-
-@font-face {
-  font-family: 'Editorial New';
-  src: url('./fonts/EditorialNew-Regular.woff2') format('woff2'),
-       url('./fonts/EditorialNew-Regular.woff') format('woff');
-  font-weight:  400;
-  font-style:   normal;
-  font-stretch: normal;
-}
-
-@font-face {
-  font-family: 'Tiempos Text';
-  src: url('./fonts/tiempos-text-web-regular.woff2') format('woff2'),
-       url('./fonts/tiempos-text-web-regular.woff') format('woff');
-  font-weight:  400;
-  font-style:   normal;
-  font-stretch: normal;
-}
-
-
-@font-face {
-  font-family: 'Tiempos Text';
-  src: url('./fonts/tiempos-text-web-regular-italic.woff2') format('woff2'),
-       url('./fonts/tiempos-text-web-regular-italic.woff') format('woff');
-  font-weight:  400;
-  font-style:   italic;
-  font-stretch: normal;
-}
-
-@font-face {
-  font-family: 'Tiempos Text';
-  src: url('./fonts/tiempos-text-web-bold.woff2') format('woff2'),
-       url('./fonts/tiempos-text-web-bold.woff') format('woff');
-  font-weight:  700;
-  font-style:   normal;
-  font-stretch: normal;
-}
-
-
-@font-face {
-  font-family: 'Tiempos Text';
-  src: url('./fonts/tiempos-text-web-bold-italic.woff2') format('woff2'),
-       url('./fonts/tiempos-text-web-bold-italic.woff') format('woff');
-  font-weight:  700;
-  font-style:   italic;
-  font-stretch: normal;
-}
-
-
 .ReactTable .-pagination button {
   margin: 0;
 }
@@ -222,17 +171,27 @@ h2 {
 /* ARTICLE SPECIFIC  */
 
 
+.byline-container {
+  text-shadow: 1px 1px #ffffff;
+  font-size: 18px;
+}
+
 @media all and (max-width: 1000px) {
   .idyll-root {
     max-width: none;
     padding: 0;
   }
+
 }
 
 @media all and (max-width: 800px) {
   .idyll-root {
     max-width: none;
     padding: 0;
+  }
+
+  .parametric-header-image {
+    display: block;
   }
 
   .idyll-text-container {
@@ -242,6 +201,11 @@ h2 {
 
   .parametric-graphic img {
     width: 100%;
+  }
+
+  .parametric-header-text .parametric-long-title {
+    font-size: 64px;
+    line-height: 1.2;
   }
 }
 
@@ -280,6 +244,10 @@ video {
   max-width: 1440px;
 }
 
+
+.parametric-header-hed-text {
+  margin-top: 20vh;
+}
 
 body {
   overflow-x: hidden;

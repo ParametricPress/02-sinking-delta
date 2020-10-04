@@ -39,19 +39,25 @@
 [var name:"scrollerIndex" value:0 /]
 
 [LedeA]
-River deltas are among the most fertile and biodiverse ecosystems on the planet. Where a large river transitions into the sea, and a dendritic web of watercourses stretches over floodplains, both animal and plant life thrive.
+Things are out of joint in the delta of the Mekong, Southeast Asia's largest river. Rising sea levels and subsiding land are threatening to flood the area.
 [/LedeA]
 
 [br/]
 
 [LedeB]
-Deltas have always been hubs of human development. Ancient civilizations flourished in the Nile and the Ganges deltas. Today, [link text:"half a billion people" url:"https://www.nsf.gov/discoveries/disc_summ.jsp?cntn_id=138738&org=NSF&from=news" /] call deltas home - even though they cover only 1% of the earth's land surface. With rich crops and abundant fish, deltas are crucial to food security and economic development.
+Simultaneously, the annual Monsoon inundations are delayed more and more often, while still retreating early, and leaving local fields parched.
 
-However, deltas are also extremely vulnerable.
+But why? Let's unravel a complex tangle of reasons, with climate change at their core.
 [/LedeB]
 
 
+[br/]
 // BEGIN BODY TEXT
+
+Deltas have always been hubs of human development. Ancient civilizations flourished in the Nile and the Ganges deltas. Today, [link text:"half a billion people" url:"https://www.nsf.gov/discoveries/disc_summ.jsp?cntn_id=138738&org=NSF&from=news" /] call deltas home - even though they cover only 1% of the earth's land surface. With rich crops and abundant fish, deltas are crucial to food security and economic development.
+
+However, deltas are also extremely vulnerable.
+
 Located at the intersection of terrestrial and aquatic ecosystems, a delta's entire existence depends on a delicate balance of factors: Temperature. Freshwater and saltwater. Precipitation and river flow.
 
 In the Mekong delta, this balance has been disturbed. As a consequenc, the delta of Southeast Asia's largest river is both sinking and drying out at the same time. While ever-rising waves lap away at the coastline, and higher sea levels push salty water into the delta, severe droughts are leaving the landscape parched.
@@ -431,7 +437,7 @@ The [link text:"Mekong River Commission (MRC)" url:"http://www.mrcmekong.org/abo
 
 [Recirc slug:parametricSlug /]
 
-[MattNote]Will update the style of this thing so it isn't so visually loud[/MattNote]
+// [MattNote]Will update the style of this thing so it isn't so visually loud[/MattNote]
 
 The predominance of hydropower projects is also a result of Chinese influence over Southeast Asia. Chinese companies and government initiatives invest heavily in infrastructure projects in countries like Laos and Cambodia. Local politicians welcome funding with open arms - seeing it as a safeguard for both their citizens' prosperity and their own political future.
 
