@@ -234,6 +234,15 @@ h2 {
     max-width: none;
     padding: 0;
   }
+
+  .idyll-text-container {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+
+  .parametric-graphic img {
+    width: 100%;
+  }
 }
 
 video {
