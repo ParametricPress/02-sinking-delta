@@ -260,3 +260,21 @@ video {
   text-decoration: underline;
   text-decoration-style: dotted;
 }
+
+.idyll-scroll-graphic img,
+.idyll-scroll-graphic video {
+  max-width: 1440px;
+  margin-left: 0;
+}
+
+video {
+  max-width: 1440px;
+}
+
+
+body {
+  overflow-x: hidden;
+}
+.parametric-article-nav {
+  overflow-x: visible;
+}

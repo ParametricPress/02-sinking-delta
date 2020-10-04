@@ -54,7 +54,7 @@ class Header extends React.PureComponent {
 
         {
             this.props.headerImage ?
-              <div className='parametric-header-image' style={{position: 'absolute', top: 0, right: 0, left: 0, right: 0, bottom: 0, background: `url(${this.props.headerImage})`}}>
+              <div className='parametric-header-image' style={{position: 'absolute', top: 0, right: 0, left: 0, right: 0, bottom: 0, background: `url(${this.props.headerImage})`, backgroundSize: 'cover'}}>
               </div> : null
           }
           {
