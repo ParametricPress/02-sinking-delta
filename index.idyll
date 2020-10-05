@@ -50,10 +50,7 @@ Simultaneously, the annual Monsoon inundations are delayed more and more often, 
 But why? Let's unravel a complex tangle of reasons, with climate change at their core.
 [/LedeB]
 
-
-[br/]
 // BEGIN BODY TEXT
-
 Deltas have always been hubs of human development. Ancient civilizations flourished in the Nile and the Ganges deltas. Today, [link text:"half a billion people" url:"https://www.nsf.gov/discoveries/disc_summ.jsp?cntn_id=138738&org=NSF&from=news" /] call deltas home - even though they cover only 1% of the earth's land surface. With rich crops and abundant fish, deltas are crucial to food security and economic development.
 
 However, deltas are also extremely vulnerable.
@@ -73,7 +70,7 @@ At the heart of the issue: Climate change.
 Springing from the vast Tibetan plateau at the foot of the Himalayas, the Mekong river winds its way over 2,700 miles through China, Myanmar, Laos, Thailand, Cambodia and Vietnam.
 
 [ParametricGraphic fullWidth:true style:`{maxWidth: 960, margin: '1em auto'}` hed:"The Mekong River and its Delta" subhed:"From the Tibetan plateau through six countries: China, Myanmar, Laos, Thailand, Cambodia, and Vietnam" source:"Christina Orieschnig" ]
-   [img style:`{width: "960", height:'auto', maxHeight: 'none'}` src:"static/images/overview_map.jpg" /]
+   [img style:`{width: "100%", height:'auto', maxHeight: 'none'}` src:"static/images/overview_map.jpg" /]
 [/ParametricGraphic]
 
 [var name:"firstScrollerIndex" value:0 /]
@@ -146,7 +143,7 @@ During the wet season, the delta is replenished. Fish populations explode. Water
 The sediments left behind at the end of the wet season are full of nutrients. In the rich, muddy earth that emerges from the receding floods, farmers plant rice and vegetables, marking the beginning of the new agricultural year.
 
 [ParametricGraphic fullWidth:true style:`{maxWidth: 960, margin: '1em auto'}` hed:"A Dry Season Landscape" subhed:"Side branches of the Mekong wind their way through the landscape in mid-March." source:"Christina Orieschnig" ]
-   [img fullWidth:true style:`{maxWidth: '100vw', height:'auto', margin: '1em auto', maxHeight: 'none'}` src:"static/images/67_lq.jpg" /]
+   [img fullWidth:true style:`{maxWidth: '100%', height:'auto', margin: '1em auto', maxHeight: 'none'}` src:"static/images/67_lq.jpg" /]
 [/ParametricGraphic]
 
 This cycle is so deeply ingrained in the consciousness and identity of the people that it forms the basis of some of the region's most important cultural traditions. In Cambodia, the Water Festival (Bon Om Touk) is celebrated in November. It marks the beginning of the flood recession with fireworks, boat races and nautical parades.
@@ -164,7 +161,7 @@ At the beginning of August 2019, the delta was still dry.
 Endless water surfaces should have been stretching into the horizon. Instead, the bare earth of the floodplains was cracked with heat.
 
 [ParametricGraphic fullWidth:true style:`{maxWidth: 960, margin: '1em auto'}` hed:"Precariously Dry"  subhed:"Young crops growing in desiccated soil in early 2020. Due to the short flood, many irrigation canals are dry, putting agriculture in peril." source:"Christina Orieschnig" ]
-  [img fullWidth:true style:`{maxWidth: 960, height:'auto', maxHeight: 'none', margin: '1em auto'}` src:"static/images/88_fhd.jpg" /]
+  [img fullWidth:true style:`{maxWidth: "100%", height:'auto', maxHeight: 'none', margin: '1em auto'}` src:"static/images/88_fhd.jpg" /]
 [/ParametricGraphic]
 
 [br /]
@@ -225,6 +222,7 @@ What’s worse, after the flood finally did arrive, it did not stay for long. Th
      ] // end layer composer
    }` /] // end IdyllVegaLite
  [/div]
+
 [/ParametricGraphic]
 
 // end water level chart
@@ -322,33 +320,36 @@ Meteorological experts trace the immediate cause for this back to the El Niño S
 
 In Southeast Asia, 2015/16 saw a drought similarly severe as that of 2019. This period also saw the strongest-ever El Niño event, also referred to as a Super El Niño." source:"Precipitation: CHIRPS, ENSO: NOAA ONI"]
 
-  [IdyllVegaLite actions:false data:aPrecip width:"container" height:"300" spec:`{
-   config: vlConfig,
-   mark: {
-     type: "bar",
-     tooltip: true
-   },
-   encoding: {
-     x: {
-       field: "year",
-       type: "ordinal",
-       axis: {title: "Year"}
-     },
-     y: {
-       field: "precipitation",
-       type: "quantitative",
-       axis: {title: "Precipitation [mm]"},
-       scale: {domain: [0, 2000] }
-     },
-     color: {
-       field: "ENSO",
-       scale: {domain: ["Regular", "El Niño"], range: ["#222222", "#D8FFA2"] },
-       legend: null
-     }
-   } // end encoding
-  }` /] // end IdyllVegaLite
+  [div]
+      [IdyllVegaLite actions:false data:aPrecip width:"container" height:"300" spec:`{
+      config: vlConfig,
+      mark: {
+        type: "bar",
+        tooltip: true
+      },
+      encoding: {
+        x: {
+          field: "year",
+          type: "ordinal",
+          axis: {title: "Year"}
+        },
+        y: {
+          field: "precipitation",
+          type: "quantitative",
+          axis: {title: "Precipitation [mm]"},
+          scale: {domain: [0, 2000] }
+        },
+        color: {
+          field: "ENSO",
+          scale: {domain: ["Regular", "El Niño"], range: ["#222222", "#D8FFA2"] },
+          legend: null
+        }
+      } // end encoding
+      }` /] // end IdyllVegaLite
 
-  Highlighted are the years in which wet season rainfall was affected by El Niños, according to the 3-month mean of the Oceanic Niño Index (ONI) published by NOAA.
+      Highlighted are the years in which wet season rainfall was affected by El Niños, according to the 3-month mean of the Oceanic Niño Index (ONI) published by NOAA.
+
+    [/div]
 
 [/ParametricGraphic]
 
@@ -540,7 +541,7 @@ But right now, there is still a chance to create a sustainable future for the Me
 
 [b][a href:"http://typingquill.com/"]Christina Orieschnig[/a][/b] is a PhD researcher in hydrology, working in the Cambodian Mekong Delta. When she is not pursuing her scientific career, she is working on her passion projects as a freelance writer.
 
-Edited by TK editor list.
+All images and videos courtesy of the author unless otherwise noted.
 [/AuthorBio]
 
 [NextArticle slug:parametricSlug fullWidth:true /]
