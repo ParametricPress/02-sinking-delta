@@ -1504,13 +1504,13 @@ a {
   font-family: 'Graphik Web';
   font-size: 32px;
   color: #ffffff;
-  text-shadow: -1px -1px 0 #4801FF, 1px -1px 0 #4801FF, -1px 1px 0 #4801FF, 1px 1px 0 #4801FF;
   transition: all 0.25s;
   cursor: pointer;
 }
 
 .parametric-recirc-next-article a:hover .highlight-hover {
-  color: #4801FF;
+  color: #222222;
+  text-decoration: underline;
   /* text-shadow: none; */
 }
 
@@ -2222,8 +2222,34 @@ h2 {
 
 
 .byline-container {
-  text-shadow: 1px 1px #ffffff;
+  text-shadow: 0 0 2px #ffffff;
   font-size: 18px;
+}
+
+.parametric-graphic-subhed {
+  color: #222222;
+  max-width: 100%;
+}
+
+p a {
+  color: #222222;
+  text-decoration: underline;
+  transition: color 0.15s ease-in-out;
+}
+
+p a:hover {
+  color: #D8FFA2;
+}
+
+.parametric-graphic-source {
+  margin-top: 1em;
+}
+
+@media all and (min-width: 1440px) {
+  .parametric-recirc-next-article {
+    width: 100vw;
+    margin-left: calc((100vw - 1440px) / -2);
+  }
 }
 
 @media all and (max-width: 1000px) {
@@ -2231,7 +2257,6 @@ h2 {
     max-width: none;
     padding: 0;
   }
-
 }
 
 @media all and (max-width: 800px) {
