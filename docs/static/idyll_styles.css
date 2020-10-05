@@ -1477,7 +1477,6 @@ a {
   margin-left: 0;
   margin-right: 0;
   z-index: 1000;
-  font-size: 32px;
   padding: 0.5em 50px;
 }
 
@@ -1827,6 +1826,25 @@ h2 {
   margin-top: 0;
 }
 
+.parametric-article-nav {
+  font-size: 16px;
+  line-height: 24px;
+  position: sticky;
+  top: 0;
+  border-bottom: solid 1px #222222;
+  background-color: #ADADAD;
+  color: #222222;
+  margin-left: calc((100vw - 1440px) / -2);
+  margin-right: calc((100vw - 1440px) / -2);
+  padding-left: calc((100vw - 1440px) / 2);
+  padding-right: calc((100vw - 1440px) / 2);
+  margin-top: 0;
+}
+
+.parametric-article-nav .parametric-nav-links a {
+  font-weight: 300;
+  color: #D8FFA2;
+}
 
 body {
   overflow-x: hidden !important;
@@ -1834,6 +1852,7 @@ body {
 .parametric-article-nav {
   overflow-x: visible;
 }
+
 
 
 @media all and (max-width: 1440px) {
@@ -1992,18 +2011,12 @@ body {
   .parametric-article-dek {
     font-size: 24px;
   }
+
   .parametric-article-nav {
-    margin-left: 0;
-    margin-right: 0;
-    font-size: 24px;
-    line-height: 32px;
     padding-left: 1em;
     padding-right: 1em;
-  }
-
-  .parametric-nav-links {
-    font-size: 18px;
-    line-height: 1.5;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .parametric-header-text {
@@ -2034,57 +2047,6 @@ body {
 }
 
 
-
-
-/* FONTS */
-
-
-@font-face {
-  font-family: 'Editorial New';
-  src: url('./fonts/EditorialNew-Regular.woff2') format('woff2'),
-       url('./fonts/EditorialNew-Regular.woff') format('woff');
-  font-weight:  400;
-  font-style:   normal;
-  font-stretch: normal;
-}
-
-@font-face {
-  font-family: 'Tiempos Text';
-  src: url('./fonts/tiempos-text-web-regular.woff2') format('woff2'),
-       url('./fonts/tiempos-text-web-regular.woff') format('woff');
-  font-weight:  400;
-  font-style:   normal;
-  font-stretch: normal;
-}
-
-
-@font-face {
-  font-family: 'Tiempos Text';
-  src: url('./fonts/tiempos-text-web-regular-italic.woff2') format('woff2'),
-       url('./fonts/tiempos-text-web-regular-italic.woff') format('woff');
-  font-weight:  400;
-  font-style:   italic;
-  font-stretch: normal;
-}
-
-@font-face {
-  font-family: 'Tiempos Text';
-  src: url('./fonts/tiempos-text-web-bold.woff2') format('woff2'),
-       url('./fonts/tiempos-text-web-bold.woff') format('woff');
-  font-weight:  700;
-  font-style:   normal;
-  font-stretch: normal;
-}
-
-
-@font-face {
-  font-family: 'Tiempos Text';
-  src: url('./fonts/tiempos-text-web-bold-italic.woff2') format('woff2'),
-       url('./fonts/tiempos-text-web-bold-italic.woff') format('woff');
-  font-weight:  700;
-  font-style:   italic;
-  font-stretch: normal;
-}
 
 
 .ReactTable .-pagination button {
@@ -2259,17 +2221,27 @@ h2 {
 /* ARTICLE SPECIFIC  */
 
 
+.byline-container {
+  text-shadow: 1px 1px #ffffff;
+  font-size: 18px;
+}
+
 @media all and (max-width: 1000px) {
   .idyll-root {
     max-width: none;
     padding: 0;
   }
+
 }
 
 @media all and (max-width: 800px) {
   .idyll-root {
     max-width: none;
     padding: 0;
+  }
+
+  .parametric-header-image {
+    display: block;
   }
 
   .idyll-text-container {
@@ -2279,6 +2251,11 @@ h2 {
 
   .parametric-graphic img {
     width: 100%;
+  }
+
+  .parametric-header-text .parametric-long-title {
+    font-size: 64px;
+    line-height: 1.2;
   }
 }
 
@@ -2317,6 +2294,10 @@ video {
   max-width: 1440px;
 }
 
+
+.parametric-header-hed-text {
+  margin-top: 20vh;
+}
 
 body {
   overflow-x: hidden;
