@@ -1454,7 +1454,7 @@ a {
   border-top: 1px solid #2C2C2C;
   justify-content: space-between;
   margin-top: 40px;
-  padding-top: 20px;
+  padding-top: 5px;
   color: #7e7e7e;
 }
 
@@ -1862,7 +1862,13 @@ button {
   color: #222222;
 }
 
-.parametric-author-bio {
+.idyll-root .parametric-author-bio {
+  font-family: 'Graphik Web';
+  font-size: 16px;
+  line-height: 1.1;
+  margin: 3em 0 2em;
+}
+.idyll-root .parametric-author-bio p {
   font-family: 'Graphik Web';
   font-size: 16px;
   line-height: 1.1;
@@ -2497,9 +2503,6 @@ h2 {
   width: 100%;
   /* max-width: 100%; */
   overflow: visible;
-  margin-left: -50px;
-  margin-right: -50px;
-  padding: 0 50px;
 }
 
 .idyll-text-container {
@@ -2744,11 +2747,3 @@ body {
   margin: 1em 0;
 }
 
-.parametric-recirc-article a {
-  text-decoration: none;
-  color: #ffffff !important;
-}
-
-.parametric-recirc-article a:hover {
-  text-decoration: underline;
-}
