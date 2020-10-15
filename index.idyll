@@ -13,7 +13,7 @@
   title:`["Drought of the", "Sinking Delta"]`
   longTitle:`["Drought of the Sinking Delta"]`
   date:"October 2020"
-  dek:"Things are out of joint in the delta of the Mekong, Southeast Asia's largest river. Rising sea levels and subsiding land are threatening to flood the area. Simultaneously, the annual Monsoon inundations are delayed more and more often, while still retreating early, and leaving local fields parched. But why? Let's unravel a complex tangle of reasons, with climate change at their core."
+  dek:"Things are out of joint in the delta of the Mekong, Southeast Asia's largest river. Rising sea levels and subsiding land are threatening to flood the area. Simultaneously, the annual Monsoon inundations are delayed more and more often, while still retreating early, and leaving local fields parched. But why? Let's unravel a complex tangle of reasons, with climate change at its core."
   fullWidth:true
   headerImage:"static/images/header.jpg"
   authors:`[{
@@ -48,7 +48,7 @@ Things are out of joint in the delta of the Mekong, Southeast Asia's largest riv
 [LedeA]
 Simultaneously, the annual Monsoon inundations are delayed more and more often, while still retreating early, and leaving local fields parched.
 
-But why? Let's unravel a complex tangle of reasons, with climate change at their core.
+But why? Let's unravel a complex tangle of reasons, with climate change at its core.
 [/LedeA]
 
 // BEGIN BODY TEXT
@@ -58,7 +58,7 @@ However, deltas are also extremely vulnerable.
 
 Located at the intersection of terrestrial and aquatic ecosystems, a delta's entire existence depends on a delicate balance of factors: Temperature. Freshwater and saltwater. Precipitation and river flow.
 
-In the Mekong delta, this balance has been disturbed. As a consequenc, the delta of Southeast Asia's largest river is both sinking and drying out at the same time. While ever-rising waves lap away at the coastline, and higher sea levels push salty water into the delta, severe droughts are leaving the landscape parched.
+In the Mekong delta, this balance has been disturbed. As a consequence, the delta of Southeast Asia's largest river is both sinking and drying out at the same time. While ever-rising waves lap away at the coastline, and higher sea levels push salty water into the delta, severe droughts are leaving the landscape parched.
 
 But what exactly causes this double threat? And what can be done about it?
 
@@ -386,7 +386,7 @@ First and foremost, hydropower projects have been increasingly damming up the Me
 [data name:"dams" source:"dams.json" /]
 
 // Actual chart:
-[ParametricGraphic hed:"Hydropower development on Mekong and its tributaries" subhed:"The first dams were built in the 1960s, and for decades both the number of dams and the amount of river water they hold back remained limited. Now, there are nearly 100. Another 30 are currently under construction." source:"CGIAR"]
+[ParametricGraphic hed:"Hydropower development on the Mekong and its tributaries" subhed:"The first dams were built in the 1960s, and for decades both the number of dams and the amount of river water they held back remained limited. Now, there are nearly 100. Another 30 are currently under construction." source:"CGIAR"]
   [IdyllVegaLite actions:false data:dams width:"container" spec:`{
     config: vlConfig,
     encoding: {
@@ -443,7 +443,7 @@ First and foremost, hydropower projects have been increasingly damming up the Me
   }` /] // end IdyllVegaLite
 [/ParametricGraphic]
 
-The first dams were built in the 1960s, and for decades both the number of dams and the amount of river water they hold back remained limited. But in the early 2000s, the number of dams and their capacity skyrocketed. In 2005, there were 16 dams on the Mekong and its tributaries. Today, there are nearly 100. Another 30 are currently under construction.
+The first dams were built in the 1960s, and for decades both the number of dams and the amount of river water they held back remained limited. But in the early 2000s, the number of dams and their capacity skyrocketed. In 2005, there were 16 dams on the Mekong and its tributaries. Today, there are nearly 100. Another 30 are currently under construction.
 
 Overall, hydropower stations in the Mekong basin have the potential to generate 13,000 MW of electricity - more than enough to power the whole of New York City. According to a 2018 study, the percentage of river water stored for hydropower will rise tenfold from 2% in 2008 to almost 20% in 2025.
 
