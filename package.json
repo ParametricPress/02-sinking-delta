@@ -11,8 +11,8 @@
     "authorView": false,
     "template": "_index.html",
     "compileLibs": true,
-    "layout": "./node_modules/parametric-styles/issue-02-layout.css",
-    "theme": "./node_modules/parametric-styles/issue-02-theme.css",
+    "layout": "./node_modules/parametric-styles/issue-02-theme-dark.css",
+    "theme": "./node_modules/parametric-styles/issue-02-layout.css",
     "components": [
       "./node_modules/parametric-components/dist/cjs/issue-02",
       "./components"
@@ -23,7 +23,7 @@
     "idyll": "^4.0.7",
     "idyll-d3-component": "^2.0.0",
     "idyll-vega-lite": "^2.0.3",
-    "parametric-components": "^2.1.25",
-    "parametric-styles": "^2.2.16"
+    "parametric-components": "^2.1.27",
+    "parametric-styles": "^2.2.18"
   }
 }

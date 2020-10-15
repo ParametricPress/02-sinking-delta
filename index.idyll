@@ -7,6 +7,8 @@
 
 [data name:"vlConfig" source:"vega-lite-config.json" /]
 
+[Nav fullWidth:true /]
+
 [Header
   title:`["Drought of the", "Sinking Delta"]`
   longTitle:`["Drought of the Sinking Delta"]`
@@ -24,7 +26,6 @@
   source:`"https://github.com/ParametricPress/02-" + parametricSlug `
 /]
 
-[Nav fullWidth:true /]
 
 // Set-up for video, later
 [var name:"playVideo" value:false /]
@@ -44,11 +45,11 @@ Things are out of joint in the delta of the Mekong, Southeast Asia's largest riv
 
 [br/]
 
-[LedeB]
+[LedeA]
 Simultaneously, the annual Monsoon inundations are delayed more and more often, while still retreating early, and leaving local fields parched.
 
 But why? Let's unravel a complex tangle of reasons, with climate change at their core.
-[/LedeB]
+[/LedeA]
 
 // BEGIN BODY TEXT
 Deltas have always been hubs of human development. Ancient civilizations flourished in the Nile and the Ganges deltas. Today, [link text:"half a billion people" url:"https://www.nsf.gov/discoveries/disc_summ.jsp?cntn_id=138738&org=NSF&from=news" /] call deltas home - even though they cover only 1% of the earth's land surface. With rich crops and abundant fish, deltas are crucial to food security and economic development.
@@ -174,9 +175,9 @@ What’s worse, after the flood finally did arrive, it did not stay for long. Th
 [data name:"wlvl" source:"water_level_orig.csv" /]
 
 // CHART: Mekong river water levels, using rolling mean
-[ParametricGraphic fullWidth:true style:`{maxWidth: 960, margin: '1em auto'}` hed:"Mekong River Water Levels at North End of the Delta" subhed:"The flood peak of the 2019 wet season occured much later and was much shorter than in previous years." source:"Mekong River Commission"]
+[ParametricGraphic fullWidth:true className:"vl-graphic-container" style:`{maxWidth: 960, width: 960, margin: '1em auto', padding: '0 1em', overflow: 'visible'}` hed:"Mekong River Water Levels at North End of the Delta" subhed:"The flood peak of the 2019 wet season occured much later and was much shorter than in previous years." source:"Mekong River Commission"]
 
- [div]
+  [div]
    // Actual chart (simplified)
     [IdyllVegaLite actions:false data:wlvl width:"container" height:"200" spec:`{
      config: vlConfig,
@@ -198,7 +199,7 @@ What’s worse, after the flood finally did arrive, it did not stay for long. Th
          mark: {
            type: "area",
            // tooltip: true,
-           fill: '#222222',
+           fill: '#111111',
            opacity: 1,
            line: {
               color: "#D8FFA2",
@@ -225,8 +226,8 @@ What’s worse, after the flood finally did arrive, it did not stay for long. Th
        } // end time series layer
      ] // end layer composer
    }` /] // end IdyllVegaLite
- [/div]
 
+  [/div]
 [/ParametricGraphic]
 
 // end water level chart
@@ -345,7 +346,7 @@ In Southeast Asia, 2015/16 saw a drought similarly severe as that of 2019. This 
         },
         color: {
           field: "ENSO",
-          scale: {domain: ["Regular", "El Niño"], range: ["#222222", "#D8FFA2"] },
+          scale: {domain: ["Regular", "El Niño"], range: ["#adadad", "#D8FFA2"] },
           legend: null
         }
       } // end encoding
@@ -391,7 +392,7 @@ First and foremost, hydropower projects have been increasingly damming up the Me
         mark: {
           type: "area",
           tooltip: true,
-          color: "#222222"
+          color: "#ADADAD"
         },
         encoding: {
           y: {
@@ -417,7 +418,7 @@ First and foremost, hydropower projects have been increasingly damming up the Me
             axis: {
               title: "Number of dams",
               orient: "right",
-              labelColor: "#222222",
+              labelColor: "#ADADAD",
               domainColor: "#D8FFA2"
               },
             scale: {domain: [0, 180] }

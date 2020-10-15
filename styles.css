@@ -5,7 +5,7 @@
 
 body {
   font-size: 24px;
-  color: #222222;
+  color: #adadad;
   font-family: 'Graphik Web';
   line-height: 36px;
 }
@@ -29,7 +29,7 @@ p {
   font-family: 'Graphik Web';
   max-width: none;
   text-align: center;
-  color: white;
+  color: #D8FFA2;
 }
 
 .byline-container {
@@ -52,13 +52,11 @@ p {
   top: 0;
   padding-top: 0.5em;
   margin-top: 0em;
-  border-bottom: solid 1px #222222;
   margin-left: 0;
   margin-right: 0;
   padding-left: 50px;
   padding-right: 50px;
   padding-bottom: 0.5em;
-  background: #ADADAD;
   margin-bottom: 2em;
 }
 .article-header .idyll-text-container {
@@ -90,8 +88,11 @@ h2 {
 }
 .vega-embed {
   width: 100%;
-  max-width: 100%;
-  overflow: hidden;
+  /* max-width: 100%; */
+  overflow: visible;
+  margin-left: -50px;
+  margin-right: -50px;
+  padding: 0 50px;
 }
 
 .idyll-text-container {
@@ -104,7 +105,7 @@ h2 {
   font-size: 20px;
   font-weight: 400;
   line-height: 1.5;
-  color: #222222;
+  /* color: #222222; */
   margin-bottom: 1.5em;
 }
 
@@ -120,6 +121,7 @@ h2 {
 .lede-a, .lede-a p {
   font-size: 32px;
   line-height: 48px;
+  font-weight: 400;
 }
 
 .lede-b, .lede-b p {
@@ -133,10 +135,19 @@ h2 {
   margin-bottom: 25vh;
 }
 
+.vl-graphic-container {
+  width: 960px;
+}
+
+@media all and (max-width: 960px) {
+  .vl-graphic-container {
+    width: 100vw;
+  }
+}
 
 .idyll-scroll-text .idyll-step {
   padding: 1.5em 2em;
-  box-shadow: 5px 5px 2px 0 rgba(50, 50, 50, 0.6);
+  box-shadow: none;
 }
 .idyll-step h2 {
   margin: 0;
@@ -184,12 +195,12 @@ h2 {
 }
 
 .parametric-graphic-subhed {
-  color: #222222;
+  color: #adadad;
   max-width: 100%;
 }
 
 p a {
-  color: #222222;
+  color: #adadad;
   text-decoration: underline;
   transition: color 0.15s ease-in-out;
 }
@@ -234,8 +245,9 @@ p a:hover {
     flex-direction: column;
   }
   .parametric-recirc-module > div:nth-of-type(2) > div {
-    margin: 0.5em 0;
+    margin: 1em 0;
   }
+
   .parametric-header-image {
     display: block;
   }
@@ -259,16 +271,25 @@ video {
 
 }
 
+.idyll-scroll-text .idyll-step{
+  background: #111111;
+  color: #adadad;
+}
+
+.idyll-step p {
+  color: #adadad;
+}
+
 .parametric-graphic {
-  background: #ADADAD;
-  color: #222222;
+  /* background: #ADADAD; */
+  color: #adadad;
   border-top: solid 1px rgba(0, 0, 0, 0.1);
   border-bottom: solid 1px rgba(0, 0, 0, 0.1);
   margin: 2em 0;
 }
 .parametric-graphic-hed,
 .parametric-graphic-dek {
-  color: #222222;
+  color: #adadad;
 }
 .parametric-graphic-hed {
   font-family: 'Editorial New';
@@ -292,7 +313,7 @@ video {
 
 
 .parametric-header-hed-text {
-  margin-top: 20vh;
+  /* margin-top: 50px; */
 }
 
 body {
@@ -302,12 +323,16 @@ body {
   overflow-x: visible;
 }
 
+.article-header a {
+  color: #222222;
+}
+
 
 
 .parametric-recirc-article {
-  background: #222222;
-  color: #D8FFA2 !important;
-  box-shadow: 8px 8px 0 #D8FFA2;
+  /* background: #222222; */
+  /* color: #D8FFA2 !important; */
+  /* box-shadow: 8px 8px 0 #D8FFA2; */
   padding: 0.5em;
   margin: 1em 0;
 }

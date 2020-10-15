@@ -1,9 +1,10 @@
 {
-  "background": "#ADADAD",
+  "background": "#222222",
   "text": {
     "color": "#ADADAD"
   },
-  "axis": {"grid": false },
+  "labelColor": "#ADADAD",
+  "axis": {"grid": false, "titleColor" : "#ADADAD", "tickColor": "#ADADAD", "labelColor": "#ADADAD"},
   "style": {
     "cell": {
       "stroke": "transparent"
