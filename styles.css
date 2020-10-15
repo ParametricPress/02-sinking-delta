@@ -90,9 +90,6 @@ h2 {
   width: 100%;
   /* max-width: 100%; */
   overflow: visible;
-  margin-left: -50px;
-  margin-right: -50px;
-  padding: 0 50px;
 }
 
 .idyll-text-container {
@@ -337,11 +334,3 @@ body {
   margin: 1em 0;
 }
 
-.parametric-recirc-article a {
-  text-decoration: none;
-  color: #ffffff !important;
-}
-
-.parametric-recirc-article a:hover {
-  text-decoration: underline;
-}

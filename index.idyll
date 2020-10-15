@@ -175,12 +175,18 @@ What’s worse, after the flood finally did arrive, it did not stay for long. Th
 [data name:"wlvl" source:"water_level_orig.csv" /]
 
 // CHART: Mekong river water levels, using rolling mean
-[ParametricGraphic fullWidth:true className:"vl-graphic-container" style:`{maxWidth: 960, width: 960, margin: '1em auto', padding: '0 1em', overflow: 'visible'}` hed:"Mekong River Water Levels at North End of the Delta" subhed:"The flood peak of the 2019 wet season occured much later and was much shorter than in previous years." source:"Mekong River Commission"]
+[ParametricGraphic fullWidth:true className:"vl-graphic-container" style:`{maxWidth: 960, margin: '1em auto', padding: '0 1em', overflow: 'visible'}` hed:"Mekong River Water Levels at North End of the Delta" subhed:"The flood peak of the 2019 wet season occured much later and was much shorter than in previous years." source:"Mekong River Commission"]
 
   [div]
    // Actual chart (simplified)
-    [IdyllVegaLite actions:false data:wlvl width:"container" height:"200" spec:`{
+    [IdyllVegaLite actions:false data:wlvl width:"960" height:"200" spec:`{
      config: vlConfig,
+     padding: {
+       left: 20,
+       top: 0,
+       bottom: 0,
+       right: 0
+     },
      transform: [
        {
          filter: {timeUnit:"year", field:"date", gte:2015}
@@ -328,10 +334,17 @@ In Southeast Asia, 2015/16 saw a drought similarly severe as that of 2019. This 
   [div]
       [IdyllVegaLite actions:false data:aPrecip width:"container" height:"300" spec:`{
       config: vlConfig,
+      padding: {
+        left: 20,
+        top: 0,
+        bottom: 0,
+        right: 0
+      },
       mark: {
         type: "bar",
         tooltip: true
       },
+
       encoding: {
         x: {
           field: "year",
