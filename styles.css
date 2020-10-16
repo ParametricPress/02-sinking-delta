@@ -30,6 +30,8 @@ p {
   max-width: none;
   text-align: center;
   color: #D8FFA2;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #222;
 }
 
 .byline-container {
