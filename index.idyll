@@ -71,7 +71,7 @@ At the heart of the issue: Climate change.
 Springing from the vast Tibetan plateau at the foot of the Himalayas, the Mekong river winds its way over 2,700 miles through China, Myanmar, Laos, Thailand, Cambodia and Vietnam.
 
 [ParametricGraphic fullWidth:true style:`{maxWidth: 960, margin: '1em auto'}` hed:"The Mekong River and its Delta" subhed:"From the Tibetan plateau through six countries: China, Myanmar, Laos, Thailand, Cambodia, and Vietnam" source:"Christina Orieschnig" ]
-   [img style:`{width: "100%", height:'auto', maxHeight: 'none'}` src:"static/images/overview_map.jpg" /]
+   [img style:`{width: "100%", height:'auto', maxHeight: 'none'}` src:"static/images/overview.png" /]
 [/ParametricGraphic]
 
 [var name:"firstScrollerIndex" value:0 /]
@@ -179,7 +179,7 @@ What’s worse, after the flood finally did arrive, it did not stay for long. Th
 
   [div]
    // Actual chart (simplified)
-    [IdyllVegaLite actions:false data:wlvl width:"960" height:"200" spec:`{
+    [IdyllVegaLite actions:false data:wlvl width:"container" height:"200" spec:`{
      config: vlConfig,
      padding: {
        left: 20,
@@ -473,6 +473,7 @@ The droughts that have haunted the Mekong delta ever more frequently in recent d
 ##Rising Seas and Sinking Lands
 
 While the floodplains of the delta are left parched by late, short floods, there is more trouble on the horizon: The delta as a whole is sinking, with the sea encroaching inland. For this phenomenon, too, there is a complex web of reasons.
+
 
 [Graphic fullWidth:true]
   [video fullWidth:true style:`{width: "100vw", height:'auto', maxHeight: 'none', margin: '2em auto 3em auto'}` src:"static/videos/MovieRise2.mp4" /]
