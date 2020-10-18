@@ -35,7 +35,7 @@ class Header extends React.PureComponent {
                         }
                       </div>
                     </div>
-                    <div style={{marginLeft: '4em'}}>
+                    <div style={{marginLeft: 0}}>
                       <div style={{fontWeight: 'bold'}}>
                         {props.date}
                       </div>
