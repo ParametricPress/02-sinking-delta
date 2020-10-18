@@ -1,4 +1,4 @@
-[meta title:"Drought of the Sinking Delta" description:"Things are out of joint in the delta of the Mekong, Southeast Asia's largest river."
+[meta title:"Drought of the Sinking Delta" description:"Things are out of joint in the delta of the Mekong, Southeast Asia’s largest river."
   shareImageUrl:"https://parametric.press/issue-02/tk-article-slug/static/images/share.png"
   shareImageWidth:"880"
   shareImageHeight:"440" /]
@@ -13,7 +13,7 @@
   title:`["Drought of the", "Sinking Delta"]`
   longTitle:`["Drought of the Sinking Delta"]`
   date:"October 2020"
-  dek:"Things are out of joint in the delta of the Mekong, Southeast Asia's largest river. Rising sea levels and subsiding land are threatening to flood the area. Simultaneously, the annual Monsoon inundations are delayed more and more often, while still retreating early, and leaving local fields parched. But why? Let's unravel a complex tangle of reasons, with climate change at its core."
+  dek:"Things are out of joint in the delta of the Mekong, Southeast Asia’s largest river. Rising sea levels and subsiding land are threatening to flood the area. Simultaneously, the annual Monsoon inundations are delayed more and more often, while still retreating early, and leaving local fields parched. But why? Let's unravel a complex tangle of reasons, with climate change at its core."
   fullWidth:true
   headerImage:"static/images/header.jpg"
   authors:`[{
@@ -40,7 +40,7 @@
 [var name:"scrollerIndex" value:0 /]
 
 [LedeA]
-Things are out of joint in the delta of the Mekong, Southeast Asia's largest river. Rising sea levels and subsiding land are threatening to flood the area.
+Things are out of joint in the delta of the Mekong, Southeast Asia’s largest river. Rising sea levels and subsiding land are threatening to flood the area.
 [/LedeA]
 
 [br/]
